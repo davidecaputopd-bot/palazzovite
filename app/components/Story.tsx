@@ -1,10 +1,11 @@
 import Image from "next/image";
+import Reveal from "@/app/components/Reveal";
 
 export default function Story() {
   return (
     <section id="storia" className="px-6 md:px-10 py-24 md:py-36">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
-        <div>
+        <Reveal>
           <p className="font-label text-xs text-[var(--ink-soft)] mb-6">La Storia</p>
           <h2 className="font-display text-4xl md:text-6xl leading-[0.95] mb-8">
             Costruito nel 1901,
@@ -25,8 +26,8 @@ export default function Story() {
               intatti gli elementi originali del 1901.
             </p>
           </div>
-        </div>
-        <div className="relative aspect-[3/4] w-full overflow-hidden">
+        </Reveal>
+        <Reveal delay={150} className="relative aspect-[3/4] w-full overflow-hidden">
           <Image
             src="/images/palazzo/scala-soffitto.jpg"
             alt="Soffitto affrescato a medaglione sopra la scala originale del 1901, Palazzo Vite"
@@ -34,7 +35,7 @@ export default function Story() {
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 50vw"
           />
-        </div>
+        </Reveal>
       </div>
     </section>
   );

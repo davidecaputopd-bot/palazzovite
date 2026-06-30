@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Reveal from "@/app/components/Reveal";
 
 const SPACES = [
   {
@@ -21,15 +22,15 @@ const SPACES = [
 export default function PalazzoLife() {
   return (
     <section id="palazzo" className="bg-[var(--ink)] text-[var(--stone)] px-6 md:px-10 py-24 md:py-36">
-      <div className="max-w-3xl mb-14">
+      <Reveal className="max-w-3xl mb-14">
         <p className="font-label text-xs text-[var(--stone)]/60 mb-6">Il Palazzo</p>
         <h2 className="font-display text-4xl md:text-6xl leading-[0.95]">
           Gli spazi comuni.
         </h2>
-      </div>
+      </Reveal>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6">
-        {SPACES.map((s) => (
-          <div key={s.name}>
+        {SPACES.map((s, i) => (
+          <Reveal key={s.name} delay={i * 120}>
             <div className="relative aspect-[3/4] mb-5 overflow-hidden bg-[var(--stone)]/10">
               <Image
                 src={s.image}
@@ -43,7 +44,7 @@ export default function PalazzoLife() {
             <p className="font-body font-light text-sm text-[var(--stone)]/70 leading-relaxed">
               {s.desc}
             </p>
-          </div>
+          </Reveal>
         ))}
       </div>
     </section>

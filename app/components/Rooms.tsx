@@ -1,27 +1,29 @@
 import Image from "next/image";
 import { rooms } from "@/app/data/rooms";
 import { ELEMENT_ICONS } from "@/app/components/Icons";
+import Reveal from "@/app/components/Reveal";
 
 export default function Rooms() {
   return (
     <section id="stanze" className="px-6 md:px-10 py-24 md:py-36">
-      <div className="max-w-3xl mb-14">
+      <Reveal className="max-w-3xl mb-14">
         <p className="font-label text-xs text-[var(--ink-soft)] mb-6">Le Stanze</p>
         <h2 className="font-display text-4xl md:text-6xl leading-[0.95]">
           Cinque stanze,
           <br />
           cinque elementi.
         </h2>
-      </div>
+      </Reveal>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[var(--ink)]/10">
-        {rooms.map((room) => {
+        {rooms.map((room, i) => {
           const Icon = ELEMENT_ICONS[room.element];
           const accentColor = `var(--${room.element})`;
           const inkColor = `var(--${room.element}-ink)`;
 
           return (
-            <article key={room.slug} className="bg-[var(--stone)] group">
+            <Reveal key={room.slug} delay={(i % 2) * 120} className="bg-[var(--stone)] group">
+              <article>
               {room.image ? (
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-[var(--ink)]/10">
                   <div className="relative aspect-[3/4] sm:col-span-2 overflow-hidden">
@@ -79,6 +81,7 @@ export default function Rooms() {
                 </p>
               </div>
             </article>
+            </Reveal>
           );
         })}
       </div>
