@@ -18,8 +18,8 @@ export const rooms: Room[] = [
     element: "aria",
     bed: "Letto matrimoniale",
     description:
-      "Pareti chiare e luce diretta dalla finestra principale. Lenzuola bianche, arredi essenziali.",
-    image: "/images/rooms/aria.jpg",
+      "Pareti chiare, lenzuola bianche, due ritratti dipinti alle pareti. Bagno con specchio ad arco e arredi essenziali.",
+    image: "/images/rooms/aria-1.jpg",
   },
   {
     slug: "etere",
@@ -27,8 +27,8 @@ export const rooms: Room[] = [
     element: "etere",
     bed: "Letto matrimoniale",
     description:
-      "La stanza con lo specchio antico a cornice dorata e il soffitto a volta originale.",
-    image: "/images/rooms/etere.jpg",
+      "Pareti grigio-azzurre, cassettiera antica con specchio originale, porta-finestra sul balcone privato affacciato sulla bouganville.",
+    image: "/images/rooms/etere-1.jpg",
   },
   {
     slug: "fiamma",
@@ -52,9 +52,9 @@ export const rooms: Room[] = [
     slug: "mare",
     name: "Mare",
     element: "mare",
-    bed: "Letto matrimoniale",
+    bed: "Due letti singoli",
     description:
-      "Pareti verde salvia, libreria in legno con volumi e oggetti del Salento.",
-    image: "/images/rooms/mare.jpg",
+      "Pareti verde salvia chiaro, camino in legno scuro, porta-finestra con persiane bianche. Bagno con piastrelle grigio-blu e specchio tondo.",
+    image: "/images/rooms/mare-1.jpg",
   },
 ];
