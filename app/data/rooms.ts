@@ -43,10 +43,10 @@ export const rooms: Room[] = [
     slug: "terra",
     name: "Terra",
     element: "terra",
-    bed: "Letto matrimoniale o due letti singoli",
+    bed: "Letto matrimoniale",
     description:
-      "Toni caldi, mobili d'epoca recuperati, affaccio sul cortile interno.",
-    image: "/images/rooms/terra.jpg",
+      "Pavimento in cementine originali verdi e marroni, comodino in legno laccato ocra, soffitto verde scuro. Bagno con doccia, box in vetro e pareti verde salvia.",
+    image: "/images/rooms/terra-2.jpg",
   },
   {
     slug: "mare",

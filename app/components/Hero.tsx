@@ -1,12 +1,21 @@
+import Image from "next/image";
+
 export default function Hero() {
   return (
     <section className="relative h-screen min-h-[640px] w-full overflow-hidden bg-[var(--wood)]">
-      {/* placeholder: sostituire con foto reale del palazzo (facciata o cortile) */}
+      <Image
+        src="/images/palazzo/facciata.jpg"
+        alt="Facciata di Palazzo Vite, Lecce"
+        fill
+        priority
+        className="object-cover"
+        sizes="100vw"
+      />
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(43,36,25,0.15) 0%, rgba(43,36,25,0.55) 75%, rgba(43,36,25,0.8) 100%), linear-gradient(135deg, #8C9479 0%, #5C4128 55%, #2B2419 100%)",
+            "linear-gradient(180deg, rgba(43,36,25,0.1) 0%, rgba(43,36,25,0.5) 70%, rgba(43,36,25,0.78) 100%)",
         }}
       />
       <div className="relative z-10 h-full flex flex-col justify-end px-6 md:px-10 pb-16 md:pb-24">

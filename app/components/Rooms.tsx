@@ -1,5 +1,8 @@
+import Image from "next/image";
 import { rooms } from "@/app/data/rooms";
 import { ELEMENT_ICONS } from "@/app/components/Icons";
+
+const PLACEHOLDER_IMAGE = "/images/rooms/aria.jpg"; // non esiste ancora: triggera il fallback colore
 
 export default function Rooms() {
   return (
@@ -17,14 +20,24 @@ export default function Rooms() {
         {rooms.map((room) => {
           const Icon = ELEMENT_ICONS[room.element];
           const color = `var(--${room.element})`;
+          const hasPhoto = room.image !== PLACEHOLDER_IMAGE;
           return (
             <article key={room.slug} className="bg-[var(--stone)] group">
               <div
                 className="relative aspect-[4/3] overflow-hidden"
-                style={{ backgroundColor: color, opacity: 0.92 }}
+                style={!hasPhoto ? { backgroundColor: color, opacity: 0.92 } : undefined}
               >
-                {/* placeholder colore elemento — sostituire con foto reale stanza */}
-                <Icon className="absolute bottom-5 right-5 w-10 h-10 text-[var(--stone)] opacity-70" />
+                {hasPhoto ? (
+                  <Image
+                    src={room.image}
+                    alt={`Stanza ${room.name}, Palazzo Vite`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                ) : (
+                  <Icon className="absolute bottom-5 right-5 w-10 h-10 text-[var(--stone)] opacity-70" />
+                )}
               </div>
               <div className="p-6 md:p-8">
                 <div className="flex items-baseline justify-between mb-3">

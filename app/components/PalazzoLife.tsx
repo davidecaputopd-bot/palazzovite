@@ -1,15 +1,20 @@
+import Image from "next/image";
+
 const SPACES = [
   {
     name: "Il Giardino",
-    desc: "Tavolino in ferro tra gli alberi, colazione all'aperto al mattino.",
+    desc: "Tavolino in ferro tra gli alberi d'arancio, colazione all'aperto al mattino.",
+    image: "/images/palazzo/giardino-1.jpg",
   },
   {
     name: "La Scala",
-    desc: "Scalinata in pietra a chiocciola, ringhiera originale in ferro e legno.",
+    desc: "Scalinata in pietra a chiocciola, ringhiera originale in ferro battuto del 1901.",
+    image: "/images/palazzo/scala-1.jpg",
   },
   {
-    name: "Il Cortile",
-    desc: "Ingresso del palazzo, soglia tra la strada e gli ambienti interni.",
+    name: "La Terrazza",
+    desc: "Sedute tra le bouganville, vista sui tetti del centro storico di Lecce.",
+    image: "/images/palazzo/terrazza-1.jpg",
   },
 ];
 
@@ -25,7 +30,15 @@ export default function PalazzoLife() {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6">
         {SPACES.map((s) => (
           <div key={s.name}>
-            <div className="aspect-[3/4] bg-[var(--stone)]/10 mb-5" />
+            <div className="relative aspect-[3/4] mb-5 overflow-hidden bg-[var(--stone)]/10">
+              <Image
+                src={s.image}
+                alt={`${s.name}, Palazzo Vite`}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+            </div>
             <h3 className="font-display text-xl tracking-wide mb-2">{s.name}</h3>
             <p className="font-body font-light text-sm text-[var(--stone)]/70 leading-relaxed">
               {s.desc}
