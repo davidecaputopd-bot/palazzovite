@@ -6,11 +6,11 @@ export type Room = {
   bed: string;
   floor?: string;
   description: string;
-  image: string;
+  image: string | null; // null = foto non ancora disponibile
+  bathroomImage?: string;
 };
 
-// NOTA: sqm, floor e image vanno completati/sostituiti con i dati reali
-// e le foto del fotografo non appena disponibili.
+// NOTA: sqm e floor vanno completati con i dati reali quando disponibili.
 export const rooms: Room[] = [
   {
     slug: "aria",
@@ -20,6 +20,7 @@ export const rooms: Room[] = [
     description:
       "Pareti chiare, lenzuola bianche, due ritratti dipinti alle pareti. Bagno con specchio ad arco e arredi essenziali.",
     image: "/images/rooms/aria-1.jpg",
+    bathroomImage: "/images/rooms/aria-bagno-1.jpg",
   },
   {
     slug: "etere",
@@ -36,8 +37,8 @@ export const rooms: Room[] = [
     element: "fiamma",
     bed: "Letto matrimoniale",
     description:
-      "Pavimento in cementine originali, comodino in legno laccato color ocra.",
-    image: "/images/rooms/fiamma.jpg",
+      "Pavimento in cementine originali, comodino in legno laccato color ocra. Foto in arrivo.",
+    image: null,
   },
   {
     slug: "terra",
@@ -45,8 +46,9 @@ export const rooms: Room[] = [
     element: "terra",
     bed: "Letto matrimoniale",
     description:
-      "Pavimento in cementine originali verdi e marroni, comodino in legno laccato ocra, soffitto verde scuro. Bagno con doccia, box in vetro e pareti verde salvia.",
+      "Pavimento in cementine originali verdi e marroni, comodino in legno laccato ocra, soffitto verde scuro.",
     image: "/images/rooms/terra-2.jpg",
+    bathroomImage: "/images/rooms/terra-bagno.jpg",
   },
   {
     slug: "mare",
@@ -54,7 +56,8 @@ export const rooms: Room[] = [
     element: "mare",
     bed: "Due letti singoli",
     description:
-      "Pareti verde salvia chiaro, camino in legno scuro, porta-finestra con persiane bianche. Bagno con piastrelle grigio-blu e specchio tondo.",
+      "Pareti verde salvia chiaro, camino in legno scuro, porta-finestra con persiane bianche.",
     image: "/images/rooms/mare-1.jpg",
+    bathroomImage: "/images/rooms/mare-bagno.jpg",
   },
 ];

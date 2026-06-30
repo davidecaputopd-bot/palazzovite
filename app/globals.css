@@ -14,12 +14,19 @@
   --wood: #5C4128;
   --gold: #B8964F;
 
-  /* Stanze — un colore per elemento, preso dalla palette reale */
+  /* Stanze — colore decorativo per elemento (sfondi, accenti) */
   --aria: #D8D2BF;
   --etere: #B8964F;
   --fiamma: #B5703C;
   --terra: #C99A3E;
   --mare: #8C9479;
+
+  /* Varianti scure — SOLO per testo, garantiscono contrasto leggibile su sfondo chiaro */
+  --aria-ink: #8A8268;
+  --etere-ink: #8A6B2E;
+  --fiamma-ink: #8A4E26;
+  --terra-ink: #8A6B22;
+  --mare-ink: #54593F;
 
   --font-display: var(--font-bebas);
   --font-label: var(--font-mono);

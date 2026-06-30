@@ -1,3 +1,5 @@
+import { BOOKING_URL, CONTACT_EMAIL } from "@/app/data/config";
+
 export default function Book() {
   return (
     <section id="prenota" className="bg-[var(--stone-deep)] px-6 md:px-10 py-24 md:py-36">
@@ -7,14 +9,18 @@ export default function Book() {
           Verifica disponibilità.
         </h2>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          {BOOKING_URL ? (
+            <a
+              href={BOOKING_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="font-label text-xs bg-[var(--ink)] text-[var(--stone)] px-8 py-4 hover:opacity-85 transition-opacity"
+            >
+              Prenota su Booking.com
+            </a>
+          ) : null}
           <a
-            href="#"
-            className="font-label text-xs bg-[var(--ink)] text-[var(--stone)] px-8 py-4 hover:opacity-85 transition-opacity"
-          >
-            Prenota su Booking.com
-          </a>
-          <a
-            href="mailto:info@palazzovite.com"
+            href={`mailto:${CONTACT_EMAIL}`}
             className="font-label text-xs border border-[var(--ink)] text-[var(--ink)] px-8 py-4 hover:bg-[var(--ink)] hover:text-[var(--stone)] transition-colors"
           >
             Richiedi informazioni

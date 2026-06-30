@@ -15,7 +15,7 @@ export default function Footer() {
       </div>
 
       {/* Dati legali obbligatori per locazioni turistiche/affittacamere in Italia */}
-      <div className="font-label text-[10px] leading-relaxed text-[var(--ink-soft)]/70 max-w-2xl">
+      <div className="font-label text-xs leading-relaxed text-[var(--ink-soft)] max-w-2xl">
         <p>
           Concentrika S.A.S. — Via Basilio il Macedone 32, 73043 Copertino
           (LE) — P.IVA 05152990750
