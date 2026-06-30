@@ -5,11 +5,22 @@ export default function Location() {
       <h2 className="font-display text-4xl md:text-6xl leading-[0.95] mb-8">
         Copertino, Salento.
       </h2>
-      <p className="font-body font-light text-base md:text-lg leading-relaxed text-[var(--ink-soft)] max-w-xl">
+      <p className="font-body font-light text-base md:text-lg leading-relaxed text-[var(--ink-soft)] max-w-xl mb-10">
         Via Amendola, 1 — 73043 Copertino (LE). Nel cuore del basso Salento,
         a pochi minuti da Lecce e con accesso facile alle spiagge ioniche e
         adriatiche della penisola.
       </p>
+      <div className="aspect-[16/9] w-full overflow-hidden">
+        <iframe
+          title="Mappa Palazzo Vite, Via Amendola 1, Copertino"
+          src="https://www.google.com/maps?q=Via+Amendola+1,+73043+Copertino+LE&output=embed"
+          width="100%"
+          height="100%"
+          style={{ border: 0 }}
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
+      </div>
     </section>
   );
 }

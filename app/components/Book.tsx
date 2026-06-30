@@ -26,6 +26,9 @@ export default function Book() {
             Richiedi informazioni
           </a>
         </div>
+        <p className="font-label text-[11px] text-[var(--ink-soft)] mt-5">
+          oppure scrivi direttamente a {CONTACT_EMAIL}
+        </p>
       </div>
     </section>
   );

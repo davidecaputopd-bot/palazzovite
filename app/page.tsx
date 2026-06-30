@@ -6,6 +6,7 @@ import PalazzoLife from "@/app/components/PalazzoLife";
 import Location from "@/app/components/Location";
 import Book from "@/app/components/Book";
 import Footer from "@/app/components/Footer";
+import StickyBookBar from "@/app/components/StickyBookBar";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
         <Book />
       </main>
       <Footer />
+      <StickyBookBar />
     </>
   );
 }
