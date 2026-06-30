@@ -22,11 +22,11 @@ const SPACES = [
 export default function PalazzoLife() {
   return (
     <section id="palazzo" className="bg-[var(--ink)] text-[var(--stone)] px-6 md:px-10 py-24 md:py-36">
-      <Reveal className="max-w-3xl mb-14">
-        <p className="font-label text-xs text-[var(--stone)]/60 mb-6">Il Palazzo</p>
+      <Reveal className="max-w-3xl mb-14 flex flex-wrap items-baseline gap-x-5 gap-y-2">
         <h2 className="font-display text-4xl md:text-6xl leading-[0.95]">
           Gli spazi comuni.
         </h2>
+        <p className="font-label text-xs text-[var(--stone)]/60">Il Palazzo</p>
       </Reveal>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6">
         {SPACES.map((s, i) => (

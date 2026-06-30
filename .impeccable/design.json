@@ -1,0 +1,121 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-30T00:00:00.000Z",
+  "title": "Design System: Palazzo Vite",
+  "extensions": {
+    "colorMeta": {
+      "ink": { "role": "primary", "displayName": "Inchiostro di Noce", "canonical": "oklch(27% 0.03 60)", "tonalRamp": ["#1A150E", "#231C13", "#2B2419", "#3A3120", "#4A4233", "#6B6049", "#9A8C6D", "#D8D2BF"] },
+      "stone": { "role": "secondary", "displayName": "Pietra Leccese", "canonical": "oklch(94% 0.015 80)", "tonalRamp": ["#E8DFC9", "#EEE7D6", "#F4EFE4", "#F7F3EB", "#FAF7F1", "#FCFAF6", "#FDFCF9", "#FFFFFF"] },
+      "stone-deep": { "role": "secondary", "displayName": "Pietra Leccese Profonda", "canonical": "oklch(90% 0.02 75)" },
+      "sage": { "role": "tertiary", "displayName": "Salvia", "canonical": "oklch(62% 0.04 135)" },
+      "ochre": { "role": "tertiary", "displayName": "Ocra", "canonical": "oklch(68% 0.1 75)" },
+      "terracotta": { "role": "tertiary", "displayName": "Terracotta", "canonical": "oklch(56% 0.09 45)" },
+      "wood": { "role": "tertiary", "displayName": "Legno", "canonical": "oklch(35% 0.04 60)" },
+      "gold": { "role": "tertiary", "displayName": "Oro Vecchio", "canonical": "oklch(67% 0.08 75)" },
+      "aria": { "role": "neutral", "displayName": "Aria", "canonical": "oklch(86% 0.015 75)" },
+      "aria-ink": { "role": "neutral", "displayName": "Aria Inchiostro", "canonical": "oklch(58% 0.02 75)" },
+      "etere": { "role": "neutral", "displayName": "Etere", "canonical": "oklch(67% 0.08 75)" },
+      "etere-ink": { "role": "neutral", "displayName": "Etere Inchiostro", "canonical": "oklch(48% 0.07 70)" },
+      "fiamma": { "role": "neutral", "displayName": "Fiamma", "canonical": "oklch(56% 0.09 45)" },
+      "fiamma-ink": { "role": "neutral", "displayName": "Fiamma Inchiostro", "canonical": "oklch(42% 0.08 42)" },
+      "terra": { "role": "neutral", "displayName": "Terra", "canonical": "oklch(68% 0.1 75)" },
+      "terra-ink": { "role": "neutral", "displayName": "Terra Inchiostro", "canonical": "oklch(48% 0.08 72)" },
+      "mare": { "role": "neutral", "displayName": "Mare", "canonical": "oklch(62% 0.04 135)" },
+      "mare-ink": { "role": "neutral", "displayName": "Mare Inchiostro", "canonical": "oklch(38% 0.03 130)" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display (Bebas Neue)", "purpose": "Titoli di sezione e hero, sempre uppercase." },
+      "headline": { "displayName": "Headline (Bebas Neue)", "purpose": "Nomi stanze e sotto-titoli." },
+      "body": { "displayName": "Body (DM Sans Light)", "purpose": "Paragrafi narrativi, max 65-75ch." },
+      "label": { "displayName": "Label (DM Mono)", "purpose": "Eyebrow, metadati, bottoni, link di navigazione." }
+    },
+    "shadows": [],
+    "motion": [
+      { "name": "reveal-ease", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "Easing unico per ogni fade-up di sezione (Reveal) e per lo zoom hero." },
+      { "name": "reveal-duration", "value": "0.9s", "purpose": "Durata standard del fade-up di sezione." },
+      { "name": "hero-zoom-duration", "value": "1.6s", "purpose": "Durata dello zoom-out dell'immagine hero al mount." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Bottone di invio form / CTA principale, sfondo ink pieno.",
+      "html": "<button class=\"ds-btn-primary\">INVIA RICHIESTA</button>",
+      "css": ".ds-btn-primary { background: #2B2419; color: #F4EFE4; padding: 16px 32px; font-family: 'DM Mono', monospace; font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.16em; border: none; border-radius: 0; transition: opacity 0.2s; } .ds-btn-primary:hover { opacity: 0.85; } .ds-btn-primary:focus-visible { outline: 2px solid #F4EFE4; outline-offset: 2px; } .ds-btn-primary:disabled { opacity: 0.5; cursor: not-allowed; }"
+    },
+    {
+      "name": "Ghost Nav Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "CTA secondaria nella nav, bordo 1px che eredita il colore del testo corrente.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#prenota\">VERIFICA DISPONIBILITÀ</a>",
+      "css": ".ds-btn-ghost { display: inline-block; border: 1px solid currentColor; color: #F4EFE4; padding: 8px 16px; font-family: 'DM Mono', monospace; font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.16em; text-decoration: none; transition: opacity 0.2s; } .ds-btn-ghost:hover { opacity: 0.6; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": "input-field",
+      "description": "Campo del form di contatto: nessun bordo perimetrale, solo underline.",
+      "html": "<label class=\"ds-label\" for=\"ds-name\">NOME E COGNOME *</label><input class=\"ds-input\" id=\"ds-name\" type=\"text\" placeholder=\"Mario Rossi\" />",
+      "css": ".ds-label { font-family: 'DM Mono', monospace; font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.16em; color: #4A4233; display: block; margin-bottom: 8px; } .ds-input { width: 100%; background: transparent; border: none; border-bottom: 1px solid rgba(43,36,25,0.3); padding: 12px 0; font-family: 'DM Sans', sans-serif; font-weight: 300; color: #2B2419; } .ds-input::placeholder { color: rgba(74,66,51,0.5); } .ds-input:focus { outline: none; border-bottom-color: #2B2419; }"
+    },
+    {
+      "name": "Room Card",
+      "kind": "card",
+      "refersTo": "room-card",
+      "description": "Scheda stanza nella griglia 'Le Stanze': foto + nome elemento + descrizione, separata da linea 1px, senza ombra o radius.",
+      "html": "<article class=\"ds-room-card\"><div class=\"ds-room-photo\" style=\"background:#B5703C;opacity:0.22;display:flex;align-items:center;justify-content:center;\"><span class=\"ds-room-caption\">FOTO IN ARRIVO</span></div><div class=\"ds-room-body\"><div class=\"ds-room-head\"><h3 class=\"ds-room-name\">FIAMMA</h3><span class=\"ds-room-meta\">Letto matrimoniale</span></div><p class=\"ds-room-desc\">Pavimento in cementine originali, comodino in legno laccato color ocra.</p></div></article>",
+      "css": ".ds-room-card { background: #F4EFE4; } .ds-room-photo { aspect-ratio: 4/3; position: relative; } .ds-room-caption { font-family: 'DM Mono', monospace; font-size: 10px; letter-spacing: 0.16em; color: #8A4E26; text-transform: uppercase; } .ds-room-body { padding: 24px; } .ds-room-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 12px; } .ds-room-name { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 0.01em; text-transform: uppercase; color: #8A4E26; } .ds-room-meta { font-family: 'DM Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em; color: #4A4233; } .ds-room-desc { font-family: 'DM Sans', sans-serif; font-weight: 300; color: #4A4233; line-height: 1.6; }"
+    },
+    {
+      "name": "Top Navigation",
+      "kind": "nav",
+      "refersTo": "nav-header",
+      "description": "Nav fissa: trasparente su hero, sfondo pietra pieno dopo lo scroll.",
+      "html": "<header class=\"ds-nav\"><a class=\"ds-nav-logo\" href=\"#\">PALAZZO VITE</a><nav class=\"ds-nav-links\"><a href=\"#storia\">Storia</a><a href=\"#stanze\">Stanze</a><a href=\"#palazzo\">Il Palazzo</a><a href=\"#posizione\">Posizione</a></nav></header>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 40px; background: #F4EFE4; } .ds-nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; letter-spacing: 0.01em; color: #2B2419; text-decoration: none; } .ds-nav-links { display: flex; gap: 32px; font-family: 'DM Mono', monospace; font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.16em; } .ds-nav-links a { color: #2B2419; text-decoration: none; transition: opacity 0.2s; } .ds-nav-links a:hover { opacity: 0.6; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "La Casa Riaperta",
+    "overview": "Palazzo Vite non si presenta come un boutique hotel: si presenta come una casa del 1901 che ha appena ripreso a vivere. Il sistema visivo deve sembrare costruito attorno a fotografie e materiali reali — pietra leccese, cementine, legno laccato, ferro battuto — non attorno a una palette astratta scelta per 'sembrare elegante'. Tipografia da insegna d'epoca (Bebas Neue) per i titoli, etichette da archivio in monospaziato maiuscolo per i metadati, corpo del testo leggero e leggibile per il racconto. Tutto è flat: nessuna ombra, nessun angolo arrotondato, nessuna texture decorativa che non derivi da una foto vera. La separazione tra sezioni e tra stanze è un filo sottile (1px), come la linea di una pagina scritta a mano, non un bordo da componente UI. Il sistema rifiuta esplicitamente l'estetica da catalogo patinato di un boutique hotel di catena, l'oro ostentato del lusso da cartolina, e ogni traccia di 'AI slop' da landing page SaaS.",
+    "keyCharacteristics": [
+      "Palette ancorata a materiali reali del palazzo, non a una teoria del colore generica",
+      "Tipografia a tre registri netti: display da insegna, label da archivio, corpo leggero",
+      "Superfici completamente flat: zero ombre, zero radius, separazione via filo da 1px",
+      "Ogni stanza ha un colore-elemento e un'icona lineare propria",
+      "Movimento discreto e coerente: reveal-on-scroll uniforme, mai coreografia vistosa"
+    ],
+    "rules": [
+      { "name": "La Regola del Materiale Vero", "body": "Ogni colore deve poter essere indicato a dito in una foto del palazzo. Se un colore non corrisponde a un materiale, una parete o un arredo reale, non entra in palette.", "section": "colors" },
+      { "name": "La Regola del Contrasto Stanza", "body": "Il colore decorativo di una stanza non è mai usato come colore di testo: solo come sfondo a bassa opacità dietro le icone. Il testo usa sempre la variante -ink corrispondente.", "section": "colors" },
+      { "name": "La Regola dell'Insegna", "body": "Bebas Neue compare solo in maiuscolo e solo per titoli — mai per corpo di testo, mai in minuscolo.", "section": "typography" },
+      { "name": "La Regola dell'Archivio", "body": "Il monospaziato (label) è sempre uppercase con tracking ampio (0.16em): è il registro dei metadati, mai del racconto.", "section": "typography" },
+      { "name": "La Regola del Foglio Piatto", "body": "Nessuna superficie si solleva mai dal piano. Se serve separare due elementi, si usa una linea di 1px o un cambio di tono di sfondo, mai un'ombra.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do ancorare ogni colore a un materiale reale fotografato nel palazzo (Regola del Materiale Vero).",
+      "Do usare la variante -ink di ogni colore-elemento per il testo, mai il colore decorativo puro.",
+      "Do mantenere il sito completamente flat: zero box-shadow, zero border-radius.",
+      "Do separare blocchi affiancati con una linea di 1px, non con un bordo o un'ombra.",
+      "Do usare il fade-up di Reveal come unica firma di movimento, con stagger solo dove elementi sono davvero affiancati nella stessa sezione.",
+      "Do dichiarare apertamente i contenuti mancanti ('Foto in arrivo') invece di nascondere il buco o inventare un placeholder generico.",
+      "Do rispettare sempre prefers-reduced-motion."
+    ],
+    "donts": [
+      "Don't introdurre ombre, glassmorphism o angoli arrotondati.",
+      "Don't usare gradient text o testo con background-clip: text.",
+      "Don't trasformare le schede stanza in card con ombra/bordo arrotondato.",
+      "Don't introdurre un'estetica da boutique hotel patinato (foto stock, oro ostentato, copy da marketing turistico generico).",
+      "Don't moltiplicare l'eyebrow uppercase come scaffolding automatico su ogni nuova sezione senza motivo.",
+      "Don't usare Bebas Neue in minuscolo o per corpo di testo.",
+      "Don't inventare dati reali mancanti (mq, piano, link booking) con segnaposto che sembrano dati veri."
+    ]
+  }
+}

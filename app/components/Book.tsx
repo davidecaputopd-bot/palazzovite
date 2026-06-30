@@ -6,7 +6,6 @@ export default function Book() {
   return (
     <section id="prenota" className="bg-[var(--stone-deep)] px-6 md:px-10 py-24 md:py-36">
       <Reveal className="max-w-3xl mx-auto text-center mb-14">
-        <p className="font-label text-xs text-[var(--ink-soft)] mb-6">Prenota</p>
         <h2 className="font-display text-4xl md:text-6xl leading-[0.95] mb-6">
           Richiedi disponibilità.
         </h2>

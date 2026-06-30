@@ -22,10 +22,10 @@
   --mare: #8C9479;
 
   /* Varianti scure — SOLO per testo, garantiscono contrasto leggibile su sfondo chiaro */
-  --aria-ink: #8A8268;
+  --aria-ink: #756B4F;
   --etere-ink: #8A6B2E;
   --fiamma-ink: #8A4E26;
-  --terra-ink: #8A6B22;
+  --terra-ink: #71591A;
   --mare-ink: #54593F;
 
   --font-display: var(--font-bebas);
