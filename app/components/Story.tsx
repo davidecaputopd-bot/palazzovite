@@ -14,7 +14,7 @@ export default function Story() {
           <div className="font-body font-light text-base md:text-lg leading-relaxed text-[var(--ink-soft)] space-y-5 max-w-md">
             <p>
               Palazzo Vite nasce nei primi anni del Novecento nel cuore di
-              Lecce, in piena epoca Liberty. La scala originale in pietra,
+              Copertino, in piena epoca Liberty. La scala originale in pietra,
               con balaustra in ferro battuto e il soffitto affrescato a
               medaglione, è ancora oggi intatta.
             </p>

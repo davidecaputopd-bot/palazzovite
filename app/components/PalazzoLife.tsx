@@ -13,7 +13,7 @@ const SPACES = [
   },
   {
     name: "La Terrazza",
-    desc: "Sedute tra le bouganville, vista sui tetti del centro storico di Lecce.",
+    desc: "Sedute tra le bouganville, vista sui tetti del centro storico di Copertino.",
     image: "/images/palazzo/terrazza-1.jpg",
   },
 ];

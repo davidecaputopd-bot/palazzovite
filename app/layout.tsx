@@ -21,9 +21,9 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Palazzo Vite — Lecce, 1901",
+  title: "Palazzo Vite — Copertino, 1901",
   description:
-    "Un palazzo dei primi del Novecento nel cuore del Salento, riaperto oggi in cinque stanze: Aria, Etere, Fiamma, Terra, Mare.",
+    "Affittacamere in un palazzo dei primi del Novecento nel cuore del Salento, a Copertino (LE), con cinque stanze: Aria, Etere, Fiamma, Terra, Mare.",
 };
 
 export default function RootLayout({

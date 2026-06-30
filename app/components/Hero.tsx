@@ -5,7 +5,7 @@ export default function Hero() {
     <section className="relative h-screen min-h-[640px] w-full overflow-hidden bg-[var(--wood)]">
       <Image
         src="/images/palazzo/facciata.jpg"
-        alt="Facciata di Palazzo Vite, Lecce"
+        alt="Facciata di Palazzo Vite, Copertino"
         fill
         priority
         className="object-cover"
@@ -20,7 +20,7 @@ export default function Hero() {
       />
       <div className="relative z-10 h-full flex flex-col justify-end px-6 md:px-10 pb-16 md:pb-24">
         <p className="font-label text-xs text-[#F4EFE4]/80 mb-3">
-          Lecce — Salento — dal 1901
+          Affittacamere — Copertino, Salento — dal 1901
         </p>
         <h1 className="font-display text-[18vw] md:text-[9vw] leading-[0.85] text-[#F4EFE4]">
           Palazzo Vite
