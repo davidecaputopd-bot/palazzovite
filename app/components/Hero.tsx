@@ -10,7 +10,7 @@ export default function Hero() {
   const base = "transition-all duration-1000 ease-out";
 
   return (
-    <section className="relative h-screen min-h-[640px] w-full overflow-hidden bg-[var(--wood)]">
+    <section className="relative min-h-[100dvh] w-full overflow-hidden bg-[var(--wood)]">
       <Image
         src="/images/palazzo/facciata.jpg"
         alt="Facciata di Palazzo Vite, Copertino"
@@ -27,12 +27,12 @@ export default function Hero() {
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(43,36,25,0.1) 0%, rgba(43,36,25,0.5) 70%, rgba(43,36,25,0.78) 100%)",
+            "linear-gradient(180deg, rgba(43,36,25,0.08) 0%, rgba(43,36,25,0.45) 60%, rgba(43,36,25,0.82) 100%)",
         }}
       />
-      <div className="relative z-10 h-full flex flex-col justify-end px-6 md:px-10 pb-16 md:pb-24">
+      <div className="relative z-10 min-h-[100dvh] flex flex-col justify-end px-6 md:px-10 pb-14 md:pb-20">
         <p
-          className={`${base} font-label text-xs text-[#F4EFE4]/80 mb-3`}
+          className={`${base} font-label text-xs text-[#F4EFE4]/75 mb-3`}
           style={{
             opacity: mounted ? 1 : 0,
             transform: mounted ? "translateY(0)" : "translateY(16px)",
@@ -42,7 +42,7 @@ export default function Hero() {
           Affittacamere — Copertino, Salento — dal 1901
         </p>
         <h1
-          className={`${base} font-display text-[18vw] md:text-[9vw] leading-[0.85] text-[#F4EFE4]`}
+          className={`${base} font-display text-[17vw] md:text-[8.5vw] leading-[0.88] text-[#F4EFE4]`}
           style={{
             opacity: mounted ? 1 : 0,
             transform: mounted ? "translateY(0)" : "translateY(24px)",
@@ -52,7 +52,7 @@ export default function Hero() {
           Palazzo Vite
         </h1>
         <p
-          className={`${base} font-body font-light text-[#F4EFE4]/90 max-w-md mt-6 text-base md:text-lg`}
+          className={`${base} font-body font-light text-[#F4EFE4]/85 max-w-sm mt-5 text-base md:text-lg leading-relaxed`}
           style={{
             opacity: mounted ? 1 : 0,
             transform: mounted ? "translateY(0)" : "translateY(16px)",
@@ -62,6 +62,27 @@ export default function Hero() {
           Un palazzo dei primi del Novecento nel cuore del Salento, riaperto
           oggi in cinque stanze.
         </p>
+        <div
+          className={`${base} mt-8 flex flex-wrap items-center gap-4 md:gap-6`}
+          style={{
+            opacity: mounted ? 1 : 0,
+            transform: mounted ? "translateY(0)" : "translateY(12px)",
+            transitionDelay: "750ms",
+          }}
+        >
+          <a
+            href="#prenota"
+            className="font-label text-xs bg-[#F4EFE4] text-[var(--ink)] px-6 py-3 hover:opacity-90 transition-opacity"
+          >
+            Verifica disponibilità
+          </a>
+          <a
+            href="#storia"
+            className="font-label text-xs text-[#F4EFE4]/65 hover:text-[#F4EFE4] transition-colors underline underline-offset-4"
+          >
+            Scopri il palazzo
+          </a>
+        </div>
       </div>
     </section>
   );

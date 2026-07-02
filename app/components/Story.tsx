@@ -3,8 +3,17 @@ import Reveal from "@/app/components/Reveal";
 
 export default function Story() {
   return (
-    <section id="storia" className="px-6 md:px-10 py-24 md:py-36">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+    <section id="storia" className="relative px-6 md:px-10 py-24 md:py-36 overflow-hidden">
+      {/* Large year watermark — decorative background flourish */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute right-0 top-1/2 -translate-y-1/2 font-display text-[22vw] md:text-[18vw] leading-none select-none"
+        style={{ color: "var(--stone-deep)", opacity: 0.6 }}
+      >
+        1901
+      </div>
+
+      <div className="relative max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
         <Reveal>
           <p className="font-label text-xs text-[var(--ink-soft)] mb-6">La Storia</p>
           <h2 className="font-display text-4xl md:text-6xl leading-[0.95] mb-8">

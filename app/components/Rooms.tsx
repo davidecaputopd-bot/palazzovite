@@ -25,31 +25,39 @@ export default function Rooms() {
             <Reveal key={room.slug} delay={(i % 2) * 120} className="bg-[var(--stone)] group">
               <article>
               {room.image ? (
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-[var(--ink)]/10">
-                  <div className="relative aspect-[3/4] sm:col-span-2 overflow-hidden">
+                <div className="grid grid-cols-3 gap-px bg-[var(--ink)]/10">
+                  <div className="relative aspect-[3/4] col-span-2 overflow-hidden">
                     <Image
                       src={room.image}
                       alt={`Stanza ${room.name}, Palazzo Vite`}
                       fill
                       className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 33vw"
+                      sizes="(max-width: 768px) 66vw, 33vw"
                     />
                   </div>
-                  <div className="relative aspect-[3/4] hidden sm:block overflow-hidden bg-[var(--stone)]">
+                  <div className="relative aspect-[3/4] overflow-hidden bg-[var(--stone)]">
                     {room.bathroomImage ? (
-                      <Image
-                        src={room.bathroomImage}
-                        alt={`Bagno della stanza ${room.name}, Palazzo Vite`}
-                        fill
-                        className="object-cover"
-                        sizes="16vw"
-                      />
+                      <>
+                        <Image
+                          src={room.bathroomImage}
+                          alt={`Bagno della stanza ${room.name}, Palazzo Vite`}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 33vw, 16vw"
+                        />
+                        <span className="absolute bottom-2 left-2 font-label text-[9px] text-[var(--stone)]/70">
+                          Bagno
+                        </span>
+                      </>
                     ) : (
                       <div
-                        className="absolute inset-0 flex items-center justify-center"
-                        style={{ backgroundColor: accentColor, opacity: 0.18 }}
+                        className="absolute inset-0 flex flex-col items-center justify-center gap-2"
+                        style={{ backgroundColor: accentColor + "30" }}
                       >
-                        <Icon className="w-8 h-8" style={{ color: inkColor }} />
+                        <Icon className="w-6 h-6" style={{ color: inkColor }} />
+                        <span className="font-label text-[9px] text-center px-1" style={{ color: inkColor }}>
+                          Foto<br />in arrivo
+                        </span>
                       </div>
                     )}
                   </div>
@@ -57,7 +65,7 @@ export default function Rooms() {
               ) : (
                 <div
                   className="relative aspect-[4/3] flex items-center justify-center"
-                  style={{ backgroundColor: accentColor, opacity: 0.22 }}
+                  style={{ backgroundColor: accentColor + "38" }}
                 >
                   <Icon className="w-10 h-10" style={{ color: inkColor }} />
                   <span className="absolute bottom-4 right-4 font-label text-[10px]" style={{ color: inkColor }}>

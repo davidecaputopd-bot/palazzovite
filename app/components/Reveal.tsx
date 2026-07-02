@@ -12,9 +12,12 @@ export default function Reveal({
   className?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
+  // mounted: JS hydrated. visible: IntersectionObserver fired.
+  const [mounted, setMounted] = useState(false);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const el = ref.current;
     if (!el) return;
     const observer = new IntersectionObserver(
@@ -24,20 +27,26 @@ export default function Reveal({
           observer.disconnect();
         }
       },
-      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.12, rootMargin: "0px 0px -32px 0px" }
     );
     observer.observe(el);
     return () => observer.disconnect();
   }, []);
+
+  // Before JS mounts: fully visible (SSR-safe, no blank flash on slow tabs).
+  // After mount, before intersection: hidden and waiting to animate in.
+  const hidden = mounted && !visible;
 
   return (
     <div
       ref={ref}
       className={className}
       style={{
-        opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0)" : "translateY(28px)",
-        transition: `opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms, transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms`,
+        opacity: hidden ? 0 : 1,
+        transform: hidden ? "translateY(24px)" : "translateY(0)",
+        transition: mounted
+          ? `opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms, transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms`
+          : "none",
       }}
     >
       {children}
