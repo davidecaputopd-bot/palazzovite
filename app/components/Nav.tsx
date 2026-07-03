@@ -77,6 +77,7 @@ export default function Nav() {
           pointerEvents: open ? "auto" : "none",
         }}
         aria-hidden={!open}
+        inert={!open}
       >
         {LINKS.map((l) => (
           <a

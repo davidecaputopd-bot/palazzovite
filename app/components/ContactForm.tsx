@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, FormEvent } from "react";
+import { useSearchParams } from "next/navigation";
 import { WEB3FORMS_ACCESS_KEY, CONTACT_EMAIL } from "@/app/data/config";
 import { rooms } from "@/app/data/rooms";
 
@@ -11,15 +12,15 @@ export default function ContactForm() {
   const [checkIn, setCheckIn] = useState("");
   const [checkOut, setCheckOut] = useState("");
   const [selectedRoom, setSelectedRoom] = useState("");
+  const searchParams = useSearchParams();
 
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const roomParam = params.get("room");
+    const roomParam = searchParams.get("room");
     if (roomParam) {
       const match = rooms.find((r) => r.slug === roomParam);
       if (match) setSelectedRoom(match.name);
     }
-  }, []);
+  }, [searchParams]);
   const dateError =
     checkIn && checkOut && checkOut <= checkIn
       ? "La data di partenza deve essere dopo l'arrivo."

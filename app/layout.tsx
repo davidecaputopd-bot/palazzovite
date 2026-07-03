@@ -10,24 +10,25 @@ const bebas = Bebas_Neue({
 });
 
 const dmMono = DM_Mono({
-  weight: ["300", "400", "500"],
+  weight: ["300", "400"],
   subsets: ["latin"],
   variable: "--font-mono",
 });
 
 const dmSans = DM_Sans({
-  weight: ["300", "400", "500"],
+  weight: ["300", "400"],
   subsets: ["latin"],
   variable: "--font-sans",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://palazzovite.vercel.app"),
-  title: "Palazzo Vite — Copertino, 1901",
+  title: "Palazzo Vite · Affittacamere a Copertino, dal 1901",
   description:
     "Affittacamere in un palazzo dei primi del Novecento nel cuore del Salento, a Copertino (LE), con cinque stanze: Aria, Etere, Fiamma, Terra, Mare.",
+  alternates: { canonical: "/" },
   openGraph: {
-    title: "Palazzo Vite — Copertino, 1901",
+    title: "Palazzo Vite · Affittacamere a Copertino, dal 1901",
     description:
       "Affittacamere in un palazzo dei primi del Novecento nel cuore del Salento, a Copertino (LE).",
     url: "https://palazzovite.vercel.app",
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Palazzo Vite — Copertino, 1901",
+    title: "Palazzo Vite · Affittacamere a Copertino, dal 1901",
     description:
       "Affittacamere in un palazzo dei primi del Novecento nel cuore del Salento.",
     images: ["/images/palazzo/facciata.jpg"],
@@ -51,6 +52,10 @@ const jsonLd = {
   name: "Palazzo Vite",
   description:
     "Affittacamere in un palazzo dei primi del Novecento nel cuore del Salento.",
+  url: "https://palazzovite.vercel.app",
+  email: "info@palazzovite.com",
+  numberOfRooms: 5,
+  sameAs: ["https://www.instagram.com/palazzovite/"],
   address: {
     "@type": "PostalAddress",
     streetAddress: "Via Amendola, 1",

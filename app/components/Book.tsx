@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { BOOKING_URL, CONTACT_EMAIL } from "@/app/data/config";
 import ContactForm from "@/app/components/ContactForm";
 import Reveal from "@/app/components/Reveal";
@@ -26,7 +27,9 @@ export default function Book() {
       </Reveal>
 
       <Reveal delay={150}>
-        <ContactForm />
+        <Suspense fallback={null}>
+          <ContactForm />
+        </Suspense>
       </Reveal>
 
       <p className="font-label text-[11px] text-[var(--ink-soft)] text-center mt-10">
