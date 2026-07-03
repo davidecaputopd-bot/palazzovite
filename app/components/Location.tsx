@@ -13,16 +13,16 @@ export default function Location() {
           a pochi minuti da Lecce e con accesso facile alle spiagge ioniche e
           adriatiche della penisola.
         </p>
-        <div className="flex flex-wrap gap-px bg-[var(--ink)]/10 mb-10 w-fit">
+        <div className="grid grid-cols-4 gap-px bg-[var(--ink)]/10 mb-10">
           {[
             { place: "Lecce", km: "15 km" },
             { place: "Gallipoli", km: "30 km" },
             { place: "Otranto", km: "40 km" },
             { place: "Brindisi", km: "60 km" },
           ].map(({ place, km }) => (
-            <div key={place} className="bg-[var(--stone)] px-4 py-3">
-              <p className="font-label text-[10px] text-[var(--ink-soft)] mb-0.5">{place}</p>
-              <p className="font-display text-lg leading-none">{km}</p>
+            <div key={place} className="bg-[var(--stone)] px-3 py-3">
+              <p className="font-label text-[9px] text-[var(--ink-soft)] mb-1">{place}</p>
+              <p className="font-display text-base leading-none" style={{ textWrap: "nowrap" }}>{km}</p>
             </div>
           ))}
         </div>

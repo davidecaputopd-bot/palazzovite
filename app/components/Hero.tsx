@@ -39,7 +39,9 @@ export default function Hero() {
             transitionDelay: "200ms",
           }}
         >
-          Affittacamere — Copertino, Salento — dal 1901
+          Affittacamere · Copertino{" "}
+          <br className="sm:hidden" />
+          · dal 1901
         </p>
         <h1
           className={`${base} font-display text-[17vw] md:text-[8.5vw] leading-[0.88] text-[#F4EFE4]`}
