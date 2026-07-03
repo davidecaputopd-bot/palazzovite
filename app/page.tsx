@@ -7,7 +7,6 @@ import Location from "@/app/components/Location";
 import Book from "@/app/components/Book";
 import Footer from "@/app/components/Footer";
 import StickyBookBar from "@/app/components/StickyBookBar";
-import ElementStrip from "@/app/components/ElementStrip";
 
 export default function Home() {
   return (
@@ -21,14 +20,12 @@ export default function Home() {
       <Nav />
       <main id="main-content" className="pb-20 md:pb-0">
         <Hero />
-        <ElementStrip />
         <Story />
         <Rooms />
         <PalazzoLife />
         <Location />
         <Book />
       </main>
-      <ElementStrip />
       <Footer />
       <StickyBookBar />
     </>
