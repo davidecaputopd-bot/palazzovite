@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useState, useEffect, FormEvent } from "react";
 import { WEB3FORMS_ACCESS_KEY, CONTACT_EMAIL } from "@/app/data/config";
 import { rooms } from "@/app/data/rooms";
 
@@ -10,6 +10,16 @@ export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [checkIn, setCheckIn] = useState("");
   const [checkOut, setCheckOut] = useState("");
+  const [selectedRoom, setSelectedRoom] = useState("");
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const roomParam = params.get("room");
+    if (roomParam) {
+      const match = rooms.find((r) => r.slug === roomParam);
+      if (match) setSelectedRoom(match.name);
+    }
+  }, []);
   const dateError =
     checkIn && checkOut && checkOut <= checkIn
       ? "La data di partenza deve essere dopo l'arrivo."
@@ -95,7 +105,13 @@ export default function ContactForm() {
         <label className={labelClass} htmlFor="room">
           Stanza di interesse
         </label>
-        <select id="room" name="room" className={inputClass} defaultValue="">
+        <select
+          id="room"
+          name="room"
+          className={inputClass}
+          value={selectedRoom}
+          onChange={(e) => setSelectedRoom(e.target.value)}
+        >
           <option value="">Non so ancora</option>
           {rooms.map((r) => (
             <option key={r.slug} value={r.name}>

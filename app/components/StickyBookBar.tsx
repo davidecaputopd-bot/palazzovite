@@ -6,7 +6,7 @@ export default function StickyBookBar() {
         className="flex flex-col items-center justify-center gap-0.5 px-6 py-5 min-h-[64px]"
       >
         <span className="font-label text-xs text-[var(--stone)]">
-          Verifica disponibilità
+          Richiedi disponibilità
         </span>
         <span className="font-body font-light text-[10px] text-[var(--stone)]/50 tracking-wide">
           Affittacamere · Copertino, Salento

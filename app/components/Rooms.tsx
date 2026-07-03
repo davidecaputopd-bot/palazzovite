@@ -84,9 +84,15 @@ export default function Rooms() {
                     {room.sqm ? ` — ${room.sqm} m²` : ""}
                   </span>
                 </div>
-                <p className="font-body font-light text-[var(--ink-soft)] text-base leading-relaxed">
+                <p className="font-body font-light text-[var(--ink-soft)] text-base leading-relaxed mb-5">
                   {room.description}
                 </p>
+                <a
+                  href={`?room=${room.slug}#prenota`}
+                  className="font-label text-[10px] text-[var(--ink-soft)] hover:text-[var(--ink)] transition-colors duration-150 underline underline-offset-4"
+                >
+                  Richiedi per questa stanza →
+                </a>
               </div>
             </article>
             </Reveal>

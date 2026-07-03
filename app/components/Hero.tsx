@@ -76,7 +76,7 @@ export default function Hero() {
             href="#prenota"
             className="font-label text-xs bg-[#F4EFE4] text-[var(--ink)] px-6 py-3 hover:opacity-90 active:scale-95 transition-[opacity,transform] duration-150 ease-out"
           >
-            Verifica disponibilità
+            Richiedi disponibilità
           </a>
           <a
             href="#storia"

@@ -51,7 +51,7 @@ export default function Nav() {
             className="border px-4 py-2 hover:opacity-70 active:scale-95 transition-[opacity,transform] duration-150 ease-out"
             style={{ borderColor: textColor, color: textColor }}
           >
-            Verifica disponibilità
+            Richiedi disponibilità
           </a>
         </nav>
 
@@ -93,7 +93,7 @@ export default function Nav() {
           onClick={() => setOpen(false)}
           className="mt-4 text-center bg-[var(--ink)] text-[var(--stone)] py-3 active:opacity-70 transition-opacity duration-150"
         >
-          Verifica disponibilità
+          Richiedi disponibilità
         </a>
       </nav>
     </header>

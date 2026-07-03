@@ -4,6 +4,7 @@ export default function Footer() {
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-6">
         <span className="font-display text-lg tracking-wide">Palazzo Vite</span>
         <div className="font-label text-[11px] flex flex-wrap items-center gap-x-6 gap-y-2 text-[var(--ink-soft)]">
+          <span>Via Amendola, 1 — Copertino (LE)</span>
           <a href="https://www.instagram.com/palazzovite/" target="_blank" rel="noreferrer" className="hover:text-[var(--ink)]">
             Instagram
           </a>
