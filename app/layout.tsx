@@ -73,6 +73,7 @@ const jsonLd = {
     addressCountry: "IT",
   },
   image: "https://palazzovite.vercel.app/images/palazzo/facciata.jpg",
+  logo: "https://palazzovite.vercel.app/images/brand/palazzo-vite-logo.svg",
 };
 
 export default function RootLayout({

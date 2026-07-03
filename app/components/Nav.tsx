@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import BrandMark from "@/app/components/BrandMark";
 import LanguageSwitcher from "@/app/components/LanguageSwitcher";
 import type { Locale, SiteCopy } from "@/app/data/i18n";
 
@@ -37,8 +38,11 @@ export default function Nav({ copy, locale }: { copy: SiteCopy["nav"]; locale: L
       }}
     >
       <div className="flex items-center justify-between px-6 md:px-10 py-5">
-        <a href="#" className="font-display text-2xl tracking-wide" style={{ color: textColor }}>
-          Palazzo Vite
+        <a href="#" aria-label="Palazzo Vite" className="shrink-0">
+          <BrandMark
+            light={!dark}
+            className="h-11 w-11 md:h-12 md:w-12 transition-[filter] duration-300"
+          />
         </a>
 
         <nav className="hidden md:flex items-center gap-8 font-label text-xs" style={{ color: textColor }}>
