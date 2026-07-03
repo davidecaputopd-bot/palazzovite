@@ -41,6 +41,16 @@ html {
   scroll-behavior: smooth;
 }
 
+::selection {
+  background: var(--ink);
+  color: var(--stone);
+}
+
+:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
 body {
   background: var(--stone);
   color: var(--ink);
