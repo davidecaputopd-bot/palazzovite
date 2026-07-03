@@ -53,10 +53,10 @@ export default function Rooms({ copy }: { copy: SiteCopy["rooms"] }) {
                     ) : (
                       <div
                         className="absolute inset-0 flex flex-col items-center justify-center gap-2"
-                        style={{ backgroundColor: accentColor + "30" }}
+                        style={{ backgroundColor: `color-mix(in srgb, ${accentColor} 20%, var(--stone))` }}
                       >
                         <Icon className="w-6 h-6" style={{ color: inkColor }} />
-                        <span className="font-label text-[9px] text-center px-1" style={{ color: inkColor }}>
+                        <span className="font-label text-[9px] text-center px-1 text-[var(--ink-soft)]">
                           {copy.photoSoon}
                         </span>
                       </div>
@@ -66,10 +66,10 @@ export default function Rooms({ copy }: { copy: SiteCopy["rooms"] }) {
               ) : (
                 <div
                   className="relative aspect-[4/3] flex items-center justify-center"
-                  style={{ backgroundColor: accentColor + "38" }}
+                  style={{ backgroundColor: `color-mix(in srgb, ${accentColor} 24%, var(--stone))` }}
                 >
                   <Icon className="w-10 h-10" style={{ color: inkColor }} />
-                  <span className="absolute bottom-4 right-4 font-label text-[10px]" style={{ color: inkColor }}>
+                  <span className="absolute bottom-4 right-4 font-label text-[10px] text-[var(--ink-soft)]">
                     {copy.photoSoon}
                   </span>
                 </div>
