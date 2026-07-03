@@ -60,7 +60,7 @@ export default function ContactForm() {
       <div className="text-center py-12 max-w-md mx-auto">
         <p className="font-display text-3xl mb-3">Richiesta inviata.</p>
         <p className="font-body font-light text-[var(--ink-soft)]">
-          Ti risponderemo al più presto a conferma della disponibilità.
+          Ti risponderemo al più presto con la disponibilità richiesta.
         </p>
       </div>
     );
@@ -104,7 +104,7 @@ export default function ContactForm() {
 
       <div>
         <label className={labelClass} htmlFor="room">
-          Stanza di interesse
+          Suite di interesse
         </label>
         <select
           id="room"
@@ -165,7 +165,7 @@ export default function ContactForm() {
           name="message"
           rows={4}
           className={inputClass}
-          placeholder="Richieste particolari, orario di arrivo, ecc."
+          placeholder="Preferenze, orario di arrivo o altre richieste."
         />
       </div>
 

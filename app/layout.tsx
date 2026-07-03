@@ -23,14 +23,14 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://palazzovite.vercel.app"),
-  title: "Palazzo Vite · Affittacamere a Copertino, dal 1901",
+  title: "Palazzo Vite · Dimora storica e suite a Copertino",
   description:
-    "Affittacamere in un palazzo dei primi del Novecento nel cuore del Salento, a Copertino (LE), con cinque stanze: Aria, Etere, Fiamma, Terra, Mare.",
+    "Palazzo Vite è una dimora storica ottocentesca nel centro storico di Copertino, vicino al Castello Angioino, con cinque suite, giardino, terrazza e parcheggio privato.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Palazzo Vite · Affittacamere a Copertino, dal 1901",
+    title: "Palazzo Vite · Dimora storica e suite a Copertino",
     description:
-      "Affittacamere in un palazzo dei primi del Novecento nel cuore del Salento, a Copertino (LE).",
+      "Dimora ottocentesca nel centro storico di Copertino, con cinque suite, giardino e terrazza affacciata sul Castello Angioino.",
     url: "https://palazzovite.vercel.app",
     siteName: "Palazzo Vite",
     images: ["/images/palazzo/facciata.jpg"],
@@ -39,9 +39,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Palazzo Vite · Affittacamere a Copertino, dal 1901",
+    title: "Palazzo Vite · Dimora storica e suite a Copertino",
     description:
-      "Affittacamere in un palazzo dei primi del Novecento nel cuore del Salento.",
+      "Dimora ottocentesca nel centro storico di Copertino, con cinque suite, giardino e terrazza.",
     images: ["/images/palazzo/facciata.jpg"],
   },
 };
@@ -51,7 +51,7 @@ const jsonLd = {
   "@type": "LodgingBusiness",
   name: "Palazzo Vite",
   description:
-    "Affittacamere in un palazzo dei primi del Novecento nel cuore del Salento.",
+    "Dimora storica ottocentesca nel centro storico di Copertino, vicino al Castello Angioino, con cinque suite, giardino, terrazza e parcheggio privato.",
   url: "https://palazzovite.vercel.app",
   email: "info@palazzovite.com",
   numberOfRooms: 5,

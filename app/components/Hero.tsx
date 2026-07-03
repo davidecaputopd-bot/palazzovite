@@ -39,7 +39,7 @@ export default function Hero() {
             transitionDelay: "200ms",
           }}
         >
-          Affittacamere · Copertino, dal 1901
+          Dimora storica · Copertino, Salento
         </p>
         <h1
           className={`${base} font-display text-[17vw] md:text-[8.5vw] leading-[0.88] text-[#F4EFE4]`}
@@ -59,8 +59,8 @@ export default function Hero() {
             transitionDelay: "550ms",
           }}
         >
-          Un palazzo dei primi del Novecento nel cuore del Salento, riaperto
-          oggi in cinque stanze.
+          Una dimora ottocentesca nel centro storico di Copertino, tra il
+          Castello Angioino e il verde degli agrumi.
         </p>
         <div
           className={`${base} mt-8 flex flex-wrap items-center gap-4 md:gap-6`}
@@ -80,7 +80,7 @@ export default function Hero() {
             href="#storia"
             className="font-label text-xs text-[#F4EFE4]/65 hover:text-[#F4EFE4] active:opacity-50 transition-[color,opacity] duration-150 ease-out underline underline-offset-4"
           >
-            Scopri il palazzo
+            Scopri la dimora
           </a>
         </div>
       </div>

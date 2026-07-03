@@ -11,8 +11,8 @@ export default function Book() {
           Richiedi disponibilità.
         </h2>
         <p className="font-body font-light text-[var(--ink-soft)] max-w-md mx-auto">
-          Compila il form con le date che ti interessano: ti rispondiamo a
-          conferma di disponibilità entro 24 ore.
+          Indicaci le date, il numero di ospiti e la suite che preferisci.
+          Ti risponderemo entro 24 ore con la disponibilità.
         </p>
         {BOOKING_URL && (
           <a

@@ -18,7 +18,7 @@ export const rooms: Room[] = [
     element: "aria",
     bed: "Letto matrimoniale",
     description:
-      "Pareti chiare, lenzuola bianche, due ritratti dipinti alle pareti. Bagno con specchio ad arco e arredi essenziali.",
+      "Toni chiari, biancheria bianca e ritratti alle pareti. Il bagno, essenziale e curato, è definito da un grande specchio ad arco.",
     image: "/images/rooms/aria-1.jpg",
     bathroomImage: "/images/rooms/aria-bagno-1.jpg",
   },
@@ -28,7 +28,7 @@ export const rooms: Room[] = [
     element: "etere",
     bed: "Letto matrimoniale",
     description:
-      "Pareti grigio-azzurre, cassettiera antica con specchio originale, porta-finestra sul balcone privato affacciato sulla bouganville.",
+      "Pareti grigio-azzurre, una cassettiera antica con specchio originale e una porta-finestra sul balcone privato affacciato sulla bouganville.",
     image: "/images/rooms/etere-1.jpg",
   },
   {
@@ -37,7 +37,7 @@ export const rooms: Room[] = [
     element: "fiamma",
     bed: "Letto matrimoniale",
     description:
-      "Pavimento in cementine originali, comodino in legno laccato color ocra. Foto in arrivo.",
+      "Cementine originali e un comodino in legno laccato color ocra raccontano il carattere della dimora con pochi elementi scelti.",
     image: null,
   },
   {
@@ -46,7 +46,7 @@ export const rooms: Room[] = [
     element: "terra",
     bed: "Letto matrimoniale",
     description:
-      "Pavimento in cementine originali verdi e marroni, comodino in legno laccato ocra, soffitto verde scuro.",
+      "Cementine verdi e brune, legno laccato color ocra e un soffitto verde profondo compongono un ambiente raccolto.",
     image: "/images/rooms/terra-2.jpg",
     bathroomImage: "/images/rooms/terra-bagno.jpg",
   },
@@ -56,7 +56,7 @@ export const rooms: Room[] = [
     element: "mare",
     bed: "Due letti singoli",
     description:
-      "Pareti verde salvia chiaro, camino in legno scuro, porta-finestra con persiane bianche.",
+      "Pareti verde salvia, un camino in legno scuro e la porta-finestra con persiane bianche conservano un'atmosfera domestica.",
     image: "/images/rooms/mare-1.jpg",
     bathroomImage: "/images/rooms/mare-bagno.jpg",
   },

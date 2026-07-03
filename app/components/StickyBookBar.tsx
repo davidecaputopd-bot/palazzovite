@@ -9,7 +9,7 @@ export default function StickyBookBar() {
           Richiedi disponibilità
         </span>
         <span className="font-body font-light text-[10px] text-[var(--stone)]/50 tracking-wide">
-          Affittacamere · Copertino, Salento
+          Dimora storica · Copertino, Salento
         </span>
       </a>
     </div>

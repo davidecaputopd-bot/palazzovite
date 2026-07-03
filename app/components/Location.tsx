@@ -5,12 +5,13 @@ export default function Location() {
     <section id="posizione" className="px-6 md:px-10 py-24 md:py-36 max-w-3xl mx-auto">
       <Reveal>
         <h2 className="font-display text-5xl md:text-7xl leading-[0.92] mb-8">
-          Copertino, Salento.
+          Copertino, nel Salento.
         </h2>
         <p className="font-body font-light text-base md:text-lg leading-relaxed text-[var(--ink-soft)] max-w-xl mb-8">
-          Via Amendola, 1, 73043 Copertino (LE). Nel cuore del basso Salento,
-          a pochi minuti da Lecce e con accesso facile alle spiagge ioniche e
-          adriatiche della penisola.
+          Palazzo Vite si trova nel centro storico di Copertino, appena fuori
+          le mura del Castello Angioino. Da qui si raggiungono facilmente
+          Lecce, Porto Cesareo, Gallipoli e le principali località della costa
+          ionica. Gli ospiti dispongono inoltre di un ampio parcheggio privato.
         </p>
         <div className="grid grid-cols-4 gap-px bg-[var(--ink)]/10 mb-10">
           {[

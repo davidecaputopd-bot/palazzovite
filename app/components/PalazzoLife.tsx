@@ -4,17 +4,17 @@ import Reveal from "@/app/components/Reveal";
 const SPACES = [
   {
     name: "Il Giardino",
-    desc: "Tavolino in ferro tra gli alberi d'arancio, colazione all'aperto al mattino.",
+    desc: "Un ampio giardino attrezzato tra agrumi e spazi verdi, per la colazione, un aperitivo o una pausa all'aperto.",
     image: "/images/palazzo/giardino-1.jpg",
   },
   {
     name: "La Scala",
-    desc: "Scalinata in pietra a chiocciola, ringhiera originale in ferro battuto del 1901.",
+    desc: "La scala in pietra e la ringhiera originale conducono agli ambienti comuni: sala colazioni, work room e angolo cottura.",
     image: "/images/palazzo/scala-1.jpg",
   },
   {
     name: "La Terrazza",
-    desc: "Sedute tra le bouganville, vista sui tetti del centro storico di Copertino.",
+    desc: "Una terrazza attrezzata tra le bouganville, con vista sul Castello Angioino e sui tetti del centro storico.",
     image: "/images/palazzo/terrazza-1.jpg",
   },
 ];
@@ -24,7 +24,7 @@ export default function PalazzoLife() {
     <section id="palazzo" className="bg-[var(--ink)] text-[var(--stone)] px-6 md:px-10 py-24 md:py-36">
       <Reveal className="max-w-3xl mb-14">
         <h2 className="font-display text-5xl md:text-7xl leading-[0.92]">
-          Gli spazi comuni.
+          Gli spazi della dimora.
         </h2>
       </Reveal>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6">

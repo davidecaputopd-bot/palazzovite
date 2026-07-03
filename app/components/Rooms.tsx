@@ -7,9 +7,9 @@ export default function Rooms() {
   return (
     <section id="stanze" className="px-6 md:px-10 py-24 md:py-36">
       <Reveal className="max-w-4xl mb-16 md:mb-20">
-        <p className="font-label text-xs text-[var(--ink-soft)] mb-6">Le Stanze</p>
+        <p className="font-label text-xs text-[var(--ink-soft)] mb-6">Le Suite</p>
         <h2 className="font-display text-5xl md:text-8xl leading-[0.92]">
-          Cinque stanze,
+          Cinque suite,
           <br />
           cinque elementi.
         </h2>
@@ -29,7 +29,7 @@ export default function Rooms() {
                   <div className="relative aspect-[3/4] col-span-2 overflow-hidden">
                     <Image
                       src={room.image}
-                      alt={`Stanza ${room.name}, Palazzo Vite`}
+                      alt={`Suite ${room.name}, Palazzo Vite`}
                       fill
                       className="object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.04]"
                       sizes="(max-width: 768px) 66vw, 33vw"
@@ -40,7 +40,7 @@ export default function Rooms() {
                       <>
                         <Image
                           src={room.bathroomImage}
-                          alt={`Bagno della stanza ${room.name}, Palazzo Vite`}
+                          alt={`Bagno della suite ${room.name}, Palazzo Vite`}
                           fill
                           className="object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.04]"
                           sizes="(max-width: 768px) 33vw, 16vw"
@@ -94,7 +94,7 @@ export default function Rooms() {
                   href={`?room=${room.slug}#prenota`}
                   className="font-label text-[10px] text-[var(--ink-soft)] hover:text-[var(--ink)] transition-colors duration-150 underline underline-offset-4"
                 >
-                  Richiedi per questa stanza →
+                  Richiedi per questa suite →
                 </a>
               </div>
             </article>
