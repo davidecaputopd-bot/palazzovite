@@ -31,7 +31,7 @@ export default function Rooms() {
                       src={room.image}
                       alt={`Stanza ${room.name}, Palazzo Vite`}
                       fill
-                      className="object-cover"
+                      className="object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.04]"
                       sizes="(max-width: 768px) 66vw, 33vw"
                     />
                   </div>
@@ -42,7 +42,7 @@ export default function Rooms() {
                           src={room.bathroomImage}
                           alt={`Bagno della stanza ${room.name}, Palazzo Vite`}
                           fill
-                          className="object-cover"
+                          className="object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.04]"
                           sizes="(max-width: 768px) 33vw, 16vw"
                         />
                         <span className="absolute bottom-2 left-2 font-label text-[9px] text-[var(--stone)]/70">

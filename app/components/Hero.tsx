@@ -74,13 +74,13 @@ export default function Hero() {
         >
           <a
             href="#prenota"
-            className="font-label text-xs bg-[#F4EFE4] text-[var(--ink)] px-6 py-3 hover:opacity-90 transition-opacity"
+            className="font-label text-xs bg-[#F4EFE4] text-[var(--ink)] px-6 py-3 hover:opacity-90 active:scale-95 transition-[opacity,transform] duration-150 ease-out"
           >
             Verifica disponibilità
           </a>
           <a
             href="#storia"
-            className="font-label text-xs text-[#F4EFE4]/65 hover:text-[#F4EFE4] transition-colors underline underline-offset-4"
+            className="font-label text-xs text-[#F4EFE4]/65 hover:text-[#F4EFE4] active:opacity-50 transition-[color,opacity] duration-150 ease-out underline underline-offset-4"
           >
             Scopri il palazzo
           </a>

@@ -42,13 +42,13 @@ export default function Nav() {
 
         <nav className="hidden md:flex items-center gap-8 font-label text-xs" style={{ color: textColor }}>
           {LINKS.map((l) => (
-            <a key={l.href} href={l.href} className="hover:opacity-60 transition-opacity">
+            <a key={l.href} href={l.href} className="hover:opacity-60 transition-opacity duration-150 ease-out">
               {l.label}
             </a>
           ))}
           <a
             href="#prenota"
-            className="border px-4 py-2 transition-colors"
+            className="border px-4 py-2 hover:opacity-70 active:scale-95 transition-[opacity,transform] duration-150 ease-out"
             style={{ borderColor: textColor, color: textColor }}
           >
             Verifica disponibilità
@@ -67,30 +67,35 @@ export default function Nav() {
         </button>
       </div>
 
-      {open && (
-        <nav
-          className="md:hidden flex flex-col font-label text-sm px-6 pb-6 gap-1"
-          style={{ color: "var(--ink)" }}
-        >
-          {LINKS.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              className="py-3 border-b border-[var(--ink)]/10"
-            >
-              {l.label}
-            </a>
-          ))}
+      <nav
+        className="md:hidden flex flex-col font-label text-sm px-6 pb-6 gap-1 overflow-hidden transition-[max-height,opacity] ease-out"
+        style={{
+          color: "var(--ink)",
+          maxHeight: open ? "400px" : "0px",
+          opacity: open ? 1 : 0,
+          transitionDuration: open ? "240ms" : "160ms",
+          pointerEvents: open ? "auto" : "none",
+        }}
+        aria-hidden={!open}
+      >
+        {LINKS.map((l) => (
           <a
-            href="#prenota"
+            key={l.href}
+            href={l.href}
             onClick={() => setOpen(false)}
-            className="mt-4 text-center bg-[var(--ink)] text-[var(--stone)] py-3"
+            className="py-3 border-b border-[var(--ink)]/10"
           >
-            Verifica disponibilità
+            {l.label}
           </a>
-        </nav>
-      )}
+        ))}
+        <a
+          href="#prenota"
+          onClick={() => setOpen(false)}
+          className="mt-4 text-center bg-[var(--ink)] text-[var(--stone)] py-3 active:opacity-70 transition-opacity duration-150"
+        >
+          Verifica disponibilità
+        </a>
+      </nav>
     </header>
   );
 }
