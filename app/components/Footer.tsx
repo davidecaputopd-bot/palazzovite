@@ -18,8 +18,8 @@ export default function Footer() {
       {/* Dati legali obbligatori per locazioni turistiche/affittacamere in Italia */}
       <div className="font-label text-xs leading-relaxed text-[var(--ink-soft)] max-w-2xl">
         <p>
-          Concentrika S.A.S. — Via Basilio il Macedone 32, 73043 Copertino
-          (LE) — P.IVA 05152990750
+          Concentrika S.A.S., Via Basilio il Macedone 32, 73043 Copertino
+          (LE). P.IVA 05152990750
         </p>
         <p>CIN: IT075022B400127675 — CIS: LE075022242000033498</p>
       </div>
