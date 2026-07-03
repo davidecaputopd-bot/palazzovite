@@ -4,7 +4,7 @@ export default function Location() {
   return (
     <section id="posizione" className="px-6 md:px-10 py-24 md:py-36 max-w-3xl mx-auto">
       <Reveal>
-        <h2 className="font-display text-4xl md:text-6xl leading-[0.95] mb-8">
+        <h2 className="font-display text-5xl md:text-7xl leading-[0.92] mb-8">
           Copertino, Salento.
         </h2>
         <p className="font-body font-light text-base md:text-lg leading-relaxed text-[var(--ink-soft)] max-w-xl mb-8">
@@ -19,9 +19,9 @@ export default function Location() {
             { place: "Otranto", km: "40 km" },
             { place: "Brindisi", km: "60 km" },
           ].map(({ place, km }) => (
-            <div key={place} className="bg-[var(--stone)] px-3 py-3">
-              <p className="font-label text-[9px] text-[var(--ink-soft)] mb-1">{place}</p>
-              <p className="font-display text-base leading-none" style={{ textWrap: "nowrap" }}>{km}</p>
+            <div key={place} className="bg-[var(--stone)] px-3 py-4 md:px-4 md:py-5">
+              <p className="font-label text-[9px] text-[var(--ink-soft)] mb-2">{place}</p>
+              <p className="font-display text-2xl md:text-4xl leading-none" style={{ textWrap: "nowrap" }}>{km}</p>
             </div>
           ))}
         </div>

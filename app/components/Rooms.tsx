@@ -6,9 +6,9 @@ import Reveal from "@/app/components/Reveal";
 export default function Rooms() {
   return (
     <section id="stanze" className="px-6 md:px-10 py-24 md:py-36">
-      <Reveal className="max-w-3xl mb-14">
+      <Reveal className="max-w-4xl mb-16 md:mb-20">
         <p className="font-label text-xs text-[var(--ink-soft)] mb-6">Le Stanze</p>
-        <h2 className="font-display text-4xl md:text-6xl leading-[0.95]">
+        <h2 className="font-display text-5xl md:text-8xl leading-[0.92]">
           Cinque stanze,
           <br />
           cinque elementi.
@@ -74,14 +74,17 @@ export default function Rooms() {
                 </div>
               )}
 
-              <div className="p-6 md:p-8">
-                <div className="flex items-baseline justify-between mb-3">
-                  <h3 className="font-display text-2xl tracking-wide" style={{ color: inkColor }}>
+              <div className="p-6 md:p-8" style={{ borderTop: `2px solid ${accentColor}` }}>
+                <div className="flex items-baseline justify-between mb-3 gap-4">
+                  <h3 className="font-display text-3xl md:text-4xl tracking-wide" style={{ color: inkColor }}>
+                    <span className="font-label text-[10px] align-middle mr-3 text-[var(--ink-soft)]">
+                      {["I", "II", "III", "IV", "V"][i]}
+                    </span>
                     {room.name}
                   </h3>
-                  <span className="font-label text-[11px] text-[var(--ink-soft)]">
+                  <span className="font-label text-[11px] text-[var(--ink-soft)] text-right">
                     {room.bed}
-                    {room.sqm ? ` — ${room.sqm} m²` : ""}
+                    {room.sqm ? ` / ${room.sqm} m²` : ""}
                   </span>
                 </div>
                 <p className="font-body font-light text-[var(--ink-soft)] text-base leading-relaxed mb-5">

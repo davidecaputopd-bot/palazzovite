@@ -23,7 +23,7 @@ export default function PalazzoLife() {
   return (
     <section id="palazzo" className="bg-[var(--ink)] text-[var(--stone)] px-6 md:px-10 py-24 md:py-36">
       <Reveal className="max-w-3xl mb-14">
-        <h2 className="font-display text-4xl md:text-6xl leading-[0.95]">
+        <h2 className="font-display text-5xl md:text-7xl leading-[0.92]">
           Gli spazi comuni.
         </h2>
       </Reveal>
