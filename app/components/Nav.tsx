@@ -57,16 +57,19 @@ export default function Nav({ copy, locale }: { copy: SiteCopy["nav"]; locale: L
           <LanguageSwitcher locale={locale} label={copy.language} color={textColor} />
         </nav>
 
-        <button
-          type="button"
-          aria-label={open ? copy.closeMenu : copy.openMenu}
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-          className="md:hidden font-label text-xs border px-3 py-2"
-          style={{ color: textColor, borderColor: textColor }}
-        >
-          {open ? copy.close : copy.menu}
-        </button>
+        <div className="flex items-center gap-2 md:hidden">
+          <LanguageSwitcher locale={locale} label={copy.language} color={textColor} />
+          <button
+            type="button"
+            aria-label={open ? copy.closeMenu : copy.openMenu}
+            aria-expanded={open}
+            onClick={() => setOpen((v) => !v)}
+            className="font-label text-xs border px-3 py-2"
+            style={{ color: textColor, borderColor: textColor }}
+          >
+            {open ? copy.close : copy.menu}
+          </button>
+        </div>
       </div>
 
       <nav
@@ -98,9 +101,6 @@ export default function Nav({ copy, locale }: { copy: SiteCopy["nav"]; locale: L
         >
           {copy.availability}
         </a>
-        <div className="mt-3 self-end">
-          <LanguageSwitcher locale={locale} label={copy.language} color="var(--ink)" />
-        </div>
       </nav>
     </header>
   );

@@ -8,6 +8,13 @@ export const localeNames: Record<Locale, string> = {
   es: "Español",
 };
 
+export const localeFlags: Record<Locale, string> = {
+  it: "🇮🇹",
+  en: "🇬🇧",
+  fr: "🇫🇷",
+  es: "🇪🇸",
+};
+
 export type SiteCopy = {
   skip: string;
   nav: {
