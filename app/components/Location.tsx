@@ -1,17 +1,15 @@
 import Reveal from "@/app/components/Reveal";
+import type { SiteCopy } from "@/app/data/i18n";
 
-export default function Location() {
+export default function Location({ copy }: { copy: SiteCopy["location"] }) {
   return (
     <section id="posizione" className="px-6 md:px-10 py-24 md:py-36 max-w-3xl mx-auto">
       <Reveal>
         <h2 className="font-display text-5xl md:text-7xl leading-[0.92] mb-8">
-          Copertino, nel Salento.
+          {copy.title}
         </h2>
         <p className="font-body font-light text-base md:text-lg leading-relaxed text-[var(--ink-soft)] max-w-xl mb-8">
-          Palazzo Vite si trova nel centro storico di Copertino, appena fuori
-          le mura del Castello Angioino. Da qui si raggiungono facilmente
-          Lecce, Porto Cesareo, Gallipoli e le principali località della costa
-          ionica. Gli ospiti dispongono inoltre di un ampio parcheggio privato.
+          {copy.description}
         </p>
         <div className="grid grid-cols-4 gap-px bg-[var(--ink)]/10 mb-10">
           {[
@@ -29,7 +27,7 @@ export default function Location() {
       </Reveal>
       <Reveal delay={150} className="relative aspect-[16/9] w-full overflow-hidden bg-[var(--stone-deep)]">
         <iframe
-          title="Mappa Palazzo Vite, Via Amendola 1, Copertino"
+          title={copy.mapTitle}
           src="https://www.google.com/maps?q=Via+Amendola+1,+73043+Copertino+LE&output=embed"
           width="100%"
           height="100%"
@@ -44,11 +42,11 @@ export default function Location() {
           target="_blank"
           rel="noopener noreferrer"
           className="absolute inset-0 flex flex-col items-center justify-center gap-3 pointer-events-none"
-          aria-label="Apri in Google Maps"
+          aria-label={copy.openMaps.replace(" →", "")}
         >
           <span className="font-label text-[10px] text-[var(--ink-soft)]">Via Amendola, 1 - Copertino (LE)</span>
           <span className="font-label text-[10px] text-[var(--ink)]/40 underline underline-offset-4 pointer-events-auto">
-            Apri in Google Maps →
+            {copy.openMaps}
           </span>
         </a>
       </Reveal>

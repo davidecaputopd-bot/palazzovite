@@ -1,4 +1,4 @@
-export default function StickyBookBar() {
+export default function StickyBookBar({ availability, subtitle }: { availability: string; subtitle: string }) {
   return (
     <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[var(--ink)]">
       <a
@@ -6,10 +6,10 @@ export default function StickyBookBar() {
         className="flex flex-col items-center justify-center gap-0.5 px-6 py-5 min-h-[64px]"
       >
         <span className="font-label text-xs text-[var(--stone)]">
-          Richiedi disponibilità
+          {availability}
         </span>
         <span className="font-body font-light text-[10px] text-[var(--stone)]/50 tracking-wide">
-          Dimora storica · Copertino, Salento
+          {subtitle}
         </span>
       </a>
     </div>

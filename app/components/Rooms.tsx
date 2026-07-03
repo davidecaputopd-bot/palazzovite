@@ -2,16 +2,17 @@ import Image from "next/image";
 import { rooms } from "@/app/data/rooms";
 import { ELEMENT_ICONS } from "@/app/components/Icons";
 import Reveal from "@/app/components/Reveal";
+import type { SiteCopy } from "@/app/data/i18n";
 
-export default function Rooms() {
+export default function Rooms({ copy }: { copy: SiteCopy["rooms"] }) {
   return (
     <section id="stanze" className="px-6 md:px-10 py-24 md:py-36">
       <Reveal className="max-w-4xl mb-16 md:mb-20">
-        <p className="font-label text-xs text-[var(--ink-soft)] mb-6">Le Suite</p>
+        <p className="font-label text-xs text-[var(--ink-soft)] mb-6">{copy.eyebrow}</p>
         <h2 className="font-display text-5xl md:text-8xl leading-[0.92]">
-          Cinque suite,
+          {copy.title[0]}
           <br />
-          cinque elementi.
+          {copy.title[1]}
         </h2>
       </Reveal>
 
@@ -40,13 +41,13 @@ export default function Rooms() {
                       <>
                         <Image
                           src={room.bathroomImage}
-                          alt={`Bagno della suite ${room.name}, Palazzo Vite`}
+                          alt={`${copy.bathroomImageAlt} ${room.name}, Palazzo Vite`}
                           fill
                           className="object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.04]"
                           sizes="(max-width: 768px) 33vw, 16vw"
                         />
                         <span className="absolute bottom-2 left-2 font-label text-[9px] text-[var(--stone)]/70">
-                          Bagno
+                          {copy.bathroom}
                         </span>
                       </>
                     ) : (
@@ -56,7 +57,7 @@ export default function Rooms() {
                       >
                         <Icon className="w-6 h-6" style={{ color: inkColor }} />
                         <span className="font-label text-[9px] text-center px-1" style={{ color: inkColor }}>
-                          Foto<br />in arrivo
+                          {copy.photoSoon}
                         </span>
                       </div>
                     )}
@@ -69,7 +70,7 @@ export default function Rooms() {
                 >
                   <Icon className="w-10 h-10" style={{ color: inkColor }} />
                   <span className="absolute bottom-4 right-4 font-label text-[10px]" style={{ color: inkColor }}>
-                    Foto in arrivo
+                    {copy.photoSoon}
                   </span>
                 </div>
               )}
@@ -83,18 +84,18 @@ export default function Rooms() {
                     {room.name}
                   </h3>
                   <span className="font-label text-[11px] text-[var(--ink-soft)] text-right">
-                    {room.bed}
+                    {room.bed === "Due letti singoli" ? copy.twinBeds : copy.doubleBed}
                     {room.sqm ? ` / ${room.sqm} m²` : ""}
                   </span>
                 </div>
                 <p className="font-body font-light text-[var(--ink-soft)] text-base leading-relaxed mb-5">
-                  {room.description}
+                  {copy.descriptions[room.slug]}
                 </p>
                 <a
                   href={`?room=${room.slug}#prenota`}
                   className="font-label text-[10px] text-[var(--ink-soft)] hover:text-[var(--ink)] transition-colors duration-150 underline underline-offset-4"
                 >
-                  Richiedi per questa suite →
+                  {copy.request}
                 </a>
               </div>
             </article>

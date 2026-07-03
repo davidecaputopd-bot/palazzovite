@@ -4,10 +4,11 @@ import { useState, useEffect, FormEvent } from "react";
 import { useSearchParams } from "next/navigation";
 import { WEB3FORMS_ACCESS_KEY, CONTACT_EMAIL } from "@/app/data/config";
 import { rooms } from "@/app/data/rooms";
+import type { SiteCopy } from "@/app/data/i18n";
 
 type Status = "idle" | "loading" | "success" | "error";
 
-export default function ContactForm() {
+export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
   const [status, setStatus] = useState<Status>("idle");
   const [checkIn, setCheckIn] = useState("");
   const [checkOut, setCheckOut] = useState("");
@@ -23,7 +24,7 @@ export default function ContactForm() {
   }, [searchParams]);
   const dateError =
     checkIn && checkOut && checkOut <= checkIn
-      ? "La data di partenza deve essere dopo l'arrivo."
+      ? copy.dateError
       : "";
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -58,9 +59,9 @@ export default function ContactForm() {
   if (status === "success") {
     return (
       <div className="text-center py-12 max-w-md mx-auto">
-        <p className="font-display text-3xl mb-3">Richiesta inviata.</p>
+        <p className="font-display text-3xl mb-3">{copy.sent}</p>
         <p className="font-body font-light text-[var(--ink-soft)]">
-          Ti risponderemo al più presto con la disponibilità richiesta.
+          {copy.sentText}
         </p>
       </div>
     );
@@ -75,13 +76,13 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div>
           <label className={labelClass} htmlFor="name">
-            Nome e cognome *
+            {copy.name}
           </label>
           <input id="name" name="name" type="text" required aria-required="true" className={inputClass} />
         </div>
         <div>
           <label className={labelClass} htmlFor="email">
-            Email *
+            {copy.email}
           </label>
           <input id="email" name="email" type="email" required aria-required="true" className={inputClass} />
         </div>
@@ -90,13 +91,13 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div>
           <label className={labelClass} htmlFor="phone">
-            Telefono
+            {copy.phone}
           </label>
           <input id="phone" name="phone" type="tel" className={inputClass} />
         </div>
         <div>
           <label className={labelClass} htmlFor="guests">
-            Numero ospiti
+            {copy.guests}
           </label>
           <input id="guests" name="guests" type="number" min={1} max={10} className={inputClass} />
         </div>
@@ -104,7 +105,7 @@ export default function ContactForm() {
 
       <div>
         <label className={labelClass} htmlFor="room">
-          Suite di interesse
+          {copy.suite}
         </label>
         <select
           id="room"
@@ -113,7 +114,7 @@ export default function ContactForm() {
           value={selectedRoom}
           onChange={(e) => setSelectedRoom(e.target.value)}
         >
-          <option value="">Non so ancora</option>
+          <option value="">{copy.undecided}</option>
           {rooms.map((r) => (
             <option key={r.slug} value={r.name}>
               {r.name}
@@ -125,7 +126,7 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div>
           <label className={labelClass} htmlFor="checkin">
-            Arrivo
+            {copy.arrival}
           </label>
           <input
             id="checkin"
@@ -138,7 +139,7 @@ export default function ContactForm() {
         </div>
         <div>
           <label className={labelClass} htmlFor="checkout">
-            Partenza
+            {copy.departure}
           </label>
           <input
             id="checkout"
@@ -158,20 +159,20 @@ export default function ContactForm() {
 
       <div>
         <label className={labelClass} htmlFor="message">
-          Messaggio
+          {copy.message}
         </label>
         <textarea
           id="message"
           name="message"
           rows={4}
           className={inputClass}
-          placeholder="Preferenze, orario di arrivo o altre richieste."
+          placeholder={copy.placeholder}
         />
       </div>
 
       {status === "error" && (
         <p role="alert" className="font-label text-[11px] text-[var(--fiamma)]">
-          ⚠ Invio non riuscito. Riprova oppure scrivi a {CONTACT_EMAIL}.
+          ⚠ {copy.sendError} {CONTACT_EMAIL}.
         </p>
       )}
 
@@ -180,7 +181,7 @@ export default function ContactForm() {
         disabled={status === "loading" || !!dateError}
         className="w-full sm:w-auto font-label text-xs bg-[var(--ink)] text-[var(--stone)] px-8 py-4 hover:opacity-85 transition-opacity disabled:opacity-50"
       >
-        {status === "loading" ? "Invio in corso..." : "Invia richiesta"}
+        {status === "loading" ? copy.sending : copy.send}
       </button>
     </form>
   );

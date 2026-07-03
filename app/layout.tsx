@@ -26,7 +26,15 @@ export const metadata: Metadata = {
   title: "Palazzo Vite · Dimora storica e suite a Copertino",
   description:
     "Palazzo Vite è una dimora storica ottocentesca nel centro storico di Copertino, vicino al Castello Angioino, con cinque suite, giardino, terrazza e parcheggio privato.",
-  alternates: { canonical: "/" },
+  alternates: {
+    canonical: "/",
+    languages: {
+      "it-IT": "/",
+      "en-GB": "/en",
+      "fr-FR": "/fr",
+      "es-ES": "/es",
+    },
+  },
   openGraph: {
     title: "Palazzo Vite · Dimora storica e suite a Copertino",
     description:

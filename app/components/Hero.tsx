@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import type { SiteCopy } from "@/app/data/i18n";
 
-export default function Hero() {
+export default function Hero({ copy, availability }: { copy: SiteCopy["hero"]; availability: string }) {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
 
@@ -13,7 +14,7 @@ export default function Hero() {
     <section className="relative min-h-[100dvh] w-full overflow-hidden bg-[var(--wood)]">
       <Image
         src="/images/palazzo/facciata.jpg"
-        alt="Facciata di Palazzo Vite, Copertino"
+        alt={copy.imageAlt}
         fill
         priority
         className="object-cover"
@@ -39,7 +40,7 @@ export default function Hero() {
             transitionDelay: "200ms",
           }}
         >
-          Dimora storica · Copertino, Salento
+          {copy.eyebrow}
         </p>
         <h1
           className={`${base} font-display text-[17vw] md:text-[8.5vw] leading-[0.88] text-[#F4EFE4]`}
@@ -59,8 +60,7 @@ export default function Hero() {
             transitionDelay: "550ms",
           }}
         >
-          Una dimora ottocentesca nel centro storico di Copertino, tra il
-          Castello Angioino e il verde degli agrumi.
+          {copy.description}
         </p>
         <div
           className={`${base} mt-8 flex flex-wrap items-center gap-4 md:gap-6`}
@@ -74,13 +74,13 @@ export default function Hero() {
             href="#prenota"
             className="font-label text-xs bg-[#F4EFE4] text-[var(--ink)] px-6 py-3 hover:opacity-90 active:scale-95 transition-[opacity,transform] duration-150 ease-out"
           >
-            Richiedi disponibilità
+            {availability}
           </a>
           <a
             href="#storia"
             className="font-label text-xs text-[#F4EFE4]/65 hover:text-[#F4EFE4] active:opacity-50 transition-[color,opacity] duration-150 ease-out underline underline-offset-4"
           >
-            Scopri la dimora
+            {copy.discover}
           </a>
         </div>
       </div>

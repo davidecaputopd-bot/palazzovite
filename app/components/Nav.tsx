@@ -1,15 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import LanguageSwitcher from "@/app/components/LanguageSwitcher";
+import type { Locale, SiteCopy } from "@/app/data/i18n";
 
-const LINKS = [
-  { href: "#storia", label: "Storia" },
-  { href: "#stanze", label: "Stanze" },
-  { href: "#palazzo", label: "Il Palazzo" },
-  { href: "#posizione", label: "Posizione" },
-];
-
-export default function Nav() {
+export default function Nav({ copy, locale }: { copy: SiteCopy["nav"]; locale: Locale }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -23,6 +18,12 @@ export default function Nav() {
   // Quando il menu mobile è aperto, forza sempre i colori "scrolled" per leggibilità
   const dark = scrolled || open;
   const textColor = dark ? "var(--ink)" : "#F4EFE4";
+  const links = [
+    { href: "#storia", label: copy.story },
+    { href: "#stanze", label: copy.rooms },
+    { href: "#palazzo", label: copy.palace },
+    { href: "#posizione", label: copy.location },
+  ];
 
   return (
     <header
@@ -41,7 +42,7 @@ export default function Nav() {
         </a>
 
         <nav className="hidden md:flex items-center gap-8 font-label text-xs" style={{ color: textColor }}>
-          {LINKS.map((l) => (
+          {links.map((l) => (
             <a key={l.href} href={l.href} className="hover:opacity-60 transition-opacity duration-150 ease-out">
               {l.label}
             </a>
@@ -51,19 +52,20 @@ export default function Nav() {
             className="border px-4 py-2 hover:opacity-70 active:scale-95 transition-[opacity,transform] duration-150 ease-out"
             style={{ borderColor: textColor, color: textColor }}
           >
-            Richiedi disponibilità
+            {copy.availability}
           </a>
+          <LanguageSwitcher locale={locale} label={copy.language} color={textColor} />
         </nav>
 
         <button
           type="button"
-          aria-label={open ? "Chiudi menu" : "Apri menu"}
+          aria-label={open ? copy.closeMenu : copy.openMenu}
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
           className="md:hidden font-label text-xs border px-3 py-2"
           style={{ color: textColor, borderColor: textColor }}
         >
-          {open ? "Chiudi" : "Menu"}
+          {open ? copy.close : copy.menu}
         </button>
       </div>
 
@@ -79,7 +81,7 @@ export default function Nav() {
         aria-hidden={!open}
         inert={!open}
       >
-        {LINKS.map((l) => (
+        {links.map((l) => (
           <a
             key={l.href}
             href={l.href}
@@ -94,8 +96,11 @@ export default function Nav() {
           onClick={() => setOpen(false)}
           className="mt-4 text-center bg-[var(--ink)] text-[var(--stone)] py-3 active:opacity-70 transition-opacity duration-150"
         >
-          Richiedi disponibilità
+          {copy.availability}
         </a>
+        <div className="mt-3 self-end">
+          <LanguageSwitcher locale={locale} label={copy.language} color="var(--ink)" />
+        </div>
       </nav>
     </header>
   );
