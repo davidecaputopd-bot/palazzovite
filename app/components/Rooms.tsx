@@ -84,7 +84,7 @@ export default function Rooms() {
                     {room.sqm ? ` — ${room.sqm} m²` : ""}
                   </span>
                 </div>
-                <p className="font-body font-light text-[var(--ink-soft)] text-sm md:text-base leading-relaxed">
+                <p className="font-body font-light text-[var(--ink-soft)] text-base leading-relaxed">
                   {room.description}
                 </p>
               </div>

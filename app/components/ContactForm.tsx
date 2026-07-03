@@ -66,13 +66,13 @@ export default function ContactForm() {
           <label className={labelClass} htmlFor="name">
             Nome e cognome *
           </label>
-          <input id="name" name="name" type="text" required className={inputClass} />
+          <input id="name" name="name" type="text" required aria-required="true" className={inputClass} />
         </div>
         <div>
           <label className={labelClass} htmlFor="email">
             Email *
           </label>
-          <input id="email" name="email" type="email" required className={inputClass} />
+          <input id="email" name="email" type="email" required aria-required="true" className={inputClass} />
         </div>
       </div>
 
@@ -134,7 +134,9 @@ export default function ContactForm() {
         </div>
       </div>
       {dateError && (
-        <p className="font-label text-[11px] text-[var(--fiamma)]">{dateError}</p>
+        <p role="alert" className="font-label text-[11px] text-[var(--fiamma)]">
+          ⚠ {dateError}
+        </p>
       )}
 
       <div>
@@ -151,8 +153,8 @@ export default function ContactForm() {
       </div>
 
       {status === "error" && (
-        <p className="font-label text-[11px] text-[var(--fiamma)]">
-          Invio non riuscito. Riprova oppure scrivi a {CONTACT_EMAIL}.
+        <p role="alert" className="font-label text-[11px] text-[var(--fiamma)]">
+          ⚠ Invio non riuscito. Riprova oppure scrivi a {CONTACT_EMAIL}.
         </p>
       )}
 
