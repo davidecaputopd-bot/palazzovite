@@ -27,7 +27,7 @@ export default function Location() {
           ))}
         </div>
       </Reveal>
-      <Reveal delay={150} className="aspect-[16/9] w-full overflow-hidden">
+      <Reveal delay={150} className="relative aspect-[16/9] w-full overflow-hidden bg-[var(--stone-deep)]">
         <iframe
           title="Mappa Palazzo Vite, Via Amendola 1, Copertino"
           src="https://www.google.com/maps?q=Via+Amendola+1,+73043+Copertino+LE&output=embed"
@@ -36,7 +36,21 @@ export default function Location() {
           style={{ border: 0 }}
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
+          className="absolute inset-0"
         />
+        {/* Fallback visibile se l'iframe non carica (ad es. in locale o con blocchi CSP) */}
+        <a
+          href="https://maps.google.com/?q=Via+Amendola+1,+73043+Copertino+LE"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute inset-0 flex flex-col items-center justify-center gap-3 pointer-events-none"
+          aria-label="Apri in Google Maps"
+        >
+          <span className="font-label text-[10px] text-[var(--ink-soft)]">Via Amendola, 1 — Copertino (LE)</span>
+          <span className="font-label text-[10px] text-[var(--ink)]/40 underline underline-offset-4 pointer-events-auto">
+            Apri in Google Maps →
+          </span>
+        </a>
       </Reveal>
     </section>
   );
