@@ -47,7 +47,7 @@ export default function Nav({ copy, locale }: { copy: SiteCopy["nav"]; locale: L
           Palazzo Vite
         </a>
 
-        <nav className="hidden md:flex items-center gap-8 font-label text-[11px]">
+        <nav className="hidden lg:flex items-center gap-8 font-label text-[11px]">
           {links.map((l) => (
             <a
               key={l.href}
@@ -67,7 +67,7 @@ export default function Nav({ copy, locale }: { copy: SiteCopy["nav"]; locale: L
           <LanguageSwitcher locale={locale} label={copy.language} color={borderColor} />
         </nav>
 
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex items-center gap-2 lg:hidden">
           <LanguageSwitcher locale={locale} label={copy.language} color={borderColor} />
           <button
             type="button"
@@ -83,7 +83,7 @@ export default function Nav({ copy, locale }: { copy: SiteCopy["nav"]; locale: L
       </div>
 
       <nav
-        className="md:hidden flex flex-col font-label text-sm px-6 pb-6 gap-1 overflow-hidden transition-[max-height,opacity] ease-out text-[var(--ink)]"
+        className="lg:hidden flex flex-col font-label text-sm px-6 pb-6 gap-1 overflow-hidden transition-[max-height,opacity] ease-out text-[var(--ink)]"
         style={{
           maxHeight: open ? "400px" : "0px",
           opacity: open ? 1 : 0,

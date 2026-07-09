@@ -7,16 +7,16 @@ import type { SiteCopy } from "@/app/data/i18n";
 export default function Rooms({ copy }: { copy: SiteCopy["rooms"] }) {
   return (
     <section id="stanze" className="px-6 md:px-10 py-24 md:py-36">
-      <Reveal className="max-w-4xl mb-16 md:mb-20">
+      <Reveal className="max-w-4xl mb-14 md:mb-20">
         <p className="font-label text-xs text-[var(--ink-soft)] mb-6">{copy.eyebrow}</p>
-        <h2 className="font-display text-5xl md:text-8xl leading-[0.92]">
+        <h2 className="font-display text-[clamp(3rem,8vw,6rem)] leading-[0.94]">
           {copy.title[0]}
           <br />
           {copy.title[1]}
         </h2>
       </Reveal>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-14">
         {rooms.map((room, i) => {
           const inkColor = `var(--${room.element}-ink)`;
 
@@ -30,7 +30,7 @@ export default function Rooms({ copy }: { copy: SiteCopy["rooms"] }) {
               />
 
               <div className="pt-6 md:pt-7">
-                <div className="flex items-baseline justify-between mb-3 gap-4">
+                <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4 mb-3">
                   <h3 className="font-display text-3xl md:text-4xl tracking-wide" style={{ color: inkColor }}>
                     <span className="font-label text-[10px] align-middle mr-3 text-[var(--ink-soft)]">
                       {["I", "II", "III", "IV", "V"][i]}

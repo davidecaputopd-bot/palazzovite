@@ -13,23 +13,23 @@ export default function PalazzoLife({ copy }: { copy: SiteCopy["spaces"] }) {
   return (
     <section id="palazzo" className="bg-[var(--dark)] text-[var(--ink)] px-6 md:px-10 py-24 md:py-36">
       <Reveal className="max-w-4xl mb-14">
-        <h2 className="font-display text-5xl md:text-7xl leading-[0.92]">
+        <h2 className="font-display text-[clamp(3rem,7vw,4.5rem)] leading-[0.94]">
           {copy.title}
         </h2>
         <p className="font-body font-light text-base md:text-lg text-[var(--ink-soft)] leading-relaxed max-w-xl mt-6">
           {copy.intro}
         </p>
       </Reveal>
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8 lg:gap-6">
         {spaces.map((s, i) => (
-          <Reveal key={s.name} delay={i * 90} className={i % 2 ? "md:mt-10" : ""}>
+          <Reveal key={s.name} delay={i * 90} className={i % 2 ? "lg:mt-10" : ""}>
             <div className="group relative aspect-[3/4] mb-5 overflow-hidden bg-[var(--ink)]/10">
               <Image
                 src={s.image}
                 alt={`${s.name}, Palazzo Vite`}
                 fill
                 className="object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.04]"
-                sizes="(max-width: 768px) 100vw, 33vw"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
               />
             </div>
             <h3 className="font-display text-xl tracking-wide mb-2">{s.name}</h3>

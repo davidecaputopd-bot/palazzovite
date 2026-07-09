@@ -8,7 +8,7 @@ export default function Location({ copy }: { copy: SiteCopy["location"] }) {
     <section id="posizione" className="px-6 md:px-10 py-24 md:py-36">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
         <Reveal>
-          <h2 className="font-display text-5xl md:text-7xl leading-[0.92] mb-8 text-[var(--dark)]">
+          <h2 className="font-display text-[clamp(3rem,6vw,4.5rem)] leading-[0.94] mb-8 text-[var(--dark)]">
             {copy.title}
           </h2>
           <p className="font-body font-light text-base md:text-lg leading-relaxed text-[var(--ink-soft)] max-w-xl mb-8">

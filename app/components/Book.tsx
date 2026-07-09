@@ -8,7 +8,7 @@ export default function Book({ copy, formCopy }: { copy: SiteCopy["book"]; formC
   return (
     <section id="prenota" className="bg-[var(--stone-deep)] px-6 md:px-10 py-24 md:py-36">
       <Reveal className="max-w-3xl mx-auto text-center mb-14">
-        <h2 className="font-display text-5xl md:text-7xl leading-[0.92] mb-6">
+        <h2 className="font-display text-[clamp(3rem,6vw,4.5rem)] leading-[0.94] mb-6">
           {copy.title}
         </h2>
         <p className="font-body font-light text-[var(--ink-soft)] max-w-md mx-auto">

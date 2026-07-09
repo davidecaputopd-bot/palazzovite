@@ -8,7 +8,7 @@ export default function Story({ copy }: { copy: SiteCopy["story"] }) {
       <div className="relative max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
         <Reveal>
           <p className="font-label text-xs text-[var(--ink-soft)] mb-6">{copy.eyebrow}</p>
-          <h2 className="font-display text-[2.4rem] sm:text-5xl md:text-7xl leading-[0.92] mb-8 text-[var(--dark)]">
+          <h2 className="font-display text-[clamp(2rem,4.4vw,4rem)] leading-[0.94] mb-8 text-[var(--dark)]">
             {copy.title[0]}
             <br />
             {copy.title[1]}
