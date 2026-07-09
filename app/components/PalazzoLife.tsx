@@ -5,7 +5,7 @@ import { SPAZI_PHOTOS } from "@/app/data/photos";
 
 export default function PalazzoLife({ copy }: { copy: SiteCopy["spaces"] }) {
   const spaces = [
-    { name: copy.garden[0], desc: copy.garden[1], image: SPAZI_PHOTOS[1] },
+    { name: copy.garden[0], desc: copy.garden[1], image: "/foto/location-02.jpg" },
     { name: copy.breakfast[0], desc: copy.breakfast[1], image: SPAZI_PHOTOS[3] },
     { name: copy.work[0], desc: copy.work[1], image: SPAZI_PHOTOS[4] },
     { name: copy.terrace[0], desc: copy.terrace[1], image: "/foto/hero-01.jpg" },
