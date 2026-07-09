@@ -15,7 +15,7 @@ export default function Hero({ copy, availability }: { copy: SiteCopy["hero"]; a
   const base = "transition-all duration-1000 ease-out";
 
   return (
-    <section className="relative min-h-[100dvh] w-full overflow-hidden bg-[var(--dark)]">
+    <section className="relative min-h-[100dvh] w-full overflow-hidden bg-[var(--hero-shade)]">
       <Image
         src={HERO}
         alt={copy.imageAlt}
@@ -32,7 +32,7 @@ export default function Hero({ copy, availability }: { copy: SiteCopy["hero"]; a
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, color-mix(in srgb, var(--dark) 18%, transparent) 0%, color-mix(in srgb, var(--dark) 42%, transparent) 55%, color-mix(in srgb, var(--dark) 88%, transparent) 100%)",
+            "linear-gradient(180deg, color-mix(in srgb, var(--hero-shade) 16%, transparent) 0%, color-mix(in srgb, var(--hero-shade) 36%, transparent) 55%, color-mix(in srgb, var(--hero-shade) 78%, transparent) 100%)",
         }}
       />
       <div className="relative z-10 min-h-[100dvh] flex flex-col justify-end px-6 md:px-10 pb-16 md:pb-24">
@@ -77,7 +77,7 @@ export default function Hero({ copy, availability }: { copy: SiteCopy["hero"]; a
         >
           <a
             href="#prenota"
-            className="font-label text-[11px] bg-[var(--blush)] text-[var(--dark)] px-7 py-4 hover:bg-[var(--accent)] active:scale-95 transition-[background-color,transform] duration-200 ease-out"
+            className="font-label text-[11px] bg-[var(--blush)] text-[var(--ink)] px-7 py-4 hover:bg-[var(--accent)] active:scale-95 transition-[background-color,transform] duration-200 ease-out"
           >
             {availability}
           </a>

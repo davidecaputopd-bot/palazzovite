@@ -15,8 +15,10 @@ export default function Nav({ copy, locale }: { copy: SiteCopy["nav"]; locale: L
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Testo sempre chiaro (blush): trasparente sull'hero, verde-scuro dopo lo scroll.
+  // Header trasparente sull'hero; dopo lo scroll resta leggero, non una barra piena.
   const solid = scrolled || open;
+  const textColor = solid ? "var(--ink)" : "var(--blush)";
+  const borderColor = solid ? "var(--ink)" : "var(--blush)";
   const links = [
     { href: "#storia", label: copy.story },
     { href: "#stanze", label: copy.rooms },
@@ -26,13 +28,18 @@ export default function Nav({ copy, locale }: { copy: SiteCopy["nav"]; locale: L
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 text-[var(--blush)] transition-colors duration-500"
+      className="fixed top-0 left-0 right-0 z-50 transition-[background-color,color,border-color,backdrop-filter] duration-500"
       style={{
-        backgroundColor: solid ? "var(--dark)" : "transparent",
-        backgroundImage: solid
-          ? "none"
-          : "linear-gradient(180deg, color-mix(in srgb, var(--dark) 55%, transparent), transparent)",
-        borderBottom: scrolled && !open ? "1px solid color-mix(in srgb, var(--blush) 14%, transparent)" : "1px solid transparent",
+        color: textColor,
+        backgroundColor: open
+          ? "color-mix(in srgb, var(--dark) 96%, transparent)"
+          : scrolled
+            ? "color-mix(in srgb, var(--dark) 30%, transparent)"
+            : "transparent",
+        backgroundImage: "none",
+        backdropFilter: solid ? "blur(14px)" : "none",
+        WebkitBackdropFilter: solid ? "blur(14px)" : "none",
+        borderBottom: scrolled && !open ? "1px solid color-mix(in srgb, var(--ink) 12%, transparent)" : "1px solid transparent",
       }}
     >
       <div className="flex items-center justify-between px-6 md:px-10 py-5">
@@ -45,28 +52,30 @@ export default function Nav({ copy, locale }: { copy: SiteCopy["nav"]; locale: L
             <a
               key={l.href}
               href={l.href}
-              className="hover:text-[var(--accent)] transition-colors duration-200 ease-out"
+              className="hover:text-[var(--accent-deep)] transition-colors duration-200 ease-out"
             >
               {l.label}
             </a>
           ))}
           <a
             href="#prenota"
-            className="border border-[var(--blush)] px-4 py-2 hover:bg-[var(--accent)] hover:text-[var(--dark)] hover:border-[var(--accent)] active:scale-95 transition-[background-color,color,transform] duration-200 ease-out"
+            className="border px-4 py-2 hover:bg-[var(--accent-deep)] hover:text-[var(--blush)] hover:border-[var(--accent-deep)] active:scale-95 transition-[background-color,color,border-color,transform] duration-200 ease-out"
+            style={{ borderColor }}
           >
             {copy.availability}
           </a>
-          <LanguageSwitcher locale={locale} label={copy.language} color="var(--blush)" />
+          <LanguageSwitcher locale={locale} label={copy.language} color={borderColor} />
         </nav>
 
         <div className="flex items-center gap-2 md:hidden">
-          <LanguageSwitcher locale={locale} label={copy.language} color="var(--blush)" />
+          <LanguageSwitcher locale={locale} label={copy.language} color={borderColor} />
           <button
             type="button"
             aria-label={open ? copy.closeMenu : copy.openMenu}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="font-label text-[11px] border border-[var(--blush)] px-3 py-2"
+            className="font-label text-[11px] border px-3 py-2"
+            style={{ borderColor }}
           >
             {open ? copy.close : copy.menu}
           </button>
@@ -74,7 +83,7 @@ export default function Nav({ copy, locale }: { copy: SiteCopy["nav"]; locale: L
       </div>
 
       <nav
-        className="md:hidden flex flex-col font-label text-sm px-6 pb-6 gap-1 overflow-hidden transition-[max-height,opacity] ease-out text-[var(--blush)]"
+        className="md:hidden flex flex-col font-label text-sm px-6 pb-6 gap-1 overflow-hidden transition-[max-height,opacity] ease-out text-[var(--ink)]"
         style={{
           maxHeight: open ? "400px" : "0px",
           opacity: open ? 1 : 0,
@@ -89,7 +98,7 @@ export default function Nav({ copy, locale }: { copy: SiteCopy["nav"]; locale: L
             key={l.href}
             href={l.href}
             onClick={() => setOpen(false)}
-            className="py-3 border-b border-[var(--blush)]/15 hover:text-[var(--accent)] transition-colors"
+            className="py-3 border-b border-[var(--ink)]/15 hover:text-[var(--accent-deep)] transition-colors"
           >
             {l.label}
           </a>
@@ -97,7 +106,7 @@ export default function Nav({ copy, locale }: { copy: SiteCopy["nav"]; locale: L
         <a
           href="#prenota"
           onClick={() => setOpen(false)}
-          className="mt-4 text-center bg-[var(--blush)] text-[var(--dark)] py-3 active:opacity-70 transition-opacity duration-150"
+          className="mt-4 text-center bg-[var(--ink)] text-[var(--blush)] py-3 active:opacity-70 transition-opacity duration-150"
         >
           {copy.availability}
         </a>

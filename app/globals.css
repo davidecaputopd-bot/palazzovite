@@ -28,13 +28,14 @@
   --terra-ink: #71591A;
   --mare-ink: #54593F;
 
-  /* Palette "The Hollywood Grande" adattata (azzurro -> verdino campionato dalle pareti) */
-  --dark: #0E1704;        /* verde-nero profondo: fondali scuri, nav scrolled, footer, overlay */
+  /* Palette editoriale adattata: verdino chiaro sbiadito, campionato dalle pareti */
+  --dark: #B8C3B1;        /* verdino chiaro polveroso: fondali e superfici */
+  --hero-shade: #24301F;  /* solo velatura fotografica, per leggere la hero */
   --blush: #F2E2DD;       /* crema calda: superfici chiare */
   --accent: #ACB6A8;      /* verdino sbiadito campionato dalle pareti (era #8ca7af) */
   --accent-soft: #C1C8BE; /* verdino più chiaro per fill sottili */
-  --accent-deep: #6E7A66; /* verdino scurito per testo su fondo chiaro (contrasto AA) */
-  --on-dark: #F2E2DD;     /* testo su fondo scuro */
+  --accent-deep: #5E6B57; /* verdino scurito per testo su fondo chiaro (contrasto AA) */
+  --on-dark: #2B2419;     /* testo su verdino chiaro */
 }
 
 /* Gli alias font vivono su body: è lì che next/font monta --font-encode/playfair/spectral */
