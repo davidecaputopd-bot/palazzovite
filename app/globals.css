@@ -28,9 +28,21 @@
   --terra-ink: #71591A;
   --mare-ink: #54593F;
 
-  --font-display: var(--font-bebas);
-  --font-label: var(--font-mono);
-  --font-body: var(--font-sans);
+  /* Palette "The Hollywood Grande" adattata (azzurro -> verdino campionato dalle pareti) */
+  --dark: #0E1704;        /* verde-nero profondo: fondali scuri, nav scrolled, footer, overlay */
+  --blush: #F2E2DD;       /* crema calda: superfici chiare */
+  --accent: #ACB6A8;      /* verdino sbiadito campionato dalle pareti (era #8ca7af) */
+  --accent-soft: #C1C8BE; /* verdino più chiaro per fill sottili */
+  --accent-deep: #6E7A66; /* verdino scurito per testo su fondo chiaro (contrasto AA) */
+  --on-dark: #F2E2DD;     /* testo su fondo scuro */
+}
+
+/* Gli alias font vivono su body: è lì che next/font monta --font-encode/playfair/spectral */
+body {
+  --font-display: var(--font-encode);
+  --font-subheading: var(--font-playfair);
+  --font-label: var(--font-encode);
+  --font-body: var(--font-spectral);
 }
 
 * {
@@ -39,6 +51,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 ::selection {
@@ -57,6 +70,7 @@ body {
   font-family: var(--font-body);
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
 
 .grain {
@@ -84,10 +98,20 @@ p {
   text-wrap: pretty;
 }
 
+section {
+  scroll-margin-top: 88px;
+}
+
 .font-label {
   font-family: var(--font-label);
+  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.14em;
+}
+
+.font-subheading {
+  font-family: var(--font-subheading);
+  font-weight: 500;
 }
 
 @media (prefers-reduced-motion: reduce) {

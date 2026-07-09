@@ -1,23 +1,28 @@
 import Image from "next/image";
 import Reveal from "@/app/components/Reveal";
 import type { SiteCopy } from "@/app/data/i18n";
+import { SPAZI_PHOTOS } from "@/app/data/photos";
 
 export default function PalazzoLife({ copy }: { copy: SiteCopy["spaces"] }) {
   const spaces = [
-    { name: copy.garden[0], desc: copy.garden[1], image: "/images/palazzo/giardino-1.jpg" },
-    { name: copy.staircase[0], desc: copy.staircase[1], image: "/images/palazzo/scala-1.jpg" },
-    { name: copy.terrace[0], desc: copy.terrace[1], image: "/images/palazzo/terrazza-1.jpg" },
+    { name: copy.garden[0], desc: copy.garden[1], image: SPAZI_PHOTOS[1] },
+    { name: copy.breakfast[0], desc: copy.breakfast[1], image: SPAZI_PHOTOS[3] },
+    { name: copy.work[0], desc: copy.work[1], image: SPAZI_PHOTOS[4] },
+    { name: copy.terrace[0], desc: copy.terrace[1], image: "/foto/hero-01.jpg" },
   ];
   return (
-    <section id="palazzo" className="bg-[var(--ink)] text-[var(--stone)] px-6 md:px-10 py-24 md:py-36">
-      <Reveal className="max-w-3xl mb-14">
+    <section id="palazzo" className="bg-[var(--dark)] text-[var(--blush)] px-6 md:px-10 py-24 md:py-36">
+      <Reveal className="max-w-4xl mb-14">
         <h2 className="font-display text-5xl md:text-7xl leading-[0.92]">
           {copy.title}
         </h2>
+        <p className="font-body font-light text-base md:text-lg text-[var(--blush)]/70 leading-relaxed max-w-xl mt-6">
+          {copy.intro}
+        </p>
       </Reveal>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-6">
         {spaces.map((s, i) => (
-          <Reveal key={s.name} delay={i * 120} className={i === 1 ? "md:mt-10" : ""}>
+          <Reveal key={s.name} delay={i * 90} className={i % 2 ? "md:mt-10" : ""}>
             <div className="group relative aspect-[3/4] mb-5 overflow-hidden bg-[var(--stone)]/10">
               <Image
                 src={s.image}
@@ -28,7 +33,7 @@ export default function PalazzoLife({ copy }: { copy: SiteCopy["spaces"] }) {
               />
             </div>
             <h3 className="font-display text-xl tracking-wide mb-2">{s.name}</h3>
-            <p className="font-body font-light text-sm text-[var(--stone)]/70 leading-relaxed">
+            <p className="font-body font-light text-sm text-[var(--blush)]/70 leading-relaxed">
               {s.desc}
             </p>
           </Reveal>

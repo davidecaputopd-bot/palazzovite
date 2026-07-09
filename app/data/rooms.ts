@@ -19,8 +19,8 @@ export const rooms: Room[] = [
     bed: "Letto matrimoniale",
     description:
       "Toni chiari, biancheria bianca e ritratti alle pareti. Il bagno, essenziale e curato, è definito da un grande specchio ad arco.",
-    image: "/images/rooms/aria-1.jpg",
-    bathroomImage: "/images/rooms/aria-bagno-1.jpg",
+    image: "/foto/camera-aria-03.jpg",
+    bathroomImage: "/foto/camera-aria-05.jpg",
   },
   {
     slug: "etere",
@@ -29,7 +29,8 @@ export const rooms: Room[] = [
     bed: "Letto matrimoniale",
     description:
       "Pareti grigio-azzurre, una cassettiera antica con specchio originale e una porta-finestra sul balcone privato affacciato sulla bouganville.",
-    image: "/images/rooms/etere-1.jpg",
+    image: "/foto/camera-etere-01.jpg",
+    bathroomImage: "/foto/camera-etere-05.jpg",
   },
   {
     slug: "fiamma",
@@ -38,7 +39,8 @@ export const rooms: Room[] = [
     bed: "Letto matrimoniale",
     description:
       "Cementine originali e un comodino in legno laccato color ocra raccontano il carattere della dimora con pochi elementi scelti.",
-    image: null,
+    image: "/foto/camera-fiamma-01.jpg",
+    bathroomImage: "/foto/camera-fiamma-05.jpg",
   },
   {
     slug: "terra",
@@ -47,8 +49,8 @@ export const rooms: Room[] = [
     bed: "Letto matrimoniale",
     description:
       "Cementine verdi e brune, legno laccato color ocra e un soffitto verde profondo compongono un ambiente raccolto.",
-    image: "/images/rooms/terra-2.jpg",
-    bathroomImage: "/images/rooms/terra-bagno.jpg",
+    image: "/foto/camera-terra-03.jpg",
+    bathroomImage: "/foto/camera-terra-05.jpg",
   },
   {
     slug: "mare",
@@ -57,7 +59,7 @@ export const rooms: Room[] = [
     bed: "Due letti singoli",
     description:
       "Pareti verde salvia, un camino in legno scuro e la porta-finestra con persiane bianche conservano un'atmosfera domestica.",
-    image: "/images/rooms/mare-1.jpg",
-    bathroomImage: "/images/rooms/mare-bagno.jpg",
+    image: "/foto/camera-mare-02.jpg",
+    bathroomImage: "/foto/camera-mare-05.jpg",
   },
 ];

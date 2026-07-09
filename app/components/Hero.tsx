@@ -3,17 +3,21 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import type { SiteCopy } from "@/app/data/i18n";
+import { HERO } from "@/app/data/photos";
 
 export default function Hero({ copy, availability }: { copy: SiteCopy["hero"]; availability: string }) {
   const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    const frame = requestAnimationFrame(() => setMounted(true));
+    return () => cancelAnimationFrame(frame);
+  }, []);
 
   const base = "transition-all duration-1000 ease-out";
 
   return (
-    <section className="relative min-h-[100dvh] w-full overflow-hidden bg-[var(--wood)]">
+    <section className="relative min-h-[100dvh] w-full overflow-hidden bg-[var(--dark)]">
       <Image
-        src="/images/palazzo/facciata.jpg"
+        src={HERO}
         alt={copy.imageAlt}
         fill
         priority
@@ -21,19 +25,19 @@ export default function Hero({ copy, availability }: { copy: SiteCopy["hero"]; a
         sizes="100vw"
         style={{
           transform: mounted ? "scale(1)" : "scale(1.08)",
-          transition: "transform 1.6s cubic-bezier(0.16, 1, 0.3, 1)",
+          transition: "transform 1.8s cubic-bezier(0.16, 1, 0.3, 1)",
         }}
       />
       <div
         className="absolute inset-0"
         style={{
           background:
-            "linear-gradient(180deg, rgba(43,36,25,0.08) 0%, rgba(43,36,25,0.45) 60%, rgba(43,36,25,0.82) 100%)",
+            "linear-gradient(180deg, color-mix(in srgb, var(--dark) 18%, transparent) 0%, color-mix(in srgb, var(--dark) 42%, transparent) 55%, color-mix(in srgb, var(--dark) 88%, transparent) 100%)",
         }}
       />
-      <div className="relative z-10 min-h-[100dvh] flex flex-col justify-end px-6 md:px-10 pb-14 md:pb-20">
+      <div className="relative z-10 min-h-[100dvh] flex flex-col justify-end px-6 md:px-10 pb-16 md:pb-24">
         <p
-          className={`${base} font-label text-xs text-[#F4EFE4]/75 mb-3`}
+          className={`${base} font-label text-[11px] md:text-xs text-[var(--accent)] mb-4`}
           style={{
             opacity: mounted ? 1 : 0,
             transform: mounted ? "translateY(0)" : "translateY(16px)",
@@ -43,8 +47,9 @@ export default function Hero({ copy, availability }: { copy: SiteCopy["hero"]; a
           {copy.eyebrow}
         </p>
         <h1
-          className={`${base} font-display text-[17vw] md:text-[8.5vw] leading-[0.88] text-[#F4EFE4]`}
+          className={`${base} font-display text-[var(--blush)] leading-[0.92] text-[clamp(2.4rem,8.5vw,5.75rem)]`}
           style={{
+            letterSpacing: "-0.01em",
             opacity: mounted ? 1 : 0,
             transform: mounted ? "translateY(0)" : "translateY(24px)",
             transitionDelay: "350ms",
@@ -53,7 +58,7 @@ export default function Hero({ copy, availability }: { copy: SiteCopy["hero"]; a
           Palazzo Vite
         </h1>
         <p
-          className={`${base} font-body font-light text-[#F4EFE4]/85 max-w-sm mt-5 text-base md:text-lg leading-relaxed`}
+          className={`${base} font-body font-light text-[var(--blush)]/85 max-w-md mt-6 text-base md:text-lg leading-relaxed`}
           style={{
             opacity: mounted ? 1 : 0,
             transform: mounted ? "translateY(0)" : "translateY(16px)",
@@ -63,7 +68,7 @@ export default function Hero({ copy, availability }: { copy: SiteCopy["hero"]; a
           {copy.description}
         </p>
         <div
-          className={`${base} mt-8 flex flex-wrap items-center gap-4 md:gap-6`}
+          className={`${base} mt-9 flex flex-wrap items-center gap-5 md:gap-6`}
           style={{
             opacity: mounted ? 1 : 0,
             transform: mounted ? "translateY(0)" : "translateY(12px)",
@@ -72,13 +77,13 @@ export default function Hero({ copy, availability }: { copy: SiteCopy["hero"]; a
         >
           <a
             href="#prenota"
-            className="font-label text-xs bg-[#F4EFE4] text-[var(--ink)] px-6 py-3 hover:opacity-90 active:scale-95 transition-[opacity,transform] duration-150 ease-out"
+            className="font-label text-[11px] bg-[var(--blush)] text-[var(--dark)] px-7 py-4 hover:bg-[var(--accent)] active:scale-95 transition-[background-color,transform] duration-200 ease-out"
           >
             {availability}
           </a>
           <a
             href="#storia"
-            className="font-label text-xs text-[#F4EFE4]/65 hover:text-[#F4EFE4] active:opacity-50 transition-[color,opacity] duration-150 ease-out underline underline-offset-4"
+            className="font-label text-[11px] text-[var(--blush)]/70 hover:text-[var(--blush)] active:opacity-50 transition-[color,opacity] duration-200 ease-out underline underline-offset-[6px] decoration-[var(--accent)]"
           >
             {copy.discover}
           </a>

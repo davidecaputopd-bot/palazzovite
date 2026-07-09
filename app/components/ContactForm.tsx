@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, FormEvent } from "react";
+import { useState, FormEvent } from "react";
 import { useSearchParams } from "next/navigation";
 import { WEB3FORMS_ACCESS_KEY, CONTACT_EMAIL } from "@/app/data/config";
 import { rooms } from "@/app/data/rooms";
@@ -9,19 +9,14 @@ import type { SiteCopy } from "@/app/data/i18n";
 type Status = "idle" | "loading" | "success" | "error";
 
 export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
+  const searchParams = useSearchParams();
+  const initialRoom =
+    rooms.find((room) => room.slug === searchParams.get("room"))?.name ?? "";
   const [status, setStatus] = useState<Status>("idle");
   const [checkIn, setCheckIn] = useState("");
   const [checkOut, setCheckOut] = useState("");
-  const [selectedRoom, setSelectedRoom] = useState("");
-  const searchParams = useSearchParams();
+  const [selectedRoom, setSelectedRoom] = useState(initialRoom);
 
-  useEffect(() => {
-    const roomParam = searchParams.get("room");
-    if (roomParam) {
-      const match = rooms.find((r) => r.slug === roomParam);
-      if (match) setSelectedRoom(match.name);
-    }
-  }, [searchParams]);
   const dateError =
     checkIn && checkOut && checkOut <= checkIn
       ? copy.dateError
@@ -35,7 +30,11 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
     const form = e.currentTarget;
     const formData = new FormData(form);
     formData.append("access_key", WEB3FORMS_ACCESS_KEY);
-    formData.append("subject", "Nuova richiesta da Palazzo Vite");
+    // Oggetto strutturato: "Richiesta disponibilità — [Camera] — [Date]"
+    const camera = selectedRoom || "Camera da definire";
+    const date =
+      checkIn && checkOut ? `${checkIn} → ${checkOut}` : checkIn || "date da definire";
+    formData.set("subject", `Richiesta disponibilità — ${camera} — ${date}`);
 
     try {
       const res = await fetch("https://api.web3forms.com/submit", {

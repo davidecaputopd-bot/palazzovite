@@ -1,31 +1,44 @@
+import Image from "next/image";
 import Reveal from "@/app/components/Reveal";
 import type { SiteCopy } from "@/app/data/i18n";
+import { LOCATION_PHOTOS } from "@/app/data/photos";
 
 export default function Location({ copy }: { copy: SiteCopy["location"] }) {
   return (
-    <section id="posizione" className="px-6 md:px-10 py-24 md:py-36 max-w-3xl mx-auto">
-      <Reveal>
-        <h2 className="font-display text-5xl md:text-7xl leading-[0.92] mb-8">
-          {copy.title}
-        </h2>
-        <p className="font-body font-light text-base md:text-lg leading-relaxed text-[var(--ink-soft)] max-w-xl mb-8">
-          {copy.description}
-        </p>
-        <div className="grid grid-cols-4 gap-px bg-[var(--ink)]/10 mb-10">
-          {[
-            { place: "Lecce", km: "15 km" },
-            { place: "Gallipoli", km: "30 km" },
-            { place: "Otranto", km: "40 km" },
-            { place: "Brindisi", km: "60 km" },
-          ].map(({ place, km }) => (
-            <div key={place} className="bg-[var(--stone)] px-3 py-4 md:px-4 md:py-5">
-              <p className="font-label text-[9px] text-[var(--ink-soft)] mb-2">{place}</p>
-              <p className="font-display text-2xl md:text-4xl leading-none" style={{ textWrap: "nowrap" }}>{km}</p>
-            </div>
-          ))}
-        </div>
-      </Reveal>
-      <Reveal delay={150} className="relative aspect-[16/9] w-full overflow-hidden bg-[var(--stone-deep)]">
+    <section id="posizione" className="px-6 md:px-10 py-24 md:py-36">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
+        <Reveal>
+          <h2 className="font-display text-5xl md:text-7xl leading-[0.92] mb-8 text-[var(--dark)]">
+            {copy.title}
+          </h2>
+          <p className="font-body font-light text-base md:text-lg leading-relaxed text-[var(--ink-soft)] max-w-xl mb-8">
+            {copy.description}
+          </p>
+          <div className="grid grid-cols-2 gap-5 mb-10">
+            {[
+              { place: "Lecce", km: "15 km" },
+              { place: "Porto Cesareo", km: "17 km" },
+              { place: "Gallipoli", km: "30 km" },
+              { place: "Brindisi", km: "60 km" },
+            ].map(({ place, km }) => (
+              <div key={place} className="border-t border-[var(--dark)]/15 pt-4">
+                <p className="font-label text-[9px] text-[var(--ink-soft)] mb-2">{place}</p>
+                <p className="font-display text-2xl md:text-4xl leading-none" style={{ textWrap: "nowrap" }}>{km}</p>
+              </div>
+            ))}
+          </div>
+        </Reveal>
+        <Reveal delay={120} className="relative aspect-[4/5] w-full overflow-hidden bg-[var(--stone-deep)] md:mt-12">
+          <Image
+            src={LOCATION_PHOTOS[3]}
+            alt="Ingresso di Palazzo Vite nel centro storico di Copertino"
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 50vw"
+          />
+        </Reveal>
+      </div>
+      <Reveal delay={150} className="relative aspect-[16/9] w-full max-w-6xl mx-auto mt-14 overflow-hidden bg-[var(--stone-deep)]">
         <iframe
           title={copy.mapTitle}
           src="https://www.google.com/maps?q=Via+Amendola+1,+73043+Copertino+LE&output=embed"

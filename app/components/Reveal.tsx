@@ -17,9 +17,11 @@ export default function Reveal({
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    const frame = requestAnimationFrame(() => setMounted(true));
     const el = ref.current;
-    if (!el) return;
+    if (!el) {
+      return () => cancelAnimationFrame(frame);
+    }
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -30,7 +32,10 @@ export default function Reveal({
       { threshold: 0.12, rootMargin: "0px 0px -32px 0px" }
     );
     observer.observe(el);
-    return () => observer.disconnect();
+    return () => {
+      cancelAnimationFrame(frame);
+      observer.disconnect();
+    };
   }, []);
 
   // Before JS mounts: fully visible (SSR-safe, no blank flash on slow tabs).

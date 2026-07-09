@@ -1,24 +1,30 @@
 import type { Metadata } from "next";
-import { Bebas_Neue, DM_Mono, DM_Sans } from "next/font/google";
+import { Encode_Sans_Expanded, Playfair_Display, Spectral } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
-const bebas = Bebas_Neue({
-  weight: "400",
+// Sostituti open dei font del riferimento "The Hollywood Grande":
+// GT America Extended -> Encode Sans Expanded (grottesco esteso, titoli/label)
+// Bookmania          -> Playfair Display (serif elegante, sottotitoli/accenti)
+// Calluna            -> Spectral (serif da lettura, corpo)
+const encode = Encode_Sans_Expanded({
+  weight: ["500", "600", "700"],
   subsets: ["latin"],
-  variable: "--font-bebas",
+  variable: "--font-encode",
 });
 
-const dmMono = DM_Mono({
-  weight: ["300", "400"],
+const playfair = Playfair_Display({
+  weight: ["500", "600"],
+  style: ["normal", "italic"],
   subsets: ["latin"],
-  variable: "--font-mono",
+  variable: "--font-playfair",
 });
 
-const dmSans = DM_Sans({
-  weight: ["300", "400"],
+const spectral = Spectral({
+  weight: ["300", "400", "500"],
+  style: ["normal", "italic"],
   subsets: ["latin"],
-  variable: "--font-sans",
+  variable: "--font-spectral",
 });
 
 export const metadata: Metadata = {
@@ -80,7 +86,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="it">
-      <body className={`${bebas.variable} ${dmMono.variable} ${dmSans.variable}`}>
+      <body className={`${encode.variable} ${playfair.variable} ${spectral.variable}`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
