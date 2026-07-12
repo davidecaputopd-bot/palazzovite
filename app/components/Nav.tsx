@@ -9,10 +9,16 @@ export default function Nav({ copy, locale }: { copy: SiteCopy["nav"]; locale: L
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > window.innerHeight * 0.8);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    const hero = document.querySelector("main > section");
+    if (!hero) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setScrolled(!entry.isIntersecting),
+      { threshold: 0.08 },
+    );
+
+    observer.observe(hero);
+    return () => observer.disconnect();
   }, []);
 
   // Header trasparente sull'hero; dopo lo scroll resta leggero, non una barra piena.

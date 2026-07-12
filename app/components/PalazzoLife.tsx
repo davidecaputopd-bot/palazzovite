@@ -20,20 +20,33 @@ export default function PalazzoLife({ copy }: { copy: SiteCopy["spaces"] }) {
           {copy.intro}
         </p>
       </Reveal>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8 lg:gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-6 gap-10 md:gap-6">
         {spaces.map((s, i) => (
-          <Reveal key={s.name} delay={i * 90} className={i % 2 ? "lg:mt-10" : ""}>
-            <div className="group relative aspect-[3/4] mb-5 overflow-hidden bg-[var(--ink)]/10">
+          <Reveal
+            key={s.name}
+            delay={i * 90}
+            className={[
+              i === 0 ? "md:col-span-3 md:row-span-2" : "",
+              i === 1 ? "md:col-span-3" : "",
+              i > 1 ? "md:col-span-3 lg:col-span-3" : "",
+            ].join(" ")}
+          >
+            <div
+              className={[
+                "group relative mb-5 overflow-hidden bg-[var(--ink)]/10",
+                i === 0 ? "aspect-[4/5] md:aspect-[5/6]" : "aspect-[4/3] md:aspect-[16/10]",
+              ].join(" ")}
+            >
               <Image
                 src={s.image}
                 alt={`${s.name}, Palazzo Vite`}
                 fill
                 className="object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.04]"
-                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
-            <h3 className="font-display text-xl tracking-wide mb-2">{s.name}</h3>
-            <p className="font-body font-light text-sm text-[var(--ink-soft)] leading-relaxed">
+            <h3 className="font-display text-xl md:text-2xl tracking-wide mb-2">{s.name}</h3>
+            <p className="font-body font-light text-sm md:text-base text-[var(--ink-soft)] leading-relaxed max-w-md">
               {s.desc}
             </p>
           </Reveal>

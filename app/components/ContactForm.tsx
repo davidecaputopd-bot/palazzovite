@@ -30,11 +30,11 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
     const form = e.currentTarget;
     const formData = new FormData(form);
     formData.append("access_key", WEB3FORMS_ACCESS_KEY);
-    // Oggetto strutturato: "Richiesta disponibilità — [Camera] — [Date]"
+    // Oggetto strutturato: "Richiesta disponibilità - [Camera] - [Date]"
     const camera = selectedRoom || "Camera da definire";
     const date =
-      checkIn && checkOut ? `${checkIn} → ${checkOut}` : checkIn || "date da definire";
-    formData.set("subject", `Richiesta disponibilità — ${camera} — ${date}`);
+      checkIn && checkOut ? `${checkIn} - ${checkOut}` : checkIn || "date da definire";
+    formData.set("subject", `Richiesta disponibilità - ${camera} - ${date}`);
 
     try {
       const res = await fetch("https://api.web3forms.com/submit", {
@@ -71,7 +71,7 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
   const labelClass = "font-label text-[11px] text-[var(--ink-soft)] block mb-2";
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-xl mx-auto text-left space-y-6">
+    <form onSubmit={handleSubmit} className="w-full text-left space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div>
           <label className={labelClass} htmlFor="name">
@@ -152,7 +152,7 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
       </div>
       {dateError && (
         <p role="alert" className="font-label text-[11px] text-[var(--fiamma)]">
-          ⚠ {dateError}
+          {dateError}
         </p>
       )}
 
@@ -171,7 +171,7 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
 
       {status === "error" && (
         <p role="alert" className="font-label text-[11px] text-[var(--fiamma)]">
-          ⚠ {copy.sendError} {CONTACT_EMAIL}.
+          {copy.sendError} {CONTACT_EMAIL}.
         </p>
       )}
 

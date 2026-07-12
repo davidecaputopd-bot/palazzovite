@@ -1,5 +1,6 @@
 import Nav from "@/app/components/Nav";
 import Hero from "@/app/components/Hero";
+import Highlights from "@/app/components/Highlights";
 import Story from "@/app/components/Story";
 import Rooms from "@/app/components/Rooms";
 import PalazzoLife from "@/app/components/PalazzoLife";
@@ -25,6 +26,7 @@ export default function SiteHome({ locale }: { locale: Locale }) {
       <Nav copy={copy.nav} locale={locale} />
       <main id="main-content" className="pb-20 md:pb-0">
         <Hero copy={copy.hero} availability={copy.nav.availability} />
+        <Highlights items={copy.highlights} />
         <Story copy={copy.story} />
         <Rooms copy={copy.rooms} />
         <PalazzoLife copy={copy.spaces} />

@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  /* Base — toni reali del palazzo: crema caldo, non nero patinato */
+  /* Base - toni reali del palazzo: crema caldo, non nero patinato */
   --stone: #F4EFE4;
   --stone-deep: #E8DFC9;
   --ink: #2B2419;
@@ -14,14 +14,14 @@
   --wood: #5C4128;
   --gold: #B8964F;
 
-  /* Stanze — colore decorativo per elemento (sfondi, accenti) */
+  /* Stanze - colore decorativo per elemento (sfondi, accenti) */
   --aria: #D8D2BF;
   --etere: #B8964F;
   --fiamma: #B5703C;
   --terra: #C99A3E;
   --mare: #8C9479;
 
-  /* Varianti scure — SOLO per testo, garantiscono contrasto leggibile su sfondo chiaro */
+  /* Varianti scure - SOLO per testo, garantiscono contrasto leggibile su sfondo chiaro */
   --aria-ink: #756B4F;
   --etere-ink: #8A6B2E;
   --fiamma-ink: #8A4E26;

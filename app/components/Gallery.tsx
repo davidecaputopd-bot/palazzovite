@@ -26,7 +26,7 @@ export default function Gallery({
             key={src}
             type="button"
             onClick={() => setIndex(i)}
-            aria-label={`${openLabel} — ${alt} ${i + 1}`}
+            aria-label={`${openLabel} - ${alt} ${i + 1}`}
             className={`group relative overflow-hidden bg-[var(--blush)] ${
               i === 0 ? "col-span-2 row-span-2 aspect-square" : "aspect-square"
             }`}
