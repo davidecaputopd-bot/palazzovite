@@ -42,10 +42,10 @@ export default function Story({ copy }: { copy: SiteCopy["story"] }) {
           </div>
           <div className="absolute bottom-0 right-0 h-[42%] w-[54%] overflow-hidden border-[10px] border-[var(--stone)] bg-[var(--stone-deep)]">
             <Image
-              src="/foto/location-01.jpg"
+              src="/foto/spazi-02.jpg"
               alt={copy.detailImageAlt}
               fill
-              className="object-cover"
+              className="object-cover object-[62%_50%]"
               sizes="(max-width: 768px) 54vw, 28vw"
             />
           </div>

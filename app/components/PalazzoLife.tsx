@@ -7,8 +7,8 @@ export default function PalazzoLife({ copy }: { copy: SiteCopy["spaces"] }) {
   const spaces = [
     { name: copy.garden[0], desc: copy.garden[1], image: "/foto/location-02.jpg" },
     { name: copy.breakfast[0], desc: copy.breakfast[1], image: SPAZI_PHOTOS[3] },
-    { name: copy.work[0], desc: copy.work[1], image: SPAZI_PHOTOS[4] },
     { name: copy.terrace[0], desc: copy.terrace[1], image: "/foto/hero-01.jpg" },
+    { name: copy.work[0], desc: copy.work[1], image: SPAZI_PHOTOS[4] },
   ];
   return (
     <section id="palazzo" className="bg-[var(--dark)] text-[var(--ink)] px-6 md:px-10 py-24 md:py-36">
@@ -20,28 +20,35 @@ export default function PalazzoLife({ copy }: { copy: SiteCopy["spaces"] }) {
           {copy.intro}
         </p>
       </Reveal>
-      <div className="grid grid-cols-1 md:grid-cols-6 gap-10 md:gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-6">
         {spaces.map((s, i) => (
           <Reveal
             key={s.name}
             delay={i * 90}
             className={[
-              i === 0 ? "md:col-span-3 md:row-span-2" : "",
-              i === 1 ? "md:col-span-3" : "",
-              i > 1 ? "md:col-span-3 lg:col-span-3" : "",
+              i === 0 ? "md:col-span-5 md:row-span-2" : "",
+              i === 1 ? "md:col-span-7" : "",
+              i === 2 ? "md:col-span-7" : "",
+              i === 3 ? "md:col-span-5" : "",
             ].join(" ")}
           >
             <div
               className={[
                 "group relative mb-5 overflow-hidden bg-[var(--ink)]/10",
-                i === 0 ? "aspect-[4/5] md:aspect-[5/6]" : "aspect-[4/3] md:aspect-[16/10]",
+                i === 0 ? "aspect-[4/5] md:aspect-[5/6]" : "",
+                i === 1 ? "aspect-[4/3] md:aspect-[16/9]" : "",
+                i === 2 ? "aspect-[4/3] md:aspect-[16/9]" : "",
+                i === 3 ? "aspect-[4/3] md:aspect-[5/4]" : "",
               ].join(" ")}
             >
               <Image
                 src={s.image}
                 alt={`${s.name}, Palazzo Vite`}
                 fill
-                className="object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.04]"
+                className={[
+                  "object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.04]",
+                  i === 2 ? "object-[50%_58%]" : "",
+                ].join(" ")}
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>

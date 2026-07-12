@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="px-6 md:px-10 py-10 pb-24 md:pb-10 border-t border-[var(--ink)]/10">
+    <footer className="bg-[var(--dark)] text-[var(--ink)] px-6 md:px-10 py-10 pb-28 md:pb-10 border-t border-[var(--ink)]/10">
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-6">
         <span className="font-display text-lg tracking-wide">Palazzo Vite</span>
         <div className="font-label text-[11px] flex flex-wrap items-center gap-x-6 gap-y-2 text-[var(--ink-soft)]">
