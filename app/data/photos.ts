@@ -21,13 +21,12 @@ export const ROOM_PHOTOS: Record<string, string[]> = {
 export const SPAZI_PHOTOS = seq("spazi", 12);
 export const LOCATION_PHOTOS = seq("location", 8);
 
-// Foto degli spazi comuni raggruppate per ambiente (categorie visibili in UI).
-// La chiave corrisponde a copy.spaces.categories.<key>.
-export const SPAZI_CATEGORIES: { key: "staircase" | "lounge" | "reading" | "kitchen" | "terrace" | "garden"; photos: string[] }[] = [
-  { key: "staircase", photos: ["/foto/spazi-01.jpg", "/foto/spazi-07.jpg", "/foto/spazi-06.jpg", "/foto/spazi-02.jpg"] },
-  { key: "lounge", photos: ["/foto/spazi-03.jpg", "/foto/spazi-08.jpg", "/foto/spazi-09.jpg"] },
-  { key: "reading", photos: ["/foto/spazi-05.jpg", "/foto/spazi-12.jpg"] },
-  { key: "kitchen", photos: ["/foto/spazi-04.jpg", "/foto/spazi-11.jpg", "/foto/spazi-10.jpg"] },
-  { key: "terrace", photos: ["/foto/location-05.jpg", "/foto/location-06.jpg"] },
-  { key: "garden", photos: ["/foto/location-07.jpg", "/foto/location-08.jpg"] },
-];
+// Foto per ciascuno spazio comune (galleria per tile, come le stanze).
+// La scala a chiocciola resta nella sezione Storia, non qui.
+export const SPACE_PHOTOS: Record<"garden" | "kitchen" | "terrace" | "work", string[]> = {
+  garden: ["/foto/location-07.jpg", "/foto/location-08.jpg"],
+  // La sala lettura fa parte della cucina: inclusa qui.
+  kitchen: ["/foto/spazi-04.jpg", "/foto/spazi-11.jpg", "/foto/spazi-10.jpg", "/foto/spazi-05.jpg", "/foto/spazi-12.jpg"],
+  terrace: ["/foto/location-05.jpg", "/foto/location-06.jpg", "/foto/hero-01.jpg"],
+  work: ["/foto/spazi-03.jpg", "/foto/spazi-08.jpg", "/foto/spazi-09.jpg"],
+};
