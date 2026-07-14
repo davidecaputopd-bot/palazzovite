@@ -2,14 +2,14 @@ import Image from "next/image";
 import Reveal from "@/app/components/Reveal";
 import PhotoStrip from "@/app/components/PhotoStrip";
 import type { SiteCopy } from "@/app/data/i18n";
-import { LOCATION_PHOTOS, SPAZI_PHOTOS } from "@/app/data/photos";
+import { SPAZI_CATEGORIES } from "@/app/data/photos";
 
 export default function PalazzoLife({ copy }: { copy: SiteCopy["spaces"] }) {
   const spaces = [
     { name: copy.garden[0], desc: copy.garden[1], image: "/foto/location-02.jpg" },
-    { name: copy.breakfast[0], desc: copy.breakfast[1], image: SPAZI_PHOTOS[3] },
+    { name: copy.breakfast[0], desc: copy.breakfast[1], image: "/foto/spazi-04.jpg" },
     { name: copy.terrace[0], desc: copy.terrace[1], image: "/foto/hero-01.jpg" },
-    { name: copy.work[0], desc: copy.work[1], image: SPAZI_PHOTOS[4] },
+    { name: copy.work[0], desc: copy.work[1], image: "/foto/spazi-05.jpg" },
   ];
   return (
     <section id="palazzo" className="bg-[var(--dark)] text-[var(--ink)] px-6 md:px-10 py-24 md:py-36">
@@ -61,10 +61,18 @@ export default function PalazzoLife({ copy }: { copy: SiteCopy["spaces"] }) {
         ))}
       </div>
 
-      {/* Striscia scorribile: interni comuni + terrazza e giardino (esterni condivisi) */}
-      <Reveal delay={120} className="mt-16 md:mt-20">
-        <PhotoStrip images={[...SPAZI_PHOTOS, ...LOCATION_PHOTOS.slice(4)]} alt={copy.title} />
-      </Reveal>
+      {/* Gallerie per categoria: ogni ambiente ha la sua striscia scorribile etichettata */}
+      <div className="mt-16 md:mt-24 space-y-12 md:space-y-16">
+        {SPAZI_CATEGORIES.map((cat, i) => {
+          const label = copy.categories[cat.key];
+          return (
+            <Reveal key={cat.key} delay={i * 60}>
+              <p className="font-label text-[11px] text-[var(--ink-soft)] mb-4">{label}</p>
+              <PhotoStrip images={cat.photos} alt={label} openLabel={copy.galleryLabel} />
+            </Reveal>
+          );
+        })}
+      </div>
     </section>
   );
 }
