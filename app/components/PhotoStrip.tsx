@@ -5,9 +5,9 @@ import Image from "next/image";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
-// Galleria a griglia con lightbox e lazy loading.
-// Prima immagine "featured" (larga), il resto in griglia; hover scale on-image.
-export default function Gallery({
+// Striscia orizzontale scorribile (scroll-snap) di fotografie, con lightbox.
+// Pensata per gli spazi comuni: si sfoglia col dito/trackpad, click per ingrandire.
+export default function PhotoStrip({
   images,
   alt,
   openLabel = "Apri",
@@ -20,16 +20,19 @@ export default function Gallery({
 
   return (
     <>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+      <div
+        className="flex gap-px overflow-x-auto snap-x snap-mandatory scroll-px-6 -mx-6 px-6 md:-mx-10 md:px-10 pb-4"
+        style={{ scrollbarWidth: "thin" }}
+        role="region"
+        aria-label={alt}
+      >
         {images.map((src, i) => (
           <button
             key={src}
             type="button"
             onClick={() => setIndex(i)}
-            aria-label={`${openLabel} - ${alt} ${i + 1}`}
-            className={`group relative overflow-hidden bg-[var(--blush)] ${
-              i === 0 ? "col-span-2 row-span-2 aspect-square" : "aspect-square"
-            }`}
+            aria-label={`${openLabel} — ${alt} ${i + 1}`}
+            className="group relative shrink-0 snap-start overflow-hidden bg-[var(--ink)]/10 w-[78vw] sm:w-[46vw] md:w-[32vw] lg:w-[24vw] aspect-[4/5]"
           >
             <Image
               src={src}
@@ -37,9 +40,9 @@ export default function Gallery({
               fill
               loading="lazy"
               className="object-cover transition-transform duration-[600ms] ease-out group-hover:scale-[1.05]"
-              sizes={i === 0 ? "(max-width: 768px) 100vw, 50vw" : "(max-width: 768px) 50vw, 25vw"}
+              sizes="(max-width: 640px) 78vw, (max-width: 768px) 46vw, (max-width: 1024px) 32vw, 24vw"
             />
-            <span className="absolute inset-0 bg-[var(--dark)]/0 transition-colors duration-300 group-hover:bg-[var(--dark)]/15" />
+            <span className="absolute inset-0 bg-[var(--hero-shade)]/0 transition-colors duration-300 group-hover:bg-[var(--hero-shade)]/15" />
           </button>
         ))}
       </div>

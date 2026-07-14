@@ -74,29 +74,31 @@ body {
   overflow-x: hidden;
 }
 
-/* Grain overlay globale: pellicola leggera sopra tutta la pagina, non interattiva. */
+/* Grain overlay globale: pellicola leggera sopra tutta la pagina, non interattiva.
+   Layer sovradimensionato (inset -50%) e animato via transform: composita in GPU,
+   nessun repaint full-viewport (background-position forzava ~8 ripaint/sec). */
 .grain {
   pointer-events: none;
   position: fixed;
-  inset: 0;
+  inset: -50%;
   z-index: 90;
   opacity: 0.055;
   mix-blend-mode: overlay;
   background-repeat: repeat;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  will-change: transform;
   animation: grainShift 0.7s steps(6) infinite;
 }
 
-/* Spostamento a scatti della texture: effetto pellicola, non movimento continuo.
-   Anima solo background-position su una texture ripetuta: nessun bordo scoperto. */
+/* Spostamento a scatti della texture: effetto pellicola, non movimento continuo. */
 @keyframes grainShift {
-  0% { background-position: 0 0; }
-  16% { background-position: -15px 8px; }
-  33% { background-position: 10px -12px; }
-  50% { background-position: -8px 15px; }
-  66% { background-position: 14px 6px; }
-  83% { background-position: -12px -10px; }
-  100% { background-position: 0 0; }
+  0% { transform: translate(0, 0); }
+  16% { transform: translate(-15px, 8px); }
+  33% { transform: translate(10px, -12px); }
+  50% { transform: translate(-8px, 15px); }
+  66% { transform: translate(14px, 6px); }
+  83% { transform: translate(-12px, -10px); }
+  100% { transform: translate(0, 0); }
 }
 
 .font-display {

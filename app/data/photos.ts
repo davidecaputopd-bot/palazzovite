@@ -16,5 +16,7 @@ export const ROOM_PHOTOS: Record<string, string[]> = {
   fiamma: seq("camera-fiamma", 6),
 };
 
-export const SPAZI_PHOTOS = seq("spazi", 5);
-export const LOCATION_PHOTOS = seq("location", 4);
+// 12 scatti spazi comuni: scala a chiocciola, salone voltato, sala lettura,
+// cucina, angolo caffè. 8 location: facciata, giardino, cortile, portale, terrazza.
+export const SPAZI_PHOTOS = seq("spazi", 12);
+export const LOCATION_PHOTOS = seq("location", 8);

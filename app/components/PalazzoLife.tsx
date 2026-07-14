@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Reveal from "@/app/components/Reveal";
+import PhotoStrip from "@/app/components/PhotoStrip";
 import type { SiteCopy } from "@/app/data/i18n";
-import { SPAZI_PHOTOS } from "@/app/data/photos";
+import { LOCATION_PHOTOS, SPAZI_PHOTOS } from "@/app/data/photos";
 
 export default function PalazzoLife({ copy }: { copy: SiteCopy["spaces"] }) {
   const spaces = [
@@ -59,6 +60,11 @@ export default function PalazzoLife({ copy }: { copy: SiteCopy["spaces"] }) {
           </Reveal>
         ))}
       </div>
+
+      {/* Striscia scorribile: interni comuni + terrazza e giardino (esterni condivisi) */}
+      <Reveal delay={120} className="mt-16 md:mt-20">
+        <PhotoStrip images={[...SPAZI_PHOTOS, ...LOCATION_PHOTOS.slice(4)]} alt={copy.title} />
+      </Reveal>
     </section>
   );
 }
