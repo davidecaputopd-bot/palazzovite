@@ -4,6 +4,7 @@ import Highlights from "@/app/components/Highlights";
 import Story from "@/app/components/Story";
 import Rooms from "@/app/components/Rooms";
 import PalazzoLife from "@/app/components/PalazzoLife";
+import PracticalInfo from "@/app/components/PracticalInfo";
 import Location from "@/app/components/Location";
 import Book from "@/app/components/Book";
 import Footer from "@/app/components/Footer";
@@ -30,6 +31,7 @@ export default function SiteHome({ locale }: { locale: Locale }) {
         <Story copy={copy.story} />
         <Rooms copy={copy.rooms} />
         <PalazzoLife copy={copy.spaces} />
+        <PracticalInfo copy={copy.practical} />
         <Location copy={copy.location} />
         <Book copy={copy.book} formCopy={copy.form} />
       </main>
