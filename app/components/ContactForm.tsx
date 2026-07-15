@@ -2,7 +2,7 @@
 
 import { useState, FormEvent } from "react";
 import { useSearchParams } from "next/navigation";
-import { WEB3FORMS_ACCESS_KEY, CONTACT_EMAIL } from "@/app/data/config";
+import { CONTACT_EMAIL } from "@/app/data/config";
 import { rooms } from "@/app/data/rooms";
 import type { SiteCopy } from "@/app/data/i18n";
 
@@ -28,25 +28,33 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
     setStatus("loading");
 
     const form = e.currentTarget;
-    const formData = new FormData(form);
-    formData.append("access_key", WEB3FORMS_ACCESS_KEY);
+    const payload: Record<string, string> = Object.fromEntries(
+      new FormData(form).entries() as IterableIterator<[string, string]>,
+    );
+
     // Oggetto strutturato: "Richiesta disponibilità - [Camera] - [Date]"
     const camera = selectedRoom || "Camera da definire";
     const date =
       checkIn && checkOut ? `${checkIn} - ${checkOut}` : checkIn || "date da definire";
-    formData.set("subject", `Richiesta disponibilità - ${camera} - ${date}`);
+    payload._subject = `Richiesta disponibilità - ${camera} - ${date}`;
+    payload._template = "table";
+    payload._captcha = "false";
+    if (payload.email) payload._replyto = payload.email;
 
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      // FormSubmit: nessuna chiave, recapita a CONTACT_EMAIL (attivazione una tantum).
+      const res = await fetch(`https://formsubmit.co/ajax/${CONTACT_EMAIL}`, {
         method: "POST",
-        body: formData,
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(payload),
       });
       const data = await res.json();
-      if (data.success) {
+      if (res.ok && String(data.success) === "true") {
         setStatus("success");
         form.reset();
         setCheckIn("");
         setCheckOut("");
+        setSelectedRoom("");
       } else {
         setStatus("error");
       }

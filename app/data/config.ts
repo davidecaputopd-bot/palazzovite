@@ -1,10 +1,13 @@
 // Configurazione centrale del sito. Aggiorna qui il link Booking.com
 // non appena la struttura ha una pagina attiva sul portale.
 export const BOOKING_URL: string | null = null; // null finché non c'è il link reale
-export const CONTACT_EMAIL = "info@palazzovite.com";
 
-// Chiave Web3Forms per l'invio del form di contatto senza backend.
-// IMPORTANTE: la chiave deve essere generata per l'indirizzo palazzovite@gmail.com
-// (Web3Forms recapita alla mail proprietaria della chiave). Genera su https://web3forms.com.
-// L'oggetto della mail è strutturato lato client: "Richiesta disponibilità - [Camera] - [Date]".
-export const WEB3FORMS_ACCESS_KEY = "INSERISCI_QUI_LA_CHIAVE";
+// Contatti ufficiali Palazzo Vite.
+export const CONTACT_EMAIL = "palazzovite@gmail.com";
+export const CONTACT_PHONE = "3286244934"; // anche WhatsApp
+export const CONTACT_PHONE_DISPLAY = "328 624 4934";
+
+// Il form richiesta disponibilità invia via FormSubmit (nessuna chiave/backend):
+// la mail arriva a CONTACT_EMAIL. Alla PRIMA richiesta FormSubmit invia una mail
+// di attivazione una tantum a quell'indirizzo: va cliccato il link una volta,
+// poi tutte le richieste vengono recapitate.

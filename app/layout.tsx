@@ -67,7 +67,8 @@ const jsonLd = {
   description:
     "Dimora storica ottocentesca nel centro storico di Copertino, vicino al Castello Angioino, con cinque suite, giardino, terrazza e parcheggio privato.",
   url: "https://palazzovite.vercel.app",
-  email: "info@palazzovite.com",
+  email: "palazzovite@gmail.com",
+  telephone: "+393286244934",
   numberOfRooms: 5,
   sameAs: ["https://www.instagram.com/palazzovite/"],
   address: {

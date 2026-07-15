@@ -1,3 +1,5 @@
+import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_DISPLAY } from "@/app/data/config";
+
 export default function Footer() {
   return (
     <footer className="bg-[var(--dark)] text-[var(--ink)] px-6 md:px-10 py-10 pb-28 md:pb-10 border-t border-[var(--ink)]/10">
@@ -8,8 +10,11 @@ export default function Footer() {
           <a href="https://www.instagram.com/palazzovite/" target="_blank" rel="noreferrer" className="hover:text-[var(--ink)]">
             Instagram
           </a>
-          <a href="mailto:info@palazzovite.com" className="hover:text-[var(--ink)]">
-            info@palazzovite.com
+          <a href={`tel:+39${CONTACT_PHONE}`} className="hover:text-[var(--ink)]">
+            {CONTACT_PHONE_DISPLAY}
+          </a>
+          <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-[var(--ink)]">
+            {CONTACT_EMAIL}
           </a>
           <span>© {new Date().getFullYear()} Palazzo Vite</span>
         </div>
