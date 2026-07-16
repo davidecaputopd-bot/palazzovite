@@ -53,18 +53,28 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
     setStatus("loading");
 
     const form = e.currentTarget;
-    const payload: Record<string, string> = Object.fromEntries(
-      new FormData(form).entries() as IterableIterator<[string, string]>,
-    );
+    const d = new FormData(form);
+    const get = (k: string) => String(d.get(k) ?? "").trim();
 
-    // Oggetto strutturato: "Richiesta disponibilità - [Camera] - [Date]"
+    // Le chiavi diventano le etichette dei campi nella mail: sempre in italiano,
+    // qualunque sia la lingua con cui l'ospite naviga il sito.
     const camera = selectedRoom || "Camera da definire";
     const date =
       checkIn && checkOut ? `${checkIn} - ${checkOut}` : checkIn || "date da definire";
-    payload._subject = `Richiesta disponibilità - ${camera} - ${date}`;
-    payload._template = "table";
-    payload._captcha = "false";
-    if (payload.email) payload._replyto = payload.email;
+    const payload: Record<string, string> = {
+      Nome: get("name"),
+      Email: get("email"),
+      Telefono: get("phone") || "-",
+      Ospiti: get("guests") || "-",
+      Camera: camera,
+      Arrivo: checkIn || "-",
+      Partenza: checkOut || "-",
+      Messaggio: get("message") || "-",
+      _subject: `Richiesta disponibilità - ${camera} - ${date}`,
+      _template: "table",
+      _captcha: "false",
+    };
+    if (payload.Email) payload._replyto = payload.Email;
 
     try {
       // FormSubmit: nessuna chiave, recapita a CONTACT_EMAIL (attivazione una tantum).
