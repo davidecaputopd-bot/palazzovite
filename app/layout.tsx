@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://palazzovite.vercel.app"),
   title: "Palazzo Vite · Dimora storica e suite a Copertino",
   description:
-    "Palazzo Vite è una dimora storica ottocentesca nel centro storico di Copertino, vicino al Castello Angioino, con cinque suite, giardino, terrazza e parcheggio privato.",
+    "Palazzo Vite è una dimora storica del 1908 nel centro storico di Copertino, vicino al Castello Angioino, con cinque suite, giardino, terrazza e parcheggio privato.",
   alternates: {
     canonical: "/",
     languages: {
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Palazzo Vite · Dimora storica e suite a Copertino",
     description:
-      "Dimora ottocentesca nel centro storico di Copertino, con cinque suite, giardino e terrazza affacciata sul Castello Angioino.",
+      "Dimora storica del 1908 nel centro storico di Copertino, con cinque suite, giardino e terrazza affacciata sul Castello Angioino.",
     url: "https://palazzovite.vercel.app",
     siteName: "Palazzo Vite",
     images: ["/images/palazzo/facciata.jpg"],
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Palazzo Vite · Dimora storica e suite a Copertino",
     description:
-      "Dimora ottocentesca nel centro storico di Copertino, con cinque suite, giardino e terrazza.",
+      "Dimora storica del 1908 nel centro storico di Copertino, con cinque suite, giardino e terrazza.",
     images: ["/images/palazzo/facciata.jpg"],
   },
 };
@@ -65,7 +65,7 @@ const jsonLd = {
   "@type": "LodgingBusiness",
   name: "Palazzo Vite",
   description:
-    "Dimora storica ottocentesca nel centro storico di Copertino, vicino al Castello Angioino, con cinque suite, giardino, terrazza e parcheggio privato.",
+    "Dimora storica del 1908 nel centro storico di Copertino, vicino al Castello Angioino, con cinque suite, giardino, terrazza e parcheggio privato.",
   url: "https://palazzovite.vercel.app",
   email: "palazzovite@gmail.com",
   telephone: "+393286244934",
