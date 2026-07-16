@@ -142,7 +142,7 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
           <label className={labelClass} htmlFor="guests">
             {copy.guests}
           </label>
-          <input id="guests" name="guests" type="number" min={1} max={10} className={inputClass} />
+          <input id="guests" name="guests" type="number" min={1} max={10} required aria-required="true" className={inputClass} />
         </div>
       </div>
 
@@ -175,6 +175,8 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
             id="checkin"
             name="checkin"
             type="date"
+            required
+            aria-required="true"
             value={checkIn}
             onChange={(e) => setCheckIn(e.target.value)}
             className={inputClass}
@@ -188,6 +190,8 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
             id="checkout"
             name="checkout"
             type="date"
+            required
+            aria-required="true"
             value={checkOut}
             onChange={(e) => setCheckOut(e.target.value)}
             className={inputClass}
@@ -199,6 +203,7 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
           {dateError}
         </p>
       )}
+      <p className="font-body text-sm text-[var(--ink-soft)]">{copy.requiredFields}</p>
 
       <div>
         <label className={labelClass} htmlFor="message">

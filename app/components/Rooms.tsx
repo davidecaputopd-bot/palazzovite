@@ -19,6 +19,13 @@ export default function Rooms({ copy }: { copy: SiteCopy["rooms"] }) {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-14">
         {rooms.map((room, i) => {
           const inkColor = `var(--${room.element}-ink)`;
+          const roomFacts: string[] = [
+            room.bed === "Due letti singoli" ? copy.twinBeds : copy.doubleBed,
+            copy.privateBathroom,
+            copy.wifi,
+            room.sqm ? `${room.sqm} m²` : null,
+            room.floor ?? null,
+          ].filter((fact): fact is string => Boolean(fact));
 
           return (
             <Reveal key={room.slug} delay={(i % 2) * 120} className={i % 2 ? "md:mt-20" : ""}>
@@ -37,14 +44,18 @@ export default function Rooms({ copy }: { copy: SiteCopy["rooms"] }) {
                     </span>
                     {room.name}
                   </h3>
-                  <span className="font-label text-[11px] text-[var(--ink-soft)] text-right">
-                    {room.bed === "Due letti singoli" ? copy.twinBeds : copy.doubleBed}
-                    {room.sqm ? ` / ${room.sqm} m²` : ""}
-                  </span>
+                  <span className="font-label text-[11px] text-[var(--ink-soft)] text-right">{copy.bathroom}</span>
                 </div>
                 <p className="font-body font-light text-[var(--ink-soft)] text-base leading-relaxed mb-5 max-w-md">
                   {copy.descriptions[room.slug]}
                 </p>
+                <ul className="mb-5 flex flex-wrap gap-x-4 gap-y-2 font-label text-[11px] text-[var(--ink-soft)]">
+                  {roomFacts.map((fact) => (
+                    <li key={fact} className="border-t border-[var(--ink)]/15 pt-2">
+                      {fact}
+                    </li>
+                  ))}
+                </ul>
                 <a
                   href={`?room=${room.slug}#prenota`}
                   className="font-label text-[12px] text-[var(--ink-soft)] hover:text-[var(--ink)] transition-colors duration-150 underline underline-offset-4"
