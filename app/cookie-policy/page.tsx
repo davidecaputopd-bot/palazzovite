@@ -25,7 +25,9 @@ export default function CookiePolicyPage() {
 
         <p className="font-body text-lg leading-relaxed text-[var(--ink-soft)] mb-10">
           Questa pagina spiega quali strumenti tecnici e servizi esterni possono
-          essere usati durante la navigazione del sito di Palazzo Vite.
+          essere usati durante la navigazione del sito di Palazzo Vite. Allo
+          stato attuale il sito non utilizza cookie di profilazione pubblicitaria
+          e non carica automaticamente la mappa di Google Maps.
         </p>
 
         <div className="space-y-9 font-body text-base leading-relaxed text-[var(--ink-soft)]">
@@ -42,10 +44,10 @@ export default function CookiePolicyPage() {
           <section>
             <h2 className="font-label text-xs text-[var(--ink)] mb-3">Statistiche di navigazione</h2>
             <p>
-              Il sito può utilizzare Vercel Web Analytics per ottenere dati
-              aggregati sulle visite e migliorare le pagine. Lo strumento è
-              pensato per raccogliere metriche essenziali senza cookie di terze
-              parti e senza identificare direttamente il visitatore.
+              Il sito utilizza Vercel Web Analytics per ottenere dati aggregati
+              sulle visite e migliorare le pagine. Lo strumento è pensato per
+              raccogliere metriche essenziali senza cookie di terze parti e senza
+              identificare direttamente il visitatore.
             </p>
           </section>
 
@@ -54,19 +56,33 @@ export default function CookiePolicyPage() {
             <p>
               La mappa integrata di Google Maps non viene caricata
               automaticamente. Viene mostrata solo se scegli di cliccare su
-              “Mostra la mappa”. In alternativa puoi aprire direttamente
-              l’indirizzo su Google Maps tramite il link esterno presente nella
-              sezione Posizione.
+              “Mostra la mappa”. In quel momento Google può ricevere informazioni
+              tecniche relative alla navigazione, secondo le proprie condizioni e
+              informative. In alternativa puoi aprire direttamente l’indirizzo su
+              Google Maps tramite il link esterno presente nella sezione Posizione.
             </p>
           </section>
 
           <section>
             <h2 className="font-label text-xs text-[var(--ink)] mb-3">Form di contatto</h2>
             <p>
-              L’invio del form può passare attraverso FormSubmit, servizio usato
-              per recapitare la richiesta all’indirizzo email della struttura. I
-              dati inseriti nel form sono trattati secondo quanto indicato
+              L’invio del form passa attraverso FormSubmit, servizio usato per
+              recapitare la richiesta all’indirizzo email della struttura. I dati
+              inseriti nel form sono trattati secondo quanto indicato
               nell’informativa privacy.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-label text-xs text-[var(--ink)] mb-3">Banner cookie</h2>
+            <p>
+              Poiché il sito non installa cookie di profilazione prima del
+              consenso e la mappa di Google Maps è bloccata fino a scelta
+              dell’utente, non viene mostrato un banner cookie generalizzato. Se
+              in futuro saranno aggiunti strumenti pubblicitari, remarketing,
+              pixel social o altri sistemi di tracciamento non tecnico, sarà
+              necessario aggiornare questa policy e introdurre un meccanismo di
+              consenso preventivo.
             </p>
           </section>
 

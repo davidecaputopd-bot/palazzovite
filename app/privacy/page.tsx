@@ -41,6 +41,11 @@ export default function PrivacyPage() {
               </a>
               .
             </p>
+            <p className="mt-3">
+              Non risulta nominato un Responsabile della Protezione dei Dati
+              (DPO), in quanto non obbligatorio per questa tipologia di attività
+              salvo diverse valutazioni interne o normative.
+            </p>
           </section>
 
           <section>
@@ -63,17 +68,32 @@ export default function PrivacyPage() {
               l’esecuzione di misure precontrattuali richieste dall’interessato e,
               quando applicabile, l’adempimento di obblighi legali.
             </p>
+            <p className="mt-3">
+              I dati non vengono usati per newsletter, comunicazioni promozionali
+              o attività di profilazione, salvo separata e specifica informativa.
+            </p>
           </section>
 
           <section>
             <h2 className="font-label text-xs text-[var(--ink)] mb-3">Servizi esterni</h2>
             <p>
-              Il form di contatto può utilizzare FormSubmit per inoltrare le
-              richieste all’indirizzo email della struttura. Il sito può inoltre
-              usare Vercel Web Analytics per statistiche aggregate e non invasive
-              sulla navigazione. La mappa di Google Maps non viene caricata
-              automaticamente: viene mostrata solo dopo un’azione esplicita
-              dell’utente.
+              Il sito è ospitato su Vercel. Il form di contatto utilizza
+              FormSubmit per inoltrare le richieste all’indirizzo email della
+              struttura. Il sito utilizza inoltre Vercel Web Analytics per
+              statistiche aggregate e non invasive sulla navigazione. La mappa
+              di Google Maps non viene caricata automaticamente: viene mostrata
+              solo dopo un’azione esplicita dell’utente.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-label text-xs text-[var(--ink)] mb-3">Trasferimenti fuori dallo Spazio Economico Europeo</h2>
+            <p>
+              Alcuni fornitori tecnici potrebbero trattare dati anche fuori
+              dallo Spazio Economico Europeo. In questi casi il trattamento deve
+              avvenire sulla base degli strumenti previsti dal GDPR, come
+              decisioni di adeguatezza, clausole contrattuali standard o altre
+              garanzie applicabili.
             </p>
           </section>
 
@@ -98,11 +118,31 @@ export default function PrivacyPage() {
           </section>
 
           <section>
+            <h2 className="font-label text-xs text-[var(--ink)] mb-3">Conferimento dei dati</h2>
+            <p>
+              Il conferimento dei dati indicati come obbligatori nel form è
+              necessario per ricevere una risposta alla richiesta. Il mancato
+              conferimento può impedire a Palazzo Vite di ricontattarti o di
+              gestire correttamente la richiesta di disponibilità. I dati non
+              obbligatori sono facoltativi.
+            </p>
+          </section>
+
+          <section>
+            <h2 className="font-label text-xs text-[var(--ink)] mb-3">Decisioni automatizzate</h2>
+            <p>
+              Non vengono effettuate decisioni basate unicamente su trattamenti
+              automatizzati, né attività di profilazione con effetti giuridici o
+              significativi sulla persona.
+            </p>
+          </section>
+
+          <section>
             <h2 className="font-label text-xs text-[var(--ink)] mb-3">Diritti dell’interessato</h2>
             <p>
               Puoi chiedere accesso, rettifica, cancellazione, limitazione o
-              opposizione al trattamento dei tuoi dati, nei casi previsti dalla
-              normativa. Puoi esercitare i tuoi diritti scrivendo a{" "}
+              opposizione al trattamento dei tuoi dati e, dove applicabile, la
+              portabilità dei dati. Puoi esercitare i tuoi diritti scrivendo a{" "}
               <a className="underline underline-offset-4" href={`mailto:${CONTACT_EMAIL}`}>
                 {CONTACT_EMAIL}
               </a>
