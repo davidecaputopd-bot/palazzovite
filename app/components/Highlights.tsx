@@ -8,7 +8,7 @@ export default function Highlights({ items }: { items: SiteCopy["highlights"] })
         <dl className="grid grid-cols-2 lg:grid-cols-4 divide-x-0 lg:divide-x divide-[var(--ink)]/15">
           {items.map((item) => (
             <div key={item.label} className="py-7 md:py-9 lg:px-8 first:lg:pl-0 last:lg:pr-0">
-              <dt className="font-label text-[9px] md:text-[10px] text-[var(--ink-soft)] mb-3">
+              <dt className="font-label text-[12px] text-[var(--ink-soft)] mb-3">
                 {item.label}
               </dt>
               <dd className="font-display text-xl md:text-2xl leading-tight text-[var(--ink)]">

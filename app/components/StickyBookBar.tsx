@@ -8,7 +8,7 @@ export default function StickyBookBar({ availability, subtitle }: { availability
         <span className="font-label text-[11px]">
           {availability}
         </span>
-        <span className="font-body font-light text-[10px] text-[var(--ink-soft)] tracking-wide">
+        <span className="font-body font-light text-[12px] text-[var(--ink-soft)] tracking-wide">
           {subtitle}
         </span>
       </a>

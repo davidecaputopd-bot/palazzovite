@@ -21,7 +21,7 @@ export default function LanguageSwitcher({
         aria-label={label}
         aria-expanded={open}
         onClick={() => setOpen((value) => !value)}
-        className="flex items-center gap-1.5 border px-2.5 py-2 font-label text-[10px] uppercase transition-opacity hover:opacity-60"
+        className="flex items-center gap-1.5 border px-2.5 py-2 font-label text-[12px] uppercase transition-opacity hover:opacity-60"
         style={{ borderColor: color, color }}
       >
         <span aria-hidden="true" className="text-sm leading-none">{localeFlags[locale]}</span>
@@ -35,7 +35,7 @@ export default function LanguageSwitcher({
               href={localePath(item)}
               hrefLang={item}
               aria-current={item === locale ? "page" : undefined}
-              className="flex items-center gap-2.5 px-4 py-2.5 font-label text-[10px] hover:bg-[var(--stone-deep)]"
+              className="flex items-center gap-2.5 px-4 py-2.5 font-label text-[12px] hover:bg-[var(--stone-deep)]"
             >
               <span aria-hidden="true" className="text-sm leading-none">{localeFlags[item]}</span>
               <span>{localeNames[item]}</span>

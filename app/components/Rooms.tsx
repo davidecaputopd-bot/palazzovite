@@ -32,7 +32,7 @@ export default function Rooms({ copy }: { copy: SiteCopy["rooms"] }) {
               <div className="pt-6 md:pt-7">
                 <div className="flex flex-col gap-2 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4 mb-3">
                   <h3 className="font-display text-3xl md:text-4xl tracking-wide" style={{ color: inkColor }}>
-                    <span className="font-label text-[10px] align-middle mr-3 text-[var(--ink-soft)]">
+                    <span className="font-label text-[12px] align-middle mr-3 text-[var(--ink-soft)]">
                       {["I", "II", "III", "IV", "V"][i]}
                     </span>
                     {room.name}
@@ -47,7 +47,7 @@ export default function Rooms({ copy }: { copy: SiteCopy["rooms"] }) {
                 </p>
                 <a
                   href={`?room=${room.slug}#prenota`}
-                  className="font-label text-[10px] text-[var(--ink-soft)] hover:text-[var(--ink)] transition-colors duration-150 underline underline-offset-4"
+                  className="font-label text-[12px] text-[var(--ink-soft)] hover:text-[var(--ink)] transition-colors duration-150 underline underline-offset-4"
                 >
                   {copy.request}
                 </a>

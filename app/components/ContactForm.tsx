@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, FormEvent } from "react";
+import { useState, FormEvent } from "react";
 import { useSearchParams } from "next/navigation";
 import { CONTACT_EMAIL } from "@/app/data/config";
 import { rooms } from "@/app/data/rooms";
@@ -16,14 +16,12 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
   const [checkIn, setCheckIn] = useState("");
   const [checkOut, setCheckOut] = useState("");
   const [selectedRoom, setSelectedRoom] = useState(initialRoom);
-  const formRef = useRef<HTMLFormElement>(null);
+  const [mailtoHref, setMailtoHref] = useState(`mailto:${CONTACT_EMAIL}`);
 
   // Fallback: se l'invio automatico non riesce, apre la mail già precompilata
   // con tutti i dati della richiesta, così la richiesta arriva comunque.
-  function buildMailto() {
-    const f = formRef.current;
-    if (!f) return `mailto:${CONTACT_EMAIL}`;
-    const d = new FormData(f);
+  function buildMailto(form: HTMLFormElement) {
+    const d = new FormData(form);
     const camera = selectedRoom || "-";
     const date =
       checkIn && checkOut ? `${checkIn} - ${checkOut}` : checkIn || "date da definire";
@@ -53,6 +51,7 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
     setStatus("loading");
 
     const form = e.currentTarget;
+    setMailtoHref(buildMailto(form));
     const d = new FormData(form);
     const get = (k: string) => String(d.get(k) ?? "").trim();
 
@@ -91,9 +90,11 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
         setCheckOut("");
         setSelectedRoom("");
       } else {
+        setMailtoHref(buildMailto(form));
         setStatus("error");
       }
     } catch {
+      setMailtoHref(buildMailto(form));
       setStatus("error");
     }
   }
@@ -110,11 +111,11 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
   }
 
   const inputClass =
-    "w-full bg-transparent border-b border-[var(--ink)]/30 py-3 font-body font-light text-[var(--ink)] placeholder:text-[var(--ink-soft)]/50 focus:outline-none focus:border-[var(--ink)] transition-colors";
+    "w-full bg-transparent border-b border-[var(--ink)]/60 py-3 font-body font-light text-[var(--ink)] placeholder:text-[var(--ink-soft)] focus:outline-none focus:border-[var(--ink)] transition-colors";
   const labelClass = "font-label text-[11px] text-[var(--ink-soft)] block mb-2";
 
   return (
-    <form ref={formRef} onSubmit={handleSubmit} className="w-full text-left space-y-6">
+    <form onSubmit={handleSubmit} className="w-full text-left space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div>
           <label className={labelClass} htmlFor="name">
@@ -194,7 +195,7 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
         </div>
       </div>
       {dateError && (
-        <p role="alert" className="font-label text-[11px] text-[var(--fiamma)]">
+        <p role="alert" className="font-label text-[11px] text-[var(--fiamma-ink)]">
           {dateError}
         </p>
       )}
@@ -213,9 +214,9 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
       </div>
 
       {status === "error" && (
-        <p role="alert" className="font-label text-[11px] text-[var(--fiamma)]">
+        <p role="alert" className="font-label text-[11px] text-[var(--fiamma-ink)]">
           {copy.sendError}{" "}
-          <a href={buildMailto()} className="underline underline-offset-4 hover:opacity-70">
+          <a href={mailtoHref} className="underline underline-offset-4 hover:opacity-70">
             {CONTACT_EMAIL}
           </a>
           .

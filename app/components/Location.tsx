@@ -22,7 +22,7 @@ export default function Location({ copy }: { copy: SiteCopy["location"] }) {
               { place: "Brindisi", km: "60 km" },
             ].map(({ place, km }) => (
               <div key={place} className="border-t border-[var(--dark)]/15 pt-4">
-                <p className="font-label text-[9px] text-[var(--ink-soft)] mb-2">{place}</p>
+                <p className="font-label text-[12px] text-[var(--ink-soft)] mb-2">{place}</p>
                 <p className="font-display text-2xl md:text-4xl leading-none" style={{ textWrap: "nowrap" }}>{km}</p>
               </div>
             ))}
@@ -57,8 +57,8 @@ export default function Location({ copy }: { copy: SiteCopy["location"] }) {
           className="absolute inset-0 flex flex-col items-center justify-center gap-3 pointer-events-none"
           aria-label={copy.openMaps.replace(" →", "")}
         >
-          <span className="font-label text-[10px] text-[var(--ink-soft)]">Via Amendola, 1 - Copertino (LE)</span>
-          <span className="font-label text-[10px] text-[var(--ink)]/40 underline underline-offset-4 pointer-events-auto">
+          <span className="font-label text-[12px] text-[var(--ink-soft)]">Via Amendola, 1 - Copertino (LE)</span>
+          <span className="font-label text-[12px] text-[var(--ink-soft)] underline underline-offset-4 pointer-events-auto">
             {copy.openMaps}
           </span>
         </a>

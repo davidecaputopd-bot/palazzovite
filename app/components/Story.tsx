@@ -24,7 +24,7 @@ export default function Story({ copy }: { copy: SiteCopy["story"] }) {
           <dl className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-5">
             {copy.details.map(([label, value]) => (
               <div key={label} className="border-t border-[var(--ink)]/15 pt-4">
-                <dt className="font-label text-[9px] text-[var(--ink-soft)] mb-2">{label}</dt>
+                <dt className="font-label text-[12px] text-[var(--ink-soft)] mb-2">{label}</dt>
                 <dd className="font-body text-sm leading-snug text-[var(--ink)]">{value}</dd>
               </div>
             ))}
