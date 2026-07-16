@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useRef, useState, FormEvent } from "react";
 import { useSearchParams } from "next/navigation";
 import { CONTACT_EMAIL } from "@/app/data/config";
 import { rooms } from "@/app/data/rooms";
@@ -16,6 +16,31 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
   const [checkIn, setCheckIn] = useState("");
   const [checkOut, setCheckOut] = useState("");
   const [selectedRoom, setSelectedRoom] = useState(initialRoom);
+  const formRef = useRef<HTMLFormElement>(null);
+
+  // Fallback: se l'invio automatico non riesce, apre la mail già precompilata
+  // con tutti i dati della richiesta, così la richiesta arriva comunque.
+  function buildMailto() {
+    const f = formRef.current;
+    if (!f) return `mailto:${CONTACT_EMAIL}`;
+    const d = new FormData(f);
+    const camera = selectedRoom || "-";
+    const date =
+      checkIn && checkOut ? `${checkIn} - ${checkOut}` : checkIn || "date da definire";
+    const subject = `Richiesta disponibilità - ${camera} - ${date}`;
+    const body = [
+      `Nome: ${d.get("name") ?? ""}`,
+      `Email: ${d.get("email") ?? ""}`,
+      `Telefono: ${d.get("phone") ?? ""}`,
+      `Ospiti: ${d.get("guests") ?? ""}`,
+      `Camera: ${camera}`,
+      `Arrivo: ${checkIn}`,
+      `Partenza: ${checkOut}`,
+      "",
+      `${d.get("message") ?? ""}`,
+    ].join("\n");
+    return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
 
   const dateError =
     checkIn && checkOut && checkOut <= checkIn
@@ -79,7 +104,7 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
   const labelClass = "font-label text-[11px] text-[var(--ink-soft)] block mb-2";
 
   return (
-    <form onSubmit={handleSubmit} className="w-full text-left space-y-6">
+    <form ref={formRef} onSubmit={handleSubmit} className="w-full text-left space-y-6">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div>
           <label className={labelClass} htmlFor="name">
@@ -179,7 +204,11 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
 
       {status === "error" && (
         <p role="alert" className="font-label text-[11px] text-[var(--fiamma)]">
-          {copy.sendError} {CONTACT_EMAIL}.
+          {copy.sendError}{" "}
+          <a href={buildMailto()} className="underline underline-offset-4 hover:opacity-70">
+            {CONTACT_EMAIL}
+          </a>
+          .
         </p>
       )}
 

@@ -24,7 +24,15 @@ export const LOCATION_PHOTOS = seq("location", 8);
 // Foto per ciascuno spazio comune (galleria per tile, come le stanze).
 // La scala a chiocciola resta nella sezione Storia, non qui.
 export const SPACE_PHOTOS: Record<"garden" | "kitchen" | "terrace" | "work", string[]> = {
-  garden: ["/foto/location-07.jpg", "/foto/location-08.jpg"],
+  // Giardino murato di agrumi: la prima è quella "featured" nella galleria.
+  garden: [
+    "/foto/giardino-03.jpg",
+    "/foto/location-07.jpg",
+    "/foto/giardino-01.jpg",
+    "/foto/giardino-02.jpg",
+    "/foto/giardino-04.jpg",
+    "/foto/location-08.jpg",
+  ],
   // La sala lettura fa parte della cucina: inclusa qui.
   kitchen: ["/foto/spazi-04.jpg", "/foto/spazi-11.jpg", "/foto/spazi-10.jpg", "/foto/spazi-05.jpg", "/foto/spazi-12.jpg"],
   terrace: ["/foto/location-05.jpg", "/foto/location-06.jpg", "/foto/hero-01.jpg"],
