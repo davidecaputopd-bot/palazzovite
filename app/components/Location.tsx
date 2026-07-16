@@ -2,6 +2,7 @@ import Image from "next/image";
 import Reveal from "@/app/components/Reveal";
 import type { SiteCopy } from "@/app/data/i18n";
 import { LOCATION_PHOTOS } from "@/app/data/photos";
+import MapConsent from "@/app/components/MapConsent";
 
 export default function Location({ copy }: { copy: SiteCopy["location"] }) {
   return (
@@ -38,30 +39,8 @@ export default function Location({ copy }: { copy: SiteCopy["location"] }) {
           />
         </Reveal>
       </div>
-      <Reveal delay={150} className="relative aspect-[16/9] w-full max-w-6xl mx-auto mt-14 overflow-hidden bg-[var(--stone-deep)]">
-        <iframe
-          title={copy.mapTitle}
-          src="https://www.google.com/maps?q=Via+Amendola+1,+73043+Copertino+LE&output=embed"
-          width="100%"
-          height="100%"
-          style={{ border: 0 }}
-          loading="lazy"
-          referrerPolicy="no-referrer-when-downgrade"
-          className="absolute inset-0"
-        />
-        {/* Fallback visibile se l'iframe non carica (ad es. in locale o con blocchi CSP) */}
-        <a
-          href="https://maps.google.com/?q=Via+Amendola+1,+73043+Copertino+LE"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="absolute inset-0 flex flex-col items-center justify-center gap-3 pointer-events-none"
-          aria-label={copy.openMaps.replace(" →", "")}
-        >
-          <span className="font-label text-[12px] text-[var(--ink-soft)]">Via Amendola, 1 - Copertino (LE)</span>
-          <span className="font-label text-[12px] text-[var(--ink-soft)] underline underline-offset-4 pointer-events-auto">
-            {copy.openMaps}
-          </span>
-        </a>
+      <Reveal delay={150} className="w-full max-w-6xl mx-auto mt-14">
+        <MapConsent copy={copy} />
       </Reveal>
     </section>
   );

@@ -213,6 +213,28 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
         />
       </div>
 
+      <label className="flex items-start gap-3 font-body text-sm leading-relaxed text-[var(--ink-soft)]">
+        <input
+          name="privacy"
+          type="checkbox"
+          required
+          aria-required="true"
+          className="mt-1 h-4 w-4 shrink-0 accent-[var(--ink)]"
+        />
+        <span>
+          {copy.privacyConsent}{" "}
+          <a
+            href="/privacy"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline underline-offset-4 hover:text-[var(--ink)]"
+          >
+            {copy.privacyLink}
+          </a>
+          .
+        </span>
+      </label>
+
       {status === "error" && (
         <p role="alert" className="font-label text-[11px] text-[var(--fiamma-ink)]">
           {copy.sendError}{" "}

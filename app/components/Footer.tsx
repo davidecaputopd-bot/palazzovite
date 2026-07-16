@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_DISPLAY } from "@/app/data/config";
 
 export default function Footer() {
@@ -16,6 +17,12 @@ export default function Footer() {
           <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-[var(--ink)]">
             {CONTACT_EMAIL}
           </a>
+          <Link href="/privacy" className="hover:text-[var(--ink)]">
+            Privacy
+          </Link>
+          <Link href="/cookie-policy" className="hover:text-[var(--ink)]">
+            Cookie
+          </Link>
           <span>© {new Date().getFullYear()} Palazzo Vite</span>
         </div>
       </div>
