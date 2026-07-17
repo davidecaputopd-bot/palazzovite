@@ -111,7 +111,8 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
   }
 
   const inputClass =
-    "w-full bg-transparent border-b border-[var(--ink)]/60 py-3 font-body font-light text-[var(--ink)] placeholder:text-[var(--ink-soft)] focus:outline-none focus:border-[var(--ink)] transition-colors";
+    // Niente focus:outline-none: lascia agire il :focus-visible globale (2px, WCAG 2.4.11).
+    "w-full bg-transparent border-b border-[var(--ink)]/60 py-3 font-body font-light text-[var(--ink)] placeholder:text-[var(--ink-soft)] focus:border-[var(--ink)] transition-colors";
   const labelClass = "font-label text-[11px] text-[var(--ink-soft)] block mb-2";
 
   return (
@@ -121,13 +122,13 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
           <label className={labelClass} htmlFor="name">
             {copy.name}
           </label>
-          <input id="name" name="name" type="text" required aria-required="true" className={inputClass} />
+          <input id="name" name="name" type="text" autoComplete="name" required aria-required="true" className={inputClass} />
         </div>
         <div>
           <label className={labelClass} htmlFor="email">
             {copy.email}
           </label>
-          <input id="email" name="email" type="email" required aria-required="true" className={inputClass} />
+          <input id="email" name="email" type="email" autoComplete="email" required aria-required="true" className={inputClass} />
         </div>
       </div>
 
@@ -136,7 +137,7 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
           <label className={labelClass} htmlFor="phone">
             {copy.phone}
           </label>
-          <input id="phone" name="phone" type="tel" className={inputClass} />
+          <input id="phone" name="phone" type="tel" autoComplete="tel" className={inputClass} />
         </div>
         <div>
           <label className={labelClass} htmlFor="guests">
@@ -177,6 +178,8 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
             type="date"
             required
             aria-required="true"
+            aria-describedby={dateError ? "date-error" : undefined}
+            aria-invalid={dateError ? true : undefined}
             value={checkIn}
             onChange={(e) => setCheckIn(e.target.value)}
             className={inputClass}
@@ -192,6 +195,8 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
             type="date"
             required
             aria-required="true"
+            aria-describedby={dateError ? "date-error" : undefined}
+            aria-invalid={dateError ? true : undefined}
             value={checkOut}
             onChange={(e) => setCheckOut(e.target.value)}
             className={inputClass}
@@ -199,7 +204,7 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
         </div>
       </div>
       {dateError && (
-        <p role="alert" className="font-label text-[11px] text-[var(--fiamma-ink)]">
+        <p id="date-error" role="alert" className="font-label text-[11px] text-[var(--fiamma-ink)]">
           {dateError}
         </p>
       )}
