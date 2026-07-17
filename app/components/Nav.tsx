@@ -7,6 +7,7 @@ import type { Locale, SiteCopy } from "@/app/data/i18n";
 export default function Nav({ copy, locale }: { copy: SiteCopy["nav"]; locale: Locale }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [current, setCurrent] = useState<string>("");
 
   useEffect(() => {
     const hero = document.querySelector("main > section");
@@ -18,6 +19,29 @@ export default function Nav({ copy, locale }: { copy: SiteCopy["nav"]; locale: L
     );
 
     observer.observe(hero);
+    return () => observer.disconnect();
+  }, []);
+
+  // Scroll-spy: evidenzia la sezione in cui ci si trova ("sei qui" del Trunk Test).
+  // Sceglie la sezione più vicina al terzo superiore del viewport.
+  useEffect(() => {
+    const ids = ["storia", "stanze", "palazzo", "posizione"];
+    const sections = ids
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => el !== null);
+    if (!sections.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        if (visible[0]) setCurrent(visible[0].target.id);
+      },
+      { rootMargin: "-30% 0px -60% 0px", threshold: 0 },
+    );
+
+    sections.forEach((s) => observer.observe(s));
     return () => observer.disconnect();
   }, []);
 
@@ -54,15 +78,21 @@ export default function Nav({ copy, locale }: { copy: SiteCopy["nav"]; locale: L
         </a>
 
         <nav className="hidden lg:flex items-center gap-8 font-label text-[11px]">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="hover:text-[var(--accent-deep)] transition-colors duration-200 ease-out"
-            >
-              {l.label}
-            </a>
-          ))}
+          {links.map((l) => {
+            const active = `#${current}` === l.href;
+            return (
+              <a
+                key={l.href}
+                href={l.href}
+                aria-current={active ? "location" : undefined}
+                className={`relative transition-colors duration-200 ease-out hover:text-[var(--accent-deep)] after:absolute after:left-0 after:-bottom-1.5 after:h-px after:bg-current after:transition-[width] after:duration-300 after:ease-out ${
+                  active ? "after:w-full" : "after:w-0 opacity-70 hover:opacity-100"
+                }`}
+              >
+                {l.label}
+              </a>
+            );
+          })}
           <a
             href="#prenota"
             className="border px-4 py-2 hover:bg-[var(--accent-deep)] hover:text-[var(--blush)] hover:border-[var(--accent-deep)] active:scale-95 transition-[background-color,color,border-color,transform] duration-200 ease-out"
@@ -99,16 +129,22 @@ export default function Nav({ copy, locale }: { copy: SiteCopy["nav"]; locale: L
         aria-hidden={!open}
         inert={!open}
       >
-        {links.map((l) => (
-          <a
-            key={l.href}
-            href={l.href}
-            onClick={() => setOpen(false)}
-            className="py-3 border-b border-[var(--ink)]/15 hover:text-[var(--accent-deep)] transition-colors"
-          >
-            {l.label}
-          </a>
-        ))}
+        {links.map((l) => {
+          const active = `#${current}` === l.href;
+          return (
+            <a
+              key={l.href}
+              href={l.href}
+              onClick={() => setOpen(false)}
+              aria-current={active ? "location" : undefined}
+              className={`py-3 border-b border-[var(--ink)]/15 transition-colors hover:text-[var(--accent-deep)] ${
+                active ? "font-semibold" : "opacity-70"
+              }`}
+            >
+              {l.label}
+            </a>
+          );
+        })}
         <a
           href="#prenota"
           onClick={() => setOpen(false)}

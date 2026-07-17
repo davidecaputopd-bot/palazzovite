@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Footer from "@/app/components/Footer";
 import { CONTACT_EMAIL } from "@/app/data/config";
 
 export const metadata: Metadata = {
@@ -13,7 +14,8 @@ const updatedAt = "16 luglio 2026";
 
 export default function CookiePolicyPage() {
   return (
-    <main className="min-h-screen bg-[var(--stone)] text-[var(--ink)] px-6 md:px-10 py-12 md:py-20">
+    <>
+      <main className="min-h-screen bg-[var(--stone)] text-[var(--ink)] px-6 md:px-10 py-12 md:py-20">
       <div className="max-w-3xl mx-auto">
         <Link href="/" className="font-label text-xs underline underline-offset-4 hover:opacity-70">
           ← Torna al sito
@@ -111,6 +113,8 @@ export default function CookiePolicyPage() {
           </p>
         </div>
       </div>
-    </main>
+      </main>
+      <Footer />
+    </>
   );
 }
