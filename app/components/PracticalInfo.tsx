@@ -40,8 +40,8 @@ export default function PracticalInfo({ copy }: { copy: SiteCopy["practical"] })
 
           <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 font-label text-[11px] text-[var(--ink-soft)]">
             <span className="text-[var(--ink)]/70">{copy.contactLabel}</span>
-            <a href={`tel:+39${CONTACT_PHONE}`} className="hover:text-[var(--accent-deep)] transition-colors">
-              {CONTACT_PHONE_DISPLAY}
+            <a href={`tel:+39${CONTACT_PHONE}`} className="whitespace-nowrap hover:text-[var(--accent-deep)] transition-colors">
+              +39 {CONTACT_PHONE_DISPLAY}
             </a>
             <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-[var(--accent-deep)] transition-colors">
               {CONTACT_EMAIL}
