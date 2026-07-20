@@ -15,6 +15,15 @@ export default function Book({ copy, formCopy }: { copy: SiteCopy["book"]; formC
           <p className="font-body font-light text-[var(--ink-soft)] max-w-md">
             {copy.description}
           </p>
+
+          <ul className="mt-8 grid gap-3 max-w-md">
+            {copy.reassurance.map((item) => (
+              <li key={item} className="flex items-start gap-3 border-t border-[var(--ink)]/12 pt-3 font-label text-[11px] leading-relaxed text-[var(--ink-soft)]">
+                <span className="mt-[0.35rem] h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--accent-deep)]" />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
           {BOOKING_URL && (
             <a
               href={BOOKING_URL}
@@ -31,7 +40,7 @@ export default function Book({ copy, formCopy }: { copy: SiteCopy["book"]; formC
           </p>
         </Reveal>
 
-        <Reveal delay={150} className="bg-[var(--stone)]/55 px-5 py-7 md:p-10 border border-[var(--ink)]/10">
+        <Reveal delay={90} className="bg-[var(--stone)]/55 px-5 py-7 md:p-10 border border-[var(--ink)]/10">
           <Suspense fallback={null}>
             <ContactForm copy={formCopy} />
           </Suspense>
