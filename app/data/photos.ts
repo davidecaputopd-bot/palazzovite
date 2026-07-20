@@ -51,7 +51,6 @@ export const LOCATION_PHOTOS = seq("location", 8);
 export const SPACE_PHOTOS: Record<"garden" | "kitchen" | "terrace" | "work", string[]> = {
   // Giardino murato di agrumi: la prima è quella "featured" nella galleria.
   garden: [
-    "/foto/giardino-03.jpg",
     "/foto/location-07.jpg",
     "/foto/giardino-01.jpg",
     "/foto/giardino-02.jpg",
