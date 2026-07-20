@@ -51,20 +51,21 @@ export default function StickyBookBar({
 
   return (
     <div
-      className="lg:hidden fixed bottom-0 left-0 right-0 z-40 px-4 pt-3 transition-transform duration-500 ease-out motion-reduce:transition-none"
+      className="lg:hidden fixed bottom-0 left-0 right-0 z-40 transition-transform duration-500 ease-out motion-reduce:transition-none"
       style={{
         transform: visible ? "translateY(0)" : "translateY(130%)",
-        paddingBottom: "max(1rem, env(safe-area-inset-bottom))",
+
       }}
       aria-hidden={!visible}
       inert={!visible}
     >
       <a
         href="#prenota"
-        className="flex flex-col items-center justify-center gap-1 px-5 py-4 min-h-[58px] bg-[var(--dark)] text-[var(--ink)] border border-[var(--ink)]/15 shadow-[0_18px_45px_rgba(43,36,25,0.22)] active:scale-[0.99] transition-transform"
+        className="flex items-center justify-between gap-4 min-h-[48px] px-5 py-3 bg-[color-mix(in_srgb,var(--dark)_92%,transparent)] text-[var(--ink)] border-t border-[var(--ink)]/12 backdrop-blur-md active:opacity-80 transition-opacity"
+        style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))" }}
       >
-        <span className="font-label text-[12px]">{availability}</span>
-        <span className="font-body font-light text-[12px] text-[var(--ink-soft)] tracking-wide">
+        <span className="font-label text-[11px]">{availability}</span>
+        <span className="hidden min-[390px]:inline font-body font-light text-[11px] text-[var(--ink-soft)] tracking-wide truncate">
           {subtitle}
         </span>
       </a>
