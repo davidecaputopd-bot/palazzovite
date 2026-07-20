@@ -4,7 +4,7 @@ import type { SiteCopy } from "@/app/data/i18n";
 
 export default function Story({ copy }: { copy: SiteCopy["story"] }) {
   return (
-    <section id="storia" className="relative px-6 md:px-10 py-24 md:py-36 overflow-hidden">
+    <section id="storia" className="relative px-6 md:px-10 py-20 md:py-36 overflow-hidden">
       <div className="relative max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[0.95fr_1.05fr] gap-12 md:gap-16 items-center">
         <Reveal>
           <p className="font-label text-xs text-[var(--ink-soft)] mb-6">{copy.eyebrow}</p>

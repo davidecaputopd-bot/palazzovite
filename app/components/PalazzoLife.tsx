@@ -14,7 +14,7 @@ export default function PalazzoLife({ copy }: { copy: SiteCopy["spaces"] }) {
   ];
 
   return (
-    <section id="palazzo" className="bg-[var(--dark)] text-[var(--ink)] px-6 md:px-10 py-24 md:py-36">
+    <section id="palazzo" className="bg-[var(--dark)] text-[var(--ink)] px-6 md:px-10 py-20 md:py-36">
       <Reveal className="max-w-4xl mb-14 md:mb-20">
         <h2 className="font-display text-[clamp(3rem,7vw,4.5rem)] leading-[0.94]">
           {copy.title}
@@ -28,7 +28,7 @@ export default function PalazzoLife({ copy }: { copy: SiteCopy["spaces"] }) {
         {spaces.map((s, i) => (
           <Reveal key={s.name} delay={(i % 2) * 120} className={i % 2 ? "md:mt-20" : ""}>
             <article className="group">
-              <Gallery images={s.photos} alt={s.name} openLabel={copy.galleryLabel} />
+              <Gallery images={s.photos} alt={s.name} openLabel={copy.galleryLabel} mobilePreviewCount={4} />
               <div className="pt-6 md:pt-7">
                 <h3 className="font-display text-2xl md:text-3xl tracking-wide mb-2">{s.name}</h3>
                 <p className="font-body font-light text-sm md:text-base text-[var(--ink-soft)] leading-relaxed max-w-md">

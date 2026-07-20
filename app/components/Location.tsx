@@ -6,7 +6,7 @@ import MapConsent from "@/app/components/MapConsent";
 
 export default function Location({ copy }: { copy: SiteCopy["location"] }) {
   return (
-    <section id="posizione" className="px-6 md:px-10 py-24 md:py-36">
+    <section id="posizione" className="px-6 md:px-10 py-20 md:py-36">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
         <Reveal>
           <h2 className="font-display text-[clamp(3rem,6vw,4.5rem)] leading-[0.94] mb-8 text-[var(--dark)]">

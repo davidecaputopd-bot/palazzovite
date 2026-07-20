@@ -13,20 +13,25 @@ export default function Gallery({
   openLabel = "Apri",
   bathroomFrom,
   bathroomLabel,
+  mobilePreviewCount = images.length,
 }: {
   images: string[];
   alt: string;
   openLabel?: string;
   bathroomFrom?: number; // indice da cui in poi gli scatti sono del bagno
   bathroomLabel?: string; // etichetta "Bagno" tradotta
+  mobilePreviewCount?: number; // su mobile mostra meno anteprime, il lightbox mantiene tutta la galleria
 }) {
   const [index, setIndex] = useState(-1);
+  const hiddenCount = Math.max(images.length - mobilePreviewCount, 0);
 
   return (
     <>
       <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
         {images.map((src, i) => {
           const isBath = bathroomFrom !== undefined && i >= bathroomFrom;
+          const hiddenOnMobile = i >= mobilePreviewCount;
+          const showsMoreBadge = hiddenCount > 0 && i === mobilePreviewCount - 1;
           return (
             <button
               key={src}
@@ -35,7 +40,7 @@ export default function Gallery({
               aria-label={`${openLabel} - ${alt} ${i + 1}${isBath && bathroomLabel ? ` (${bathroomLabel})` : ""}`}
               className={`group relative overflow-hidden bg-[var(--blush)] ${
                 i === 0 ? "col-span-2 row-span-2 aspect-square" : "aspect-square"
-              }`}
+              } ${hiddenOnMobile ? "hidden md:block" : ""}`}
             >
               <Image
                 src={src}
@@ -49,6 +54,11 @@ export default function Gallery({
               {isBath && bathroomLabel && (
                 <span className="absolute bottom-2 left-2 font-label text-[10px] tracking-[0.14em] text-[var(--blush)] bg-[color-mix(in_srgb,var(--hero-shade)_72%,transparent)] px-2 py-1">
                   {bathroomLabel}
+                </span>
+              )}
+              {showsMoreBadge && (
+                <span className="md:hidden absolute inset-0 grid place-items-center bg-[color-mix(in_srgb,var(--hero-shade)_34%,transparent)] font-label text-[11px] text-[var(--blush)] tracking-[0.14em]">
+                  +{hiddenCount}
                 </span>
               )}
             </button>

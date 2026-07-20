@@ -7,21 +7,38 @@ function seq(prefix: string, n: number): string[] {
   return Array.from({ length: n }, (_, i) => `/foto/${prefix}-${String(i + 1).padStart(2, "0")}.jpg`);
 }
 
-// 6 scatti per camera: prime 4 = ambiente, ultime 2 = bagno.
+// Foto camere e bagni sono separate per evitare scambi accidentali nelle gallerie.
+export const ROOM_MAIN_PHOTOS: Record<string, string[]> = {
+  aria: seq("camera-aria", 4),
+  etere: seq("camera-etere", 4),
+  mare: seq("camera-mare", 4),
+  terra: seq("camera-terra", 4),
+  fiamma: seq("camera-fiamma", 4),
+};
+
+export const ROOM_BATHROOM_PHOTOS: Record<string, string[]> = {
+  aria: ["/foto/camera-aria-05.jpg", "/foto/camera-aria-06.jpg"],
+  // Scambio intenzionale: questi due bagni corrispondono alle suite corrette.
+  etere: ["/foto/camera-mare-05.jpg", "/foto/camera-mare-06.jpg"],
+  mare: ["/foto/camera-etere-05.jpg", "/foto/camera-etere-06.jpg"],
+  terra: ["/foto/camera-terra-05.jpg", "/foto/camera-terra-06.jpg"],
+  fiamma: ["/foto/camera-fiamma-05.jpg", "/foto/camera-fiamma-06.jpg"],
+};
+
 export const ROOM_PHOTOS: Record<string, string[]> = {
-  aria: seq("camera-aria", 6),
-  etere: [
-    ...seq("camera-etere", 4),
-    "/foto/camera-mare-05.jpg",
-    "/foto/camera-mare-06.jpg",
-  ],
-  mare: [
-    ...seq("camera-mare", 4),
-    "/foto/camera-etere-05.jpg",
-    "/foto/camera-etere-06.jpg",
-  ],
-  terra: seq("camera-terra", 6),
-  fiamma: seq("camera-fiamma", 6),
+  aria: [...ROOM_MAIN_PHOTOS.aria, ...ROOM_BATHROOM_PHOTOS.aria],
+  etere: [...ROOM_MAIN_PHOTOS.etere, ...ROOM_BATHROOM_PHOTOS.etere],
+  mare: [...ROOM_MAIN_PHOTOS.mare, ...ROOM_BATHROOM_PHOTOS.mare],
+  terra: [...ROOM_MAIN_PHOTOS.terra, ...ROOM_BATHROOM_PHOTOS.terra],
+  fiamma: [...ROOM_MAIN_PHOTOS.fiamma, ...ROOM_BATHROOM_PHOTOS.fiamma],
+};
+
+export const ROOM_BATHROOM_FROM: Record<string, number> = {
+  aria: ROOM_MAIN_PHOTOS.aria.length,
+  etere: ROOM_MAIN_PHOTOS.etere.length,
+  mare: ROOM_MAIN_PHOTOS.mare.length,
+  terra: ROOM_MAIN_PHOTOS.terra.length,
+  fiamma: ROOM_MAIN_PHOTOS.fiamma.length,
 };
 
 // 12 scatti spazi comuni: scala a chiocciola, salone voltato, sala lettura,

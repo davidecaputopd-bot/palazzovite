@@ -1,12 +1,12 @@
 import { rooms } from "@/app/data/rooms";
 import Reveal from "@/app/components/Reveal";
 import Gallery from "@/app/components/Gallery";
-import { ROOM_PHOTOS } from "@/app/data/photos";
+import { ROOM_BATHROOM_FROM, ROOM_PHOTOS } from "@/app/data/photos";
 import type { SiteCopy } from "@/app/data/i18n";
 
 export default function Rooms({ copy }: { copy: SiteCopy["rooms"] }) {
   return (
-    <section id="stanze" className="px-6 md:px-10 py-24 md:py-36">
+    <section id="stanze" className="px-6 md:px-10 py-20 md:py-36">
       <Reveal className="max-w-4xl mb-14 md:mb-20">
         <p className="font-label text-xs text-[var(--ink-soft)] mb-6">{copy.eyebrow}</p>
         <h2 className="font-display text-[clamp(3rem,8vw,6rem)] leading-[0.94]">
@@ -34,8 +34,9 @@ export default function Rooms({ copy }: { copy: SiteCopy["rooms"] }) {
                 images={ROOM_PHOTOS[room.slug]}
                 alt={`Suite ${room.name}, Palazzo Vite`}
                 openLabel={copy.request.replace(" →", "")}
-                bathroomFrom={4}
+                bathroomFrom={ROOM_BATHROOM_FROM[room.slug]}
                 bathroomLabel={copy.bathroom}
+                mobilePreviewCount={5}
               />
 
               <div className="pt-6 md:pt-7">

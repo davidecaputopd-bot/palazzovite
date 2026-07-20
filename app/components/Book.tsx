@@ -6,7 +6,7 @@ import type { SiteCopy } from "@/app/data/i18n";
 
 export default function Book({ copy, formCopy }: { copy: SiteCopy["book"]; formCopy: SiteCopy["form"] }) {
   return (
-    <section id="prenota" className="bg-[var(--stone-deep)] px-6 md:px-10 py-24 md:py-36">
+    <section id="prenota" className="bg-[var(--stone-deep)] px-6 md:px-10 py-20 md:py-36">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-12 lg:gap-16 items-start">
         <Reveal className="lg:sticky lg:top-28">
           <h2 className="font-display text-[clamp(2.45rem,6vw,4.5rem)] leading-[0.94] mb-6">

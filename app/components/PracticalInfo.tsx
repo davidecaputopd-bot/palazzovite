@@ -4,7 +4,7 @@ import type { SiteCopy } from "@/app/data/i18n";
 
 export default function PracticalInfo({ copy }: { copy: SiteCopy["practical"] }) {
   return (
-    <section id="informazioni" className="px-6 md:px-10 py-24 md:py-36">
+    <section id="informazioni" className="px-6 md:px-10 py-20 md:py-36">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[0.92fr_1.08fr] gap-14 md:gap-20 items-start">
         <Reveal className="lg:sticky lg:top-28">
           <p className="font-label text-xs text-[var(--ink-soft)] mb-6">{copy.eyebrow}</p>
