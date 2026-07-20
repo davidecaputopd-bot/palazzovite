@@ -3,6 +3,7 @@ import Hero from "@/app/components/Hero";
 import Highlights from "@/app/components/Highlights";
 import Story from "@/app/components/Story";
 import Rooms from "@/app/components/Rooms";
+import EditorialPause from "@/app/components/EditorialPause";
 import PalazzoLife from "@/app/components/PalazzoLife";
 import PracticalInfo from "@/app/components/PracticalInfo";
 import Location from "@/app/components/Location";
@@ -29,7 +30,9 @@ export default function SiteHome({ locale }: { locale: Locale }) {
         <Hero copy={copy.hero} availability={copy.nav.availability} />
         <Highlights items={copy.highlights} />
         <Story copy={copy.story} />
+        <EditorialPause copy={copy.editorial.house} image="/foto/spazi-06.jpg" />
         <Rooms copy={copy.rooms} />
+        <EditorialPause copy={copy.editorial.outdoors} image="/foto/giardino-03.jpg" tone="green" reverse />
         <PalazzoLife copy={copy.spaces} />
         <PracticalInfo copy={copy.practical} />
         <Location copy={copy.location} />
