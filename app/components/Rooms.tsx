@@ -31,9 +31,11 @@ export default function Rooms({ copy }: { copy: SiteCopy["rooms"] }) {
             <Reveal key={room.slug} delay={(i % 2) * 120} className={i % 2 ? "md:mt-20" : ""}>
               <article className="group">
               <Gallery
-                images={ROOM_PHOTOS[room.slug].slice(0, 4)}
+                images={ROOM_PHOTOS[room.slug]}
                 alt={`Suite ${room.name}, Palazzo Vite`}
                 openLabel={copy.request.replace(" →", "")}
+                bathroomFrom={4}
+                bathroomLabel={copy.bathroom}
               />
 
               <div className="pt-6 md:pt-7">
