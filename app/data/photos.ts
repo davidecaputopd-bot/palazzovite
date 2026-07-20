@@ -10,8 +10,16 @@ function seq(prefix: string, n: number): string[] {
 // 6 scatti per camera: prime 4 = ambiente, ultime 2 = bagno.
 export const ROOM_PHOTOS: Record<string, string[]> = {
   aria: seq("camera-aria", 6),
-  etere: seq("camera-etere", 6),
-  mare: seq("camera-mare", 6),
+  etere: [
+    ...seq("camera-etere", 4),
+    "/foto/camera-mare-05.jpg",
+    "/foto/camera-mare-06.jpg",
+  ],
+  mare: [
+    ...seq("camera-mare", 4),
+    "/foto/camera-etere-05.jpg",
+    "/foto/camera-etere-06.jpg",
+  ],
   terra: seq("camera-terra", 6),
   fiamma: seq("camera-fiamma", 6),
 };
