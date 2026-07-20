@@ -6,41 +6,47 @@ export default function Reveal({
   children,
   delay = 0,
   className = "",
+  variant = "lift",
 }: {
   children: ReactNode;
   delay?: number;
   className?: string;
+  variant?: "lift" | "fade" | "instant";
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  // mounted: JS hydrated. visible: IntersectionObserver fired.
-  const [mounted, setMounted] = useState(false);
-  const [visible, setVisible] = useState(false);
+  const [hidden, setHidden] = useState(false);
 
   useEffect(() => {
-    const frame = requestAnimationFrame(() => setMounted(true));
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion || variant === "instant") return;
+
     const el = ref.current;
-    if (!el) {
-      return () => cancelAnimationFrame(frame);
-    }
+    if (!el) return;
+
+    const frame = requestAnimationFrame(() => {
+      setHidden(true);
+    });
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          setVisible(true);
+          setHidden(false);
           observer.disconnect();
         }
       },
-      { threshold: 0.12, rootMargin: "0px 0px -32px 0px" }
+      { threshold: 0.1, rootMargin: "0px 0px -24px 0px" },
     );
+
     observer.observe(el);
+
     return () => {
       cancelAnimationFrame(frame);
       observer.disconnect();
     };
-  }, []);
+  }, [variant]);
 
-  // Before JS mounts: fully visible (SSR-safe, no blank flash on slow tabs).
-  // After mount, before intersection: hidden and waiting to animate in.
-  const hidden = mounted && !visible;
+  const distance = variant === "fade" ? "0" : "clamp(12px, 2vw, 18px)";
+  const duration = variant === "fade" ? 0.42 : 0.52;
 
   return (
     <div
@@ -48,10 +54,8 @@ export default function Reveal({
       className={className}
       style={{
         opacity: hidden ? 0 : 1,
-        transform: hidden ? "translateY(24px)" : "translateY(0)",
-        transition: mounted
-          ? `opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms, transform 0.65s cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms`
-          : "none",
+        transform: hidden ? `translateY(${distance})` : "translateY(0)",
+        transition: `opacity ${duration}s cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms, transform ${duration}s cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms`,
       }}
     >
       {children}
