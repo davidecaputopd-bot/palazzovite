@@ -21,10 +21,13 @@ export default function Story({ copy }: { copy: SiteCopy["story"] }) {
               {copy.paragraphs[1]}
             </p>
           </div>
-          <dl className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-5">
+          <dl className="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-3">
             {copy.details.map(([label, value]) => (
-              <div key={label} className="border-t border-[var(--ink)]/15 pt-4">
-                <dt className="font-label text-[12px] text-[var(--ink-soft)] mb-2">{label}</dt>
+              <div
+                key={label}
+                className="rounded-2xl bg-[color-mix(in_srgb,var(--stone-deep)_72%,var(--stone))] p-4 md:p-5"
+              >
+                <dt className="font-label text-[11px] tracking-[0.14em] uppercase text-[var(--accent-deep)] mb-2">{label}</dt>
                 <dd className="font-body text-sm leading-snug text-[var(--ink)]">{value}</dd>
               </div>
             ))}

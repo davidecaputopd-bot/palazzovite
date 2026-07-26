@@ -61,7 +61,7 @@ export default function Rooms({ copy }: { copy: SiteCopy["rooms"] }) {
 
                   <ul className="mb-5 grid grid-cols-2 gap-2 font-label text-[10px] text-[var(--ink-soft)] sm:flex sm:flex-wrap sm:gap-x-3 sm:gap-y-2">
                     {roomFacts.map((fact) => (
-                      <li key={fact} className="border border-[var(--ink)]/12 px-3 py-2 text-center sm:text-left">
+                      <li key={fact} className="rounded-full bg-[color-mix(in_srgb,var(--stone-deep)_60%,var(--stone))] px-3.5 py-2 text-center sm:text-left">
                         {fact}
                       </li>
                     ))}
@@ -69,7 +69,7 @@ export default function Rooms({ copy }: { copy: SiteCopy["rooms"] }) {
 
                   <a
                     href={`?room=${room.slug}#prenota`}
-                    className="inline-flex w-full sm:w-auto items-center justify-center border border-[var(--ink)]/20 px-4 py-3 font-label text-[11px] text-[var(--ink-soft)] hover:text-[var(--ink)] hover:border-[var(--ink)]/35 active:scale-[0.98] transition-[color,border-color,transform] duration-150"
+                    className="inline-flex w-full sm:w-auto items-center justify-center rounded-full border border-[var(--ink)]/20 px-5 py-3 font-label text-[11px] text-[var(--ink-soft)] hover:text-[var(--ink)] hover:border-[var(--ink)]/35 active:scale-[0.98] transition-[color,border-color,transform] duration-150"
                   >
                     {copy.request}
                   </a>

@@ -112,7 +112,7 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
 
   const inputClass =
     // Niente focus:outline-none: lascia agire il :focus-visible globale (2px, WCAG 2.4.11).
-    "w-full bg-transparent border-b border-[var(--ink)]/60 py-3 font-body font-light text-[var(--ink)] placeholder:text-[var(--ink-soft)] focus:border-[var(--ink)] focus:bg-[var(--stone)]/40 transition-colors duration-200";
+    "w-full rounded-xl bg-[color-mix(in_srgb,var(--stone-deep)_55%,var(--stone))] px-4 py-3 font-body font-light text-[var(--ink)] placeholder:text-[var(--ink-soft)] focus:bg-[color-mix(in_srgb,var(--stone-deep)_80%,var(--stone))] transition-colors duration-200";
   const labelClass = "font-label text-[11px] text-[var(--ink-soft)] block mb-2";
 
   return (
@@ -207,7 +207,7 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
         </div>
       </div>
       {dateError && (
-        <p id="date-error" role="alert" className="border border-[var(--fiamma-ink)]/20 bg-[var(--stone)]/45 px-3 py-2 font-label text-[11px] leading-relaxed text-[var(--fiamma-ink)]">
+        <p id="date-error" role="alert" className="rounded-xl bg-[color-mix(in_srgb,var(--fiamma-ink)_10%,var(--stone))] px-3.5 py-2.5 font-label text-[11px] leading-relaxed text-[var(--fiamma-ink)]">
           {dateError}
         </p>
       )}
@@ -232,7 +232,7 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
           type="checkbox"
           required
           aria-required="true"
-          className="mt-1 h-4 w-4 shrink-0 accent-[var(--ink)]"
+          className="mt-0.5 h-5 w-5 shrink-0 accent-[var(--ink)]"
         />
         <span>
           {copy.privacyConsent}{" "}
@@ -249,7 +249,7 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
       </label>
 
       {status === "error" && (
-        <p role="alert" className="border border-[var(--fiamma-ink)]/20 bg-[var(--stone)]/45 px-3 py-2 font-label text-[11px] leading-relaxed text-[var(--fiamma-ink)]">
+        <p role="alert" className="rounded-xl bg-[color-mix(in_srgb,var(--fiamma-ink)_10%,var(--stone))] px-3.5 py-2.5 font-label text-[11px] leading-relaxed text-[var(--fiamma-ink)]">
           {copy.sendError}{" "}
           <a href={mailtoHref} className="underline underline-offset-4 hover:opacity-70">
             {CONTACT_EMAIL}
@@ -261,7 +261,7 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
       <button
         type="submit"
         disabled={status === "loading" || !!dateError}
-        className="w-full font-label text-xs bg-[var(--ink)] text-[var(--stone)] px-8 py-4 hover:opacity-85 active:scale-[0.98] transition-[opacity,transform] duration-150 disabled:opacity-50 disabled:scale-100"
+        className="w-full rounded-full font-label text-xs bg-[var(--ink)] text-[var(--stone)] px-8 py-4 hover:opacity-85 active:scale-[0.98] transition-[opacity,transform] duration-150 disabled:opacity-50 disabled:scale-100"
       >
         {status === "loading" ? copy.sending : copy.send}
       </button>

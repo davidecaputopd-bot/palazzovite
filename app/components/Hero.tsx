@@ -67,13 +67,13 @@ export default function Hero({ copy, availability }: { copy: SiteCopy["hero"]; a
         >
           <a
             href="#prenota"
-            className="font-label text-[11px] bg-[var(--blush)] text-[var(--ink)] px-7 py-4 hover:bg-[var(--accent)] active:scale-[0.98] transition-[background-color,transform] duration-200 ease-out"
+            className="font-label text-[11px] rounded-full bg-[var(--blush)] text-[var(--ink)] px-8 py-4 hover:bg-[var(--accent)] active:scale-[0.98] transition-[background-color,transform] duration-200 ease-out"
           >
             {availability}
           </a>
           <a
             href="#storia"
-            className="font-label text-[11px] text-[var(--blush)]/70 hover:text-[var(--blush)] active:opacity-50 transition-[color,opacity] duration-200 ease-out underline underline-offset-[6px] decoration-[var(--accent)]"
+            className="inline-flex items-center min-h-[44px] font-label text-[11px] text-[var(--blush)]/70 hover:text-[var(--blush)] active:opacity-50 transition-[color,opacity] duration-200 ease-out underline underline-offset-[6px] decoration-[var(--accent)]"
           >
             {copy.discover}
           </a>

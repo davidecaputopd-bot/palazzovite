@@ -16,13 +16,16 @@ export default function Highlights({ items }: { items: SiteCopy["highlights"] })
             </h2>
           </div>
 
-          <dl className="grid grid-cols-2 gap-x-6 gap-y-6 border-t border-[var(--ink)]/15 pt-7 lg:border-t-0 lg:pt-0">
+          <dl className="grid grid-cols-2 gap-3 md:gap-4">
             {items.map((item) => (
-              <div key={item.label} className="border-t border-[var(--ink)]/12 pt-4">
-                <dt className="font-label text-[10px] text-[var(--ink-soft)] mb-2">
+              <div
+                key={item.label}
+                className="rounded-2xl bg-[color-mix(in_srgb,var(--stone-deep)_72%,var(--stone))] p-5 md:p-6 transition-colors duration-300 hover:bg-[var(--stone-deep)]"
+              >
+                <dt className="font-label text-[10px] tracking-[0.16em] uppercase text-[var(--accent-deep)] mb-2.5">
                   {item.label}
                 </dt>
-                <dd className="font-body text-base md:text-lg leading-snug text-[var(--ink)]">
+                <dd className="font-body text-lg md:text-xl leading-snug text-[var(--ink)]">
                   {item.value}
                 </dd>
               </div>

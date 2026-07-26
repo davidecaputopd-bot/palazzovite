@@ -16,26 +16,24 @@ export default function PracticalInfo({ copy }: { copy: SiteCopy["practical"] })
         </Reveal>
 
         <Reveal delay={120}>
-          <div className="border-y border-[var(--ink)]/15">
-            <dl>
-              {copy.items.map(([label, value], index) => (
-                <div
-                  key={label}
-                  className="grid grid-cols-[2.5rem_1fr] sm:grid-cols-[3.25rem_0.9fr_1.1fr] gap-x-4 md:gap-x-8 py-6 md:py-7 border-b border-[var(--ink)]/10 last:border-b-0"
-                >
-                  <span className="font-label text-[10px] text-[var(--ink-soft)] pt-1">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <dt className="font-label text-[12px] text-[var(--ink)] tracking-[0.16em] pt-1">
-                    {label}
-                  </dt>
-                  <dd className="col-start-2 sm:col-start-auto font-body font-light text-lg md:text-xl leading-snug text-[var(--ink)] mt-2 sm:mt-0">
-                    {value}
-                  </dd>
-                </div>
-              ))}
-            </dl>
-          </div>
+          <dl className="flex flex-col gap-3">
+            {copy.items.map(([label, value], index) => (
+              <div
+                key={label}
+                className="grid grid-cols-[2.5rem_1fr] sm:grid-cols-[3.25rem_0.9fr_1.1fr] gap-x-4 md:gap-x-8 rounded-2xl bg-[color-mix(in_srgb,var(--stone-deep)_72%,var(--stone))] px-5 md:px-7 py-5 md:py-6"
+              >
+                <span className="font-label text-[10px] text-[var(--accent-deep)] pt-1">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <dt className="font-label text-[12px] text-[var(--ink)] tracking-[0.16em] pt-1">
+                  {label}
+                </dt>
+                <dd className="col-start-2 sm:col-start-auto font-body font-light text-lg md:text-xl leading-snug text-[var(--ink)] mt-2 sm:mt-0">
+                  {value}
+                </dd>
+              </div>
+            ))}
+          </dl>
 
           <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-6 font-label text-[11px] text-[var(--ink-soft)]">
             <span className="text-[var(--ink)]/70">{copy.contactLabel}</span>

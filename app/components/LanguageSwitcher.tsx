@@ -21,14 +21,14 @@ export default function LanguageSwitcher({
         aria-label={label}
         aria-expanded={open}
         onClick={() => setOpen((value) => !value)}
-        className="flex items-center gap-1.5 border px-2.5 py-2 font-label text-[12px] uppercase transition-[opacity,transform] hover:opacity-60 active:scale-[0.98]"
+        className="flex min-h-[44px] items-center gap-1.5 rounded-full border px-3.5 py-2 font-label text-[12px] uppercase transition-[opacity,transform] hover:opacity-60 active:scale-[0.98]"
         style={{ borderColor: color, color }}
       >
         <span aria-hidden="true" className="text-sm leading-none">{localeFlags[locale]}</span>
         <span>{locale}</span>
       </button>
       {open && (
-        <div className="absolute right-0 top-full mt-2 min-w-32 border border-[var(--ink)]/10 bg-[var(--stone)] py-1 text-[var(--ink)]">
+        <div className="absolute right-0 top-full mt-2 min-w-32 overflow-hidden rounded-2xl bg-[var(--stone)] py-1 text-[var(--ink)] shadow-[0_14px_34px_color-mix(in_srgb,var(--hero-shade)_16%,transparent)]">
           {locales.map((item) => (
             <a
               key={item}

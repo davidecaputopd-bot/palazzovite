@@ -95,7 +95,7 @@ export default function Nav({ copy, locale }: { copy: SiteCopy["nav"]; locale: L
           })}
           <a
             href="#prenota"
-            className="border px-4 py-2 hover:bg-[var(--accent-deep)] hover:text-[var(--blush)] hover:border-[var(--accent-deep)] active:scale-[0.98] transition-[background-color,color,border-color,transform] duration-200 ease-out"
+            className="rounded-full border px-5 py-2.5 hover:bg-[var(--accent-deep)] hover:text-[var(--blush)] hover:border-[var(--accent-deep)] active:scale-[0.98] transition-[background-color,color,border-color,transform] duration-200 ease-out"
             style={{ borderColor }}
           >
             {copy.availability}
@@ -110,7 +110,7 @@ export default function Nav({ copy, locale }: { copy: SiteCopy["nav"]; locale: L
             aria-label={open ? copy.closeMenu : copy.openMenu}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="font-label text-[11px] border px-3 py-2 active:scale-[0.98] transition-transform"
+            className="font-label text-[11px] min-h-[44px] rounded-full border px-4 py-2.5 active:scale-[0.98] transition-transform"
             style={{ borderColor }}
           >
             {open ? copy.close : copy.menu}

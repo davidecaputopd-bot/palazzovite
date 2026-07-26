@@ -15,15 +15,18 @@ export default function Location({ copy }: { copy: SiteCopy["location"] }) {
           <p className="font-body font-light text-base md:text-lg leading-relaxed text-[var(--ink-soft)] max-w-xl mb-8">
             {copy.description}
           </p>
-          <div className="grid grid-cols-2 gap-5 mb-10">
+          <div className="grid grid-cols-2 gap-3 mb-10">
             {[
               { place: "Lecce", km: "15 km" },
               { place: "Porto Cesareo", km: "17 km" },
               { place: "Gallipoli", km: "30 km" },
               { place: "Brindisi", km: "60 km" },
             ].map(({ place, km }) => (
-              <div key={place} className="border-t border-[var(--dark)]/15 pt-4">
-                <p className="font-label text-[12px] text-[var(--ink-soft)] mb-2">{place}</p>
+              <div
+                key={place}
+                className="rounded-2xl bg-[color-mix(in_srgb,var(--stone-deep)_72%,var(--stone))] p-5 md:p-6"
+              >
+                <p className="font-label text-[11px] tracking-[0.14em] uppercase text-[var(--accent-deep)] mb-2.5">{place}</p>
                 <p className="font-display text-2xl md:text-4xl leading-none" style={{ textWrap: "nowrap" }}>{km}</p>
               </div>
             ))}
