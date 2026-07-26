@@ -12,7 +12,7 @@ export default function MapConsent({ copy }: { copy: SiteCopy["location"] }) {
 
   if (accepted) {
     return (
-      <div className="relative aspect-[16/9] w-full overflow-hidden bg-[var(--stone-deep)]">
+      <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl md:rounded-[28px] bg-[var(--stone-deep)] shadow-[0_30px_70px_-38px_rgb(36_48_31_/_0.5)]">
         <iframe
           title={copy.mapTitle}
           src={MAP_EMBED_URL}
@@ -28,7 +28,7 @@ export default function MapConsent({ copy }: { copy: SiteCopy["location"] }) {
   }
 
   return (
-    <div className="relative aspect-[16/9] w-full overflow-hidden bg-[var(--dark)] text-[var(--on-dark)]">
+    <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl md:rounded-[28px] bg-[var(--dark)] text-[var(--on-dark)]">
       <div className="absolute inset-0 flex flex-col items-center justify-center gap-5 px-6 text-center">
         <div>
           <p className="font-label text-[12px] mb-3">Via Amendola, 1 - Copertino (LE)</p>
@@ -40,7 +40,7 @@ export default function MapConsent({ copy }: { copy: SiteCopy["location"] }) {
           <button
             type="button"
             onClick={() => setAccepted(true)}
-            className="font-label text-xs bg-[var(--ink)] text-[var(--stone)] px-6 py-4 hover:opacity-85 transition-opacity"
+            className="font-label text-xs rounded-full bg-[var(--ink)] text-[var(--stone)] px-7 py-4 hover:opacity-85 transition-opacity"
           >
             {copy.loadMap}
           </button>

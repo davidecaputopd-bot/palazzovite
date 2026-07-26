@@ -32,7 +32,7 @@ export default function Location({ copy }: { copy: SiteCopy["location"] }) {
             ))}
           </div>
         </Reveal>
-        <Reveal delay={120} className="relative aspect-[4/5] w-full overflow-hidden bg-[var(--stone-deep)] md:mt-12">
+        <Reveal delay={120} className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl md:rounded-[28px] bg-[var(--stone-deep)] shadow-[0_30px_70px_-38px_rgb(36_48_31_/_0.5)] md:mt-12">
           <Image
             src={LOCATION_PHOTOS[3]}
             alt="Ingresso di Palazzo Vite nel centro storico di Copertino"

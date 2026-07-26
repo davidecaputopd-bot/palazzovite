@@ -34,7 +34,7 @@ export default function Story({ copy }: { copy: SiteCopy["story"] }) {
           </dl>
         </Reveal>
         <Reveal delay={90} className="relative min-h-[520px] md:min-h-[680px]">
-          <div className="absolute left-0 top-0 h-[74%] w-[82%] overflow-hidden bg-[var(--stone-deep)]">
+          <div className="absolute left-0 top-0 h-[74%] w-[82%] overflow-hidden rounded-2xl md:rounded-3xl bg-[var(--stone-deep)] shadow-[0_28px_60px_-32px_rgb(36_48_31_/_0.5)]">
             <Image
               src="/foto/spazi-01.jpg"
               alt={copy.imageAlt}
@@ -43,7 +43,7 @@ export default function Story({ copy }: { copy: SiteCopy["story"] }) {
               sizes="(max-width: 768px) 82vw, 42vw"
             />
           </div>
-          <div className="absolute bottom-0 right-0 h-[42%] w-[54%] overflow-hidden border-[10px] border-[var(--stone)] bg-[var(--stone-deep)]">
+          <div className="absolute bottom-0 right-0 h-[42%] w-[54%] overflow-hidden rounded-2xl md:rounded-3xl border-[6px] border-[var(--stone)] bg-[var(--stone-deep)] shadow-[0_24px_50px_-28px_rgb(36_48_31_/_0.55)]">
             <Image
               src="/foto/spazi-02.jpg"
               alt={copy.detailImageAlt}

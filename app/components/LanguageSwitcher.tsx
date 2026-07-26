@@ -28,7 +28,7 @@ export default function LanguageSwitcher({
         <span>{locale}</span>
       </button>
       {open && (
-        <div className="absolute right-0 top-full mt-2 min-w-32 overflow-hidden rounded-2xl bg-[var(--stone)] py-1 text-[var(--ink)] shadow-[0_14px_34px_color-mix(in_srgb,var(--hero-shade)_16%,transparent)]">
+        <div className="absolute right-0 top-full mt-2 min-w-32 overflow-hidden rounded-2xl bg-[var(--stone)] py-1 text-[var(--ink)] shadow-[0_14px_34px_rgb(36_48_31_/_0.16)]">
           {locales.map((item) => (
             <a
               key={item}

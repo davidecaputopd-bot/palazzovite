@@ -23,7 +23,7 @@ export default function EditorialPause({
         <div className={`grid grid-cols-1 lg:grid-cols-12 gap-7 md:gap-10 items-end`}>
           <Reveal
             variant="fade"
-            className={`relative min-h-[430px] md:min-h-[660px] overflow-hidden bg-[var(--stone-deep)] lg:col-span-7 ${
+            className={`relative min-h-[430px] md:min-h-[660px] overflow-hidden rounded-2xl md:rounded-[28px] bg-[var(--stone-deep)] shadow-[0_30px_70px_-38px_rgb(36_48_31_/_0.5)] lg:col-span-7 ${
               reverse ? "lg:col-start-6 lg:order-2" : "lg:col-start-1"
             }`}
           >
