@@ -18,7 +18,7 @@ export default function Book({ copy, formCopy }: { copy: SiteCopy["book"]; formC
 
           <ul className="mt-8 grid gap-2.5 max-w-md">
             {copy.reassurance.map((item) => (
-              <li key={item} className="flex items-start gap-3 rounded-xl bg-[color-mix(in_srgb,var(--stone-deep)_60%,var(--stone))] px-4 py-3 font-label text-[11px] leading-relaxed text-[var(--ink-soft)]">
+              <li key={item} className="flex items-start gap-3 rounded-xl bg-[var(--stone)] px-4 py-3 font-label text-[11px] leading-relaxed text-[var(--ink-soft)]">
                 <span className="mt-[0.35rem] h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--accent-deep)]" />
                 <span>{item}</span>
               </li>

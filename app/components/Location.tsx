@@ -24,7 +24,7 @@ export default function Location({ copy }: { copy: SiteCopy["location"] }) {
             ].map(({ place, km }) => (
               <div
                 key={place}
-                className="rounded-2xl bg-[color-mix(in_srgb,var(--stone-deep)_72%,var(--stone))] p-5 md:p-6"
+                className="rounded-2xl bg-[var(--stone-deep)] p-5 md:p-6"
               >
                 <p className="font-label text-[11px] tracking-[0.14em] uppercase text-[var(--accent-deep)] mb-2.5">{place}</p>
                 <p className="font-display text-2xl md:text-4xl leading-none" style={{ textWrap: "nowrap" }}>{km}</p>
@@ -32,7 +32,7 @@ export default function Location({ copy }: { copy: SiteCopy["location"] }) {
             ))}
           </div>
         </Reveal>
-        <Reveal delay={120} className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl md:rounded-[28px] bg-[var(--stone-deep)] shadow-[0_30px_70px_-38px_rgb(36_48_31_/_0.5)] md:mt-12">
+        <Reveal delay={120} className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl md:rounded-3xl bg-[var(--stone-deep)] shadow-[0_30px_70px_-38px_rgb(36_48_31_/_0.5)] md:mt-12">
           <Image
             src={LOCATION_PHOTOS[3]}
             alt="Ingresso di Palazzo Vite nel centro storico di Copertino"

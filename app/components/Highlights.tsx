@@ -20,7 +20,7 @@ export default function Highlights({ items }: { items: SiteCopy["highlights"] })
             {items.map((item) => (
               <div
                 key={item.label}
-                className="rounded-2xl bg-[color-mix(in_srgb,var(--stone-deep)_72%,var(--stone))] p-5 md:p-6 transition-colors duration-300 hover:bg-[var(--stone-deep)]"
+                className="rounded-2xl bg-[var(--stone-deep)] p-5 md:p-6 transition-colors duration-300 hover:bg-[var(--stone-deep)]"
               >
                 <dt className="font-label text-[10px] tracking-[0.16em] uppercase text-[var(--accent-deep)] mb-2.5">
                   {item.label}

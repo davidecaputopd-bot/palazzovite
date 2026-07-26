@@ -20,7 +20,7 @@ export default function PracticalInfo({ copy }: { copy: SiteCopy["practical"] })
             {copy.items.map(([label, value], index) => (
               <div
                 key={label}
-                className="grid grid-cols-[2.5rem_1fr] sm:grid-cols-[3.25rem_0.9fr_1.1fr] gap-x-4 md:gap-x-8 rounded-2xl bg-[color-mix(in_srgb,var(--stone-deep)_72%,var(--stone))] px-5 md:px-7 py-5 md:py-6"
+                className="grid grid-cols-[2.5rem_1fr] sm:grid-cols-[3.25rem_0.9fr_1.1fr] gap-x-4 md:gap-x-8 rounded-2xl bg-[var(--stone-deep)] px-5 md:px-7 py-5 md:py-6"
               >
                 <span className="font-label text-[10px] text-[var(--accent-deep)] pt-1">
                   {String(index + 1).padStart(2, "0")}

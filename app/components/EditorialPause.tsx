@@ -23,7 +23,7 @@ export default function EditorialPause({
         <div className={`grid grid-cols-1 lg:grid-cols-12 gap-7 md:gap-10 items-end`}>
           <Reveal
             variant="fade"
-            className={`relative min-h-[430px] md:min-h-[660px] overflow-hidden rounded-2xl md:rounded-[28px] bg-[var(--stone-deep)] shadow-[0_30px_70px_-38px_rgb(36_48_31_/_0.5)] lg:col-span-7 ${
+            className={`relative min-h-[430px] md:min-h-[660px] overflow-hidden rounded-2xl md:rounded-3xl bg-[var(--stone-deep)] shadow-[0_30px_70px_-38px_rgb(36_48_31_/_0.5)] lg:col-span-7 ${
               reverse ? "lg:col-start-6 lg:order-2" : "lg:col-start-1"
             }`}
           >
@@ -41,7 +41,7 @@ export default function EditorialPause({
             className={`lg:col-span-5 ${reverse ? "lg:col-start-1 lg:row-start-1" : "lg:col-start-8"}`}
           >
             <div className="pt-2 md:pt-3">
-              <h2 className="font-display text-[clamp(2.35rem,4.7vw,4.5rem)] leading-[0.92] max-w-xl">
+              <h2 className="font-subheading text-[clamp(2.4rem,4.8vw,4.5rem)] leading-[1.02] max-w-xl">
                 {copy.title}
               </h2>
 
