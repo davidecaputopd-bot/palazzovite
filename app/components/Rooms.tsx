@@ -7,6 +7,7 @@ import type { SiteCopy } from "@/app/data/i18n";
 export default function Rooms({ copy }: { copy: SiteCopy["rooms"] }) {
   return (
     <section id="stanze" className="px-6 md:px-10 py-20 md:py-36">
+      <div className="max-w-6xl mx-auto">
       <Reveal className="max-w-4xl mb-12 md:mb-20">
         <p className="font-label text-xs text-[var(--ink-soft)] mb-6">{copy.eyebrow}</p>
         <h2 className="font-display text-[clamp(3rem,8vw,6rem)] leading-[0.94]">
@@ -77,6 +78,7 @@ export default function Rooms({ copy }: { copy: SiteCopy["rooms"] }) {
             </Reveal>
           );
         })}
+      </div>
       </div>
     </section>
   );

@@ -41,10 +41,6 @@ export default function EditorialPause({
             className={`lg:col-span-5 ${reverse ? "lg:col-start-1 lg:row-start-1" : "lg:col-start-8"}`}
           >
             <div className="border-t border-[var(--ink)]/18 pt-7 md:pt-9">
-              <p className="font-label text-[10px] text-[var(--ink-soft)] mb-6">
-                {copy.eyebrow}
-              </p>
-
               <h2 className="font-display text-[clamp(2.35rem,4.7vw,4.5rem)] leading-[0.92] max-w-xl">
                 {copy.title}
               </h2>

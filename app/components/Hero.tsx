@@ -12,7 +12,7 @@ export default function Hero({ copy, availability }: { copy: SiteCopy["hero"]; a
     return () => cancelAnimationFrame(frame);
   }, []);
 
-  const base = "transition-all duration-1000 ease-out";
+  const base = "transition-all duration-700 ease-out";
 
   return (
     <section className="relative min-h-[100dvh] w-full overflow-hidden bg-[var(--hero-shade)]">
@@ -25,7 +25,7 @@ export default function Hero({ copy, availability }: { copy: SiteCopy["hero"]; a
         sizes="100vw"
         style={{
           transform: mounted ? "scale(1)" : "scale(1.08)",
-          transition: "transform 1.8s cubic-bezier(0.16, 1, 0.3, 1)",
+          transition: "transform 1.45s cubic-bezier(0.16, 1, 0.3, 1)",
         }}
       />
       <div
@@ -36,16 +36,6 @@ export default function Hero({ copy, availability }: { copy: SiteCopy["hero"]; a
         }}
       />
       <div className="relative z-10 min-h-[100dvh] flex flex-col justify-end px-6 md:px-10 pb-16 md:pb-24">
-        <p
-          className={`${base} font-label text-[11px] md:text-xs text-[var(--accent)] mb-4`}
-          style={{
-            opacity: mounted ? 1 : 0,
-            transform: mounted ? "translateY(0)" : "translateY(16px)",
-            transitionDelay: "200ms",
-          }}
-        >
-          {copy.eyebrow}
-        </p>
         <h1
           className={`${base} font-display text-[var(--blush)] leading-[0.92] text-[clamp(2.4rem,8.5vw,5.75rem)]`}
           style={{
@@ -62,7 +52,7 @@ export default function Hero({ copy, availability }: { copy: SiteCopy["hero"]; a
           style={{
             opacity: mounted ? 1 : 0,
             transform: mounted ? "translateY(0)" : "translateY(16px)",
-            transitionDelay: "550ms",
+            transitionDelay: "480ms",
           }}
         >
           {copy.description}
@@ -72,12 +62,12 @@ export default function Hero({ copy, availability }: { copy: SiteCopy["hero"]; a
           style={{
             opacity: mounted ? 1 : 0,
             transform: mounted ? "translateY(0)" : "translateY(12px)",
-            transitionDelay: "750ms",
+            transitionDelay: "620ms",
           }}
         >
           <a
             href="#prenota"
-            className="font-label text-[11px] bg-[var(--blush)] text-[var(--ink)] px-7 py-4 hover:bg-[var(--accent)] active:scale-95 transition-[background-color,transform] duration-200 ease-out"
+            className="font-label text-[11px] bg-[var(--blush)] text-[var(--ink)] px-7 py-4 hover:bg-[var(--accent)] active:scale-[0.98] transition-[background-color,transform] duration-200 ease-out"
           >
             {availability}
           </a>

@@ -30,7 +30,7 @@ export default function Story({ copy }: { copy: SiteCopy["story"] }) {
             ))}
           </dl>
         </Reveal>
-        <Reveal delay={150} className="relative min-h-[520px] md:min-h-[680px]">
+        <Reveal delay={90} className="relative min-h-[520px] md:min-h-[680px]">
           <div className="absolute left-0 top-0 h-[74%] w-[82%] overflow-hidden bg-[var(--stone-deep)]">
             <Image
               src="/foto/spazi-01.jpg"

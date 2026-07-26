@@ -7,7 +7,6 @@ export default function PracticalInfo({ copy }: { copy: SiteCopy["practical"] })
     <section id="informazioni" className="px-6 md:px-10 py-20 md:py-36">
       <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[0.92fr_1.08fr] gap-14 md:gap-20 items-start">
         <Reveal className="lg:sticky lg:top-28">
-          <p className="font-label text-xs text-[var(--ink-soft)] mb-6">{copy.eyebrow}</p>
           <h2 className="font-display text-[clamp(2.7rem,6vw,4.8rem)] leading-[0.94] mb-7 max-w-lg">
             {copy.title}
           </h2>

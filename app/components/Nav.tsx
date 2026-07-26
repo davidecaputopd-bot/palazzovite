@@ -95,7 +95,7 @@ export default function Nav({ copy, locale }: { copy: SiteCopy["nav"]; locale: L
           })}
           <a
             href="#prenota"
-            className="border px-4 py-2 hover:bg-[var(--accent-deep)] hover:text-[var(--blush)] hover:border-[var(--accent-deep)] active:scale-95 transition-[background-color,color,border-color,transform] duration-200 ease-out"
+            className="border px-4 py-2 hover:bg-[var(--accent-deep)] hover:text-[var(--blush)] hover:border-[var(--accent-deep)] active:scale-[0.98] transition-[background-color,color,border-color,transform] duration-200 ease-out"
             style={{ borderColor }}
           >
             {copy.availability}
@@ -110,7 +110,7 @@ export default function Nav({ copy, locale }: { copy: SiteCopy["nav"]; locale: L
             aria-label={open ? copy.closeMenu : copy.openMenu}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="font-label text-[11px] border px-3 py-2"
+            className="font-label text-[11px] border px-3 py-2 active:scale-[0.98] transition-transform"
             style={{ borderColor }}
           >
             {open ? copy.close : copy.menu}
@@ -119,10 +119,11 @@ export default function Nav({ copy, locale }: { copy: SiteCopy["nav"]; locale: L
       </div>
 
       <nav
-        className="lg:hidden flex flex-col font-label text-sm px-6 pb-6 gap-1 overflow-hidden transition-[max-height,opacity] ease-out text-[var(--ink)]"
+        className="lg:hidden flex flex-col font-label text-sm px-6 pb-6 gap-1 overflow-hidden transition-[max-height,opacity,transform] ease-out text-[var(--ink)]"
         style={{
           maxHeight: open ? "400px" : "0px",
           opacity: open ? 1 : 0,
+          transform: open ? "translateY(0)" : "translateY(-6px)",
           transitionDuration: open ? "240ms" : "160ms",
           pointerEvents: open ? "auto" : "none",
         }}
@@ -148,7 +149,7 @@ export default function Nav({ copy, locale }: { copy: SiteCopy["nav"]; locale: L
         <a
           href="#prenota"
           onClick={() => setOpen(false)}
-          className="mt-4 text-center bg-[var(--ink)] text-[var(--blush)] py-3 active:opacity-70 transition-opacity duration-150"
+          className="mt-4 text-center bg-[var(--ink)] text-[var(--blush)] py-3 active:scale-[0.98] active:opacity-80 transition-[transform,opacity] duration-150"
         >
           {copy.availability}
         </a>

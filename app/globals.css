@@ -149,4 +149,19 @@ section {
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
+}\n\n
+.form-success {
+  animation: fadeIn 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

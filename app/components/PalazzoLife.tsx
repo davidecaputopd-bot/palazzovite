@@ -26,7 +26,7 @@ export default function PalazzoLife({ copy }: { copy: SiteCopy["spaces"] }) {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-14">
         {spaces.map((s, i) => (
-          <Reveal key={s.name} delay={(i % 2) * 120} className={i % 2 ? "md:mt-20" : ""}>
+          <Reveal key={s.name} delay={(i % 2) * 80} className={i % 2 ? "md:mt-20" : ""}>
             <article className="group">
               <Gallery images={s.photos} alt={s.name} openLabel={copy.galleryLabel} mobilePreviewCount={4} />
               <div className="pt-6 md:pt-7">

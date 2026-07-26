@@ -50,13 +50,13 @@ export default function StickyBookBar({
 
   return (
     <div
-      className={`lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-[color-mix(in_srgb,var(--dark)_94%,transparent)] text-[var(--ink)] border-t border-[var(--ink)]/12 backdrop-blur-md transition-[transform,opacity] duration-300 ease-out ${
+      className={`lg:hidden fixed bottom-0 left-0 right-0 z-40 bg-[color-mix(in_srgb,var(--dark)_94%,transparent)] text-[var(--ink)] border-t border-[var(--ink)]/12 backdrop-blur-md shadow-[0_-10px_30px_color-mix(in_srgb,var(--hero-shade)_10%,transparent)] transition-[transform,opacity] duration-[360ms] ease-[cubic-bezier(0.16,1,0.3,1)] ${
         visible ? "translate-y-0 opacity-100" : "translate-y-full opacity-0 pointer-events-none"
       }`}
     >
       <a
         href="#prenota"
-        className="flex min-h-[48px] items-center justify-center px-5 py-3 font-label text-[11px] tracking-[0.16em] active:opacity-80 transition-opacity"
+        className="flex min-h-[48px] items-center justify-center px-5 py-3 font-label text-[11px] tracking-[0.16em] active:scale-[0.99] active:opacity-80 transition-[transform,opacity]"
         style={{ paddingBottom: "max(0.75rem, env(safe-area-inset-bottom))" }}
       >
         {availability}
