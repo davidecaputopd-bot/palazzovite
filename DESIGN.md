@@ -1,80 +1,99 @@
 ---
 name: Palazzo Vite
-description: Affittacamere storico a Copertino (LE), dal 1901 — sito vetrina editoriale, cinque stanze a tema elementale
+description: Dimora storica del 1908 a Copertino (Salento) — sito vetrina, cinque suite a tema elementale
 colors:
-  ink: "#2B2419"
-  ink-soft: "#4A4233"
   stone: "#F4EFE4"
   stone-deep: "#E8DFC9"
+  ink: "#2B2419"
+  ink-soft: "#4A4233"
+  verdino: "#B8C3B1"
+  hero-shade: "#24301F"
+  blush: "#F2E2DD"
+  accent: "#ACB6A8"
+  accent-soft: "#C1C8BE"
+  accent-deep: "#5E6B57"
   sage: "#8C9479"
   ochre: "#C99A3E"
   terracotta: "#B5703C"
   wood: "#5C4128"
   gold: "#B8964F"
   aria: "#D8D2BF"
-  aria-ink: "#8A8268"
+  aria-ink: "#756B4F"
   etere: "#B8964F"
   etere-ink: "#8A6B2E"
   fiamma: "#B5703C"
   fiamma-ink: "#8A4E26"
   terra: "#C99A3E"
-  terra-ink: "#8A6B22"
+  terra-ink: "#71591A"
   mare: "#8C9479"
   mare-ink: "#54593F"
 typography:
   display:
-    fontFamily: "Bebas Neue, sans-serif"
-    fontSize: "clamp(2.5rem, 9vw, 6rem)"
-    fontWeight: 400
-    lineHeight: 0.95
+    fontFamily: "Encode Sans Expanded, sans-serif"
+    fontSize: "clamp(2.7rem, 6vw, 6rem)"
+    fontWeight: 600
+    lineHeight: 0.92
     letterSpacing: "0.01em"
-  headline:
-    fontFamily: "Bebas Neue, sans-serif"
-    fontSize: "clamp(1.25rem, 3vw, 1.5rem)"
-    fontWeight: 400
-    lineHeight: 1.1
-    letterSpacing: "0.01em"
+  subheading:
+    fontFamily: "Playfair Display, Georgia, serif"
+    fontSize: "clamp(2.35rem, 4.7vw, 4.5rem)"
+    fontWeight: 500
+    lineHeight: 1.02
+    letterSpacing: "normal"
   body:
-    fontFamily: "DM Sans, sans-serif"
+    fontFamily: "Spectral, Georgia, serif"
     fontSize: "1rem"
     fontWeight: 300
     lineHeight: 1.6
     letterSpacing: "normal"
   label:
-    fontFamily: "DM Mono, monospace"
+    fontFamily: "Encode Sans Expanded, sans-serif"
     fontSize: "0.6875rem"
-    fontWeight: 400
+    fontWeight: 600
     lineHeight: 1.4
-    letterSpacing: "0.16em"
+    letterSpacing: "0.14em"
 rounded:
-  none: "0px"
+  sm: "12px"
+  md: "16px"
+  lg: "24px"
+  pill: "9999px"
 spacing:
-  section-y-mobile: "6rem"
+  section-y-mobile: "5rem"
   section-y-desktop: "9rem"
   section-x: "1.5rem"
-  gap-hairline: "1px"
+  gap: "0.75rem"
 components:
   button-primary:
     backgroundColor: "{colors.ink}"
     textColor: "{colors.stone}"
     typography: "{typography.label}"
-    rounded: "{rounded.none}"
+    rounded: "{rounded.pill}"
     padding: "16px 32px"
   button-primary-hover:
-    backgroundColor: "{colors.ink}"
+    backgroundColor: "{colors.hero-shade}"
     textColor: "{colors.stone}"
   button-ghost:
     backgroundColor: "transparent"
-    textColor: "{colors.stone}"
+    textColor: "{colors.ink}"
     typography: "{typography.label}"
-    rounded: "{rounded.none}"
-    padding: "8px 16px"
+    rounded: "{rounded.pill}"
+    padding: "10px 20px"
   input-field:
-    backgroundColor: "transparent"
+    backgroundColor: "{colors.stone-deep}"
     textColor: "{colors.ink}"
     typography: "{typography.body}"
-    rounded: "{rounded.none}"
-    padding: "12px 0"
+    rounded: "{rounded.sm}"
+    padding: "12px 16px"
+  panel:
+    backgroundColor: "{colors.stone-deep}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.md}"
+    padding: "20px 24px"
+  room-card:
+    backgroundColor: "{colors.verdino}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.lg}"
+    padding: "16px 20px"
 ---
 
 # Design System: Palazzo Vite
@@ -83,121 +102,135 @@ components:
 
 **Creative North Star: "La Casa Riaperta"**
 
-Palazzo Vite non si presenta come un boutique hotel: si presenta come una casa del 1901 che ha appena ripreso a vivere. Il sistema visivo deve sembrare costruito attorno a fotografie e materiali reali — pietra leccese, cementine, legno laccato, ferro battuto — non attorno a una palette astratta scelta per "sembrare elegante". Tipografia da insegna d'epoca (Bebas Neue) per i titoli, etichette da archivio in monospaziato maiuscolo per i metadati, corpo del testo leggero e leggibile per il racconto. Tutto è flat: nessuna ombra, nessun angolo arrotondato, nessuna texture decorativa che non derivi da una foto vera. La separazione tra sezioni e tra stanze è un filo sottile (1px), come la linea di una pagina scritta a mano, non un bordo da componente UI.
+Palazzo Vite non si presenta come un boutique hotel: si presenta come una dimora del 1908 che ha appena ripreso a respirare. Il sistema visivo è costruito attorno a fotografie e materiali reali — pietra leccese, cementine, ferro battuto, agrumi, le pareti verde-salvia delle stanze — e da lì estrae ogni colore. È caldo e morbido, non patinato: superfici a tinta piena con angoli gentilmente arrotondati, ombre calde appena percettibili, una pellicola di grana sopra tutta la pagina. La voce tipografica alterna un display geometrico largo (Encode Sans Expanded, sempre maiuscolo) a un corpo letterario serif (Spectral), con Playfair riservato ai momenti editoriali.
 
-Il sistema rifiuta esplicitamente l'estetica da catalogo patinato di un boutique hotel di catena, l'oro ostentato del lusso da cartolina, e ogni traccia di "AI slop" da landing page SaaS — eyebrow uppercase ripetute meccanicamente su ogni sezione, card grid identiche, gradient text, hero-metric template. Dove un dato reale manca (foto della stanza Fiamma, link booking), il sito lo dice con garbo invece di improvvisare un placeholder ingannevole.
+Il sistema rifiuta esplicitamente l'estetica da catalogo patinato di un boutique hotel di catena, l'oro ostentato del lusso da cartolina, e ogni traccia di "AI slop" da landing page SaaS — eyebrow uppercase su ogni sezione, card grid identiche, gradient text, hero-metric template, ombre nette e lucide. La patina e l'imperfezione sono pregi da mostrare, non difetti da nascondere.
+
+Il colore firma è il **verdino** (#B8C3B1), campionato dalle pareti reali: è il fondo delle cinque schede-suite e lega tutto il sito all'edificio vero. I cinque colori-elemento (Aria, Etere, Fiamma, Terra, Mare) restano in riserva, usati per il testo e i badge di ogni stanza, mai come decorazione arbitraria.
 
 **Key Characteristics:**
-- Palette ancorata a materiali reali del palazzo, non a una teoria del colore generica
-- Tipografia a tre registri netti: display da insegna, label da archivio, corpo leggero
-- Superfici completamente flat: zero ombre, zero radius, separazione via filo da 1px
-- Ogni stanza (Aria, Etere, Fiamma, Terra, Mare) ha un colore-elemento e un'icona lineare propria
-- Movimento discreto e coerente: reveal-on-scroll uniforme, mai coreografia vistosa
+- Palette ancorata a materiali reali del palazzo, non a una teoria del colore
+- Superfici morbide: pannelli a tinta con raggio 12–24px, ombre calde diffuse
+- Tipografia a tre registri: display geometrico maiuscolo, corpo serif letterario, occhielli editoriali Playfair
+- Verdino come superficie-firma delle suite; colori-elemento in riserva per stanza
+- Movimento discreto: un solo fade-up all'ingresso, solo per il contenuto sotto la piega
 
 ## 2. Colors
 
-Palette pietra/terra, calda ma mai dolciastra: ogni colore corrisponde a un materiale reale visto nelle foto del palazzo (intonaco, terracotta, legno, ferro), non a una scelta "da brand".
+Palette pietra/terra calda, mai dolciastra: ogni colore corrisponde a un materiale visto nelle foto del palazzo.
 
 ### Primary
-- **Inchiostro di Noce** (#2B2419): testo principale, sfondi pieni (nav scrolled, footer scuro della sezione "Il Palazzo", bottone primario). Fa da ancora scura su quasi ogni superficie chiara.
+- **Verdino delle Pareti** (#B8C3B1): il colore-firma, campionato dalle pareti verde-salvia. Fondo delle schede-suite e delle superfici che devono "appartenere" all'edificio. Mai usato come colore di testo su fondo chiaro (contrasto insufficiente).
 
 ### Secondary
-- **Pietra Leccese** (#F4EFE4): sfondo base del sito, il "foglio" su cui tutto il resto si appoggia. Mai bianco puro: ha la temperatura calda della pietra leccese reale.
-- **Pietra Leccese Profonda** (#E8DFC9): variante più satura di Stone, usata per separare sezioni alternate (es. la sezione "Prenota") senza introdurre un nuovo colore.
+- **Salvia Profonda** (#5E6B57, `accent-deep`): unico accento tipografico. Etichette (label) e occhielli su fondo chiaro. Verde scurito per garantire contrasto AA.
 
-### Tertiary — Materiali
-- **Salvia** (#8C9479): verde spento, dalle pareti della stanza Mare.
-- **Ocra** (#C99A3E): giallo-terra, dal pavimento in cementine della stanza Terra.
-- **Terracotta** (#B5703C): rosso-mattone, dal comodino laccato della stanza Fiamma.
-- **Legno** (#5C4128): bruno scuro, sfondo placeholder dietro la foto hero prima del caricamento.
-- **Oro Vecchio** (#B8964F): ottone smorzato, dalla cassettiera con specchio della stanza Etere.
+### Tertiary — Materiali (riserva)
+- **Ocra** (#C99A3E), **Terracotta** (#B5703C), **Oro Vecchio** (#B8964F), **Legno** (#5C4128), **Salvia** (#8C9479): colori dei materiali reali, usati come colore-elemento delle stanze (Terra, Fiamma, Etere, Mare), mai come decorazione generica.
 
-### Neutral — Stanze (colore + variante testo)
-- **Aria** (#D8D2BF, ink #8A8268): pareti chiare, ritratti dipinti.
-- **Etere** (#B8964F, ink #8A6B2E): grigio-azzurro venato d'oro vecchio, balcone sulla bouganville.
-- **Fiamma** (#B5703C, ink #8A4E26): cementine originali, comodino ocra.
-- **Terra** (#C99A3E, ink #8A6B22): cementine verdi e marroni, soffitto verde scuro.
-- **Mare** (#8C9479, ink #54593F): pareti verde salvia, camino in legno scuro.
+### Neutral
+- **Pietra Leccese** (#F4EFE4, `stone`): sfondo base, il "foglio" caldo su cui tutto si appoggia. Mai bianco puro.
+- **Pietra Profonda** (#E8DFC9, `stone-deep`): fill dei pannelli-dati e dei campi form; stacca dal fondo senza introdurre un nuovo colore.
+- **Inchiostro di Noce** (#2B2419, `ink`): testo principale, bottone primario, badge. Ancora scura ovunque.
+- **Inchiostro Morbido** (#4A4233, `ink-soft`): testo secondario e descrizioni.
+- **Crema** (#F2E2DD, `blush`): superfici chiare sopra la hero.
+- **Velatura Hero** (#24301F, `hero-shade`): solo come velatura fotografica sotto la hero e sorgente delle ombre calde.
 
-Ogni colore-elemento ha una variante `-ink` più scura, usata **solo** per testo e icone sopra lo sfondo chiaro dello stesso elemento, per garantire contrasto leggibile (mai il colore decorativo puro come colore di testo).
+### Colori-Elemento (testo)
+- **aria-ink** (#756B4F) · **etere-ink** (#8A6B2E) · **fiamma-ink** (#8A4E26) · **terra-ink** (#71591A) · **mare-ink** (#54593F): variante scura di ogni elemento, usata **solo** per testo/badge della stanza corrispondente, per contrasto leggibile.
 
 ### Named Rules
-**La Regola del Materiale Vero.** Ogni colore deve poter essere indicato a dito in una foto del palazzo. Se un colore non corrisponde a un materiale, una parete o un arredo reale, non entra in palette.
+**La Regola del Materiale Vero.** Ogni colore deve poter essere indicato a dito in una foto del palazzo. Se non corrisponde a una parete, un pavimento o un arredo reale, non entra in palette.
 
-**La Regola del Contrasto Stanza.** Il colore decorativo di una stanza (`--aria`, `--etere`, ecc.) non è mai usato come colore di testo: solo come sfondo a bassa opacità (18–22%) dietro le icone. Il testo usa sempre la variante `-ink` corrispondente.
+**La Regola del Verdino-Non-Testo.** Il verdino (#B8C3B1) è una superficie, mai un colore di testo su fondo chiaro: il contrasto crolla a ~1.6:1. Per il testo si usa `ink` o `accent-deep`.
+
+**La Regola dell'Elemento in Riserva.** I colori-elemento (aria/etere/fiamma/terra/mare) appartengono alla loro stanza. Non sono decorazione: fuori dalla scheda-suite non compaiono.
 
 ## 3. Typography
 
-**Display Font:** Bebas Neue (con fallback sans-serif di sistema)
-**Body Font:** DM Sans, peso 300 (con fallback sans-serif di sistema)
-**Label/Mono Font:** DM Mono, pesi 300–500
+**Display Font:** Encode Sans Expanded (fallback sans-serif di sistema)
+**Body Font:** Spectral, peso 300 (fallback Georgia, serif)
+**Subheading Font:** Playfair Display (fallback Georgia, serif)
+**Label Font:** Encode Sans Expanded, maiuscolo con tracking ampio
 
-**Character:** Bebas Neue è la voce dell'insegna — condensata, maiuscola, da edificio storico ripristinato. DM Sans Light è la voce del racconto — leggera, quasi sussurrata, mai gridata. DM Mono uppercase con tracking ampio è la voce dell'archivio — etichette, metadati, didascalie, come timbri su un documento.
+**Character:** Il display geometrico largo è la voce dell'insegna — condensa, sicura, sempre maiuscola. Spectral è la voce del racconto — serif letterario, leggero, mai gridato. Playfair è la voce editoriale — comparso solo dove serve rompere i maiuscoli (pause editoriali). L'accoppiata regge su un asse di contrasto vero (geometrico vs letterario), non su due sans simili.
 
 ### Hierarchy
-- **Display** (400, `clamp(2.5rem, 9vw, 6rem)`, line-height 0.95, uppercase): titoli di sezione e hero. Il nome "Palazzo Vite" nell'hero usa una scala ancora più estrema (`18vw` mobile / `9vw` desktop) riservata esclusivamente all'hero.
-- **Headline** (400, `~1.25–1.5rem`, uppercase): nomi delle stanze, titoli di sotto-sezione (es. "Il Giardino", "La Scala").
-- **Body** (300, `1rem–1.125rem`, line-height 1.6): paragrafi narrativi (storia, descrizioni stanze). Max-width contenuta (`max-w-md`/`max-w-xl`) per restare entro 65–75ch.
-- **Label** (400–500, `0.6875rem–0.75rem`, tracking 0.16em, uppercase): eyebrow di sezione, metadati form, link di navigazione, bottoni, didascalie ("Foto in arrivo").
+- **Display** (600, `clamp(2.7rem, 6vw, 6rem)`, line-height 0.9–0.94, uppercase): titoli di hero e sezione.
+- **Subheading** (500, `clamp(2.35rem, 4.7vw, 4.5rem)`, line-height 1.02, Playfair, title case): titoli delle pause editoriali.
+- **Body** (300, `1rem–1.25rem`, line-height 1.6, Spectral): paragrafi narrativi. Max-width contenuta (65–75ch).
+- **Label** (600, `0.625rem–0.6875rem` — tier 10/11px, tracking 0.14em, uppercase): occhielli, metadati, link nav, bottoni, chip.
 
 ### Named Rules
-**La Regola dell'Insegna.** Bebas Neue compare solo in maiuscolo e solo per titoli — mai per corpo di testo, mai in minuscolo. È una voce, non un default.
+**La Regola dell'Insegna.** Encode Sans Expanded compare solo in maiuscolo e solo per titoli — mai per corpo di testo.
 
-**La Regola dell'Archivio.** Il monospaziato (label) è sempre uppercase con tracking ampio (0.16em): è il registro dei metadati, mai del racconto.
+**La Regola dell'Occhiello Raro.** L'eyebrow (label maiuscola sopra il titolo) vive su 2 sezioni-àncora (Storia, Suite), non su ogni sezione. Un occhiello ovunque è AI-grammar.
 
 ## 4. Elevation
 
-Il sistema è completamente flat: nessuna `box-shadow`, nessun `border-radius` in tutto il sito. La profondità non viene da elevazione UI ma da tre soli mezzi: contrasto tonale tra sezioni (stone → stone-deep → ink), fotografia a piena ampiezza, e una linea sottile da 1px (`gap-px` su sfondo `ink/10%`) che separa stanze e blocchi affiancati — l'equivalente visivo di un margine scritto a penna, non di un bordo da componente.
+Il sistema NON è più piatto: usa **profondità morbida**. La depth viene da tre mezzi combinati: (1) layering tonale tra superfici (stone → stone-deep → verdino → ink), (2) angoli arrotondati che sollevano otticamente pannelli e foto, (3) ombre calde, ampie e a bassa opacità sotto le foto-protagoniste e i popover. Nessuna ombra netta, scura o lucida: quella è l'estetica boutique-patinato che il brand rifiuta.
+
+### Shadow Vocabulary
+- **Ombra-Foto** (`box-shadow: 0 28px 60px -32px color-mix(in srgb, #24301F 50%, transparent)`): sollevamento caldo sotto le foto-protagoniste (Storia, editoriale, Posizione, mappa).
+- **Ombra-Popover** (`box-shadow: 0 14px 34px rgb(36 48 31 / 0.16)`): sotto il dropdown lingua e superfici fluttuanti.
 
 ### Named Rules
-**La Regola del Foglio Piatto.** Nessuna superficie si solleva mai dal piano. Se serve separare due elementi, si usa una linea di 1px o un cambio di tono di sfondo, mai un'ombra.
+**La Regola dell'Ombra Calda.** Ogni ombra è tinta di `hero-shade` (#24301F), mai nero puro, sempre a bassa opacità e blur ampio con spread negativo. Se sembra un'app del 2014, il nero è troppo scuro e il blur troppo stretto.
 
 ## 5. Components
 
 ### Buttons
-- **Shape:** angoli vivi, nessun radius (0px) — coerente con la Regola del Foglio Piatto.
-- **Primary:** sfondo Inchiostro di Noce (#2B2419), testo Pietra Leccese (#F4EFE4), padding 16px/32px, tipografia Label (uppercase, tracking 0.16em). Usato per "Invia richiesta" e la CTA mobile fissa.
-- **Hover/Focus:** opacità ridotta all'85% al hover (`transition-opacity`), nessun cambio di colore o ombra.
-- **Ghost (nav):** trasparente con bordo 1px del colore del testo corrente (bianco su hero, ink su scrolled) — usato per "Verifica disponibilità" in nav.
+- **Shape:** pillola (`rounded-full`), coerente col linguaggio morbido.
+- **Primary:** fondo Inchiostro (#2B2419), testo Pietra (#F4EFE4), padding 16px/32px, tipografia Label maiuscola. Hover → `hero-shade`. Usato per "Invia richiesta", CTA hero, "Richiedi per questa suite".
+- **Ghost:** trasparente con bordo 1px del colore del testo corrente (blush su hero, ink su scrolled), pillola. Usato per la CTA in nav e il selettore lingua.
+
+### Chips
+- **Style:** pillola a tinta `stone-deep`, testo ink; sulle schede-suite assumono il colore-elemento della stanza (`color-mix(elemento, stone)`, testo `elemento-ink`).
+- **State:** informativi, non interattivi (dotazioni stanza: letto, bagno, Wi-Fi).
+
+### Cards / Containers (Pannelli)
+- **Corner Style:** raggio md (16px, `rounded-2xl`); container grandi lg (24px).
+- **Background:** `stone-deep` pieno su fondo `stone`; nelle sezioni a fondo scuro, il pannello si schiarisce (`stone`).
+- **Shadow Strategy:** nessuna ombra sui pannelli-dati; l'ombra è riservata alle foto (vedi Elevation).
+- **Border:** nessuno. La separazione è tonale, mai un filo da 1px.
+- **Internal Padding:** 20–24px.
+- **Gerarchia:** non tutto è un pannello pieno. I dati-stat (Highlights, Posizione) sono pannelli; i meta secondari (dettagli Storia) restano aperti (solo tono e spazio).
 
 ### Inputs / Fields
-- **Style:** nessun bordo perimetrale, solo `border-bottom` 1px (ink al 30% di opacità) su sfondo trasparente. Il campo è "scritto sulla pagina", non "incassato in una scheda".
-- **Focus:** il bordo inferiore passa a ink pieno (100% opacità), nessun glow o ring.
-- **Error:** testo di errore in Label, colore `--fiamma` (terracotta), sotto al campo.
-- **Label:** sempre in font Label, uppercase, 11px, sopra il campo.
-
-### Cards / Containers — Schede Stanza
-- **Corner Style:** nessun radius.
-- **Background:** Pietra Leccese piena; il colore-elemento appare solo come sfondo a bassa opacità (18–22%) dietro l'icona quando manca la foto.
-- **Shadow Strategy:** nessuna — vedi Elevation.
-- **Border:** nessun bordo per scheda; la separazione tra schede è la linea di 1px nel grid `gap-px`.
-- **Internal Padding:** 24px mobile / 32px desktop.
+- **Style:** campo pieno morbido, fondo `stone-deep`, raggio sm (12px). Niente sottolineatura, niente bordo perimetrale.
+- **Focus:** il focus-ring globale (2px `ink`, offset 2px) — mai `outline:none`. Fondo che si scurisce leggermente.
+- **Error:** pannello morbido tinto `fiamma-ink` (nessun bordo), testo `fiamma-ink`.
 
 ### Navigation
-- **Style:** fissa in alto, trasparente con gradiente scuro leggero sopra l'hero, sfondo Pietra Leccese pieno dopo lo scroll. Tipografia Label uppercase per i link.
-- **Default/hover:** opacità 100% → 60% al hover, transizione semplice.
-- **Active:** nessuno stato attivo evidenziato (sito a singola pagina con anchor link).
-- **Mobile:** bottone "Menu"/"Chiudi" testuale (no hamburger icon), pannello a tendina con link impilati separati da linea 1px.
+- **Style:** fissa in alto, trasparente sull'hero, velatura `verdino` + blur dopo lo scroll. Link in Label maiuscola con underline animato sull'attivo (scroll-spy).
+- **Selettore lingua:** icona globo lineare in `currentColor` + sigla (IT/EN/FR/ES). Mai bandiere-emoji.
+- **Mobile:** bottone testuale "Menu"/"Chiudi" (no hamburger); barra fissa "Richiedi disponibilità" in basso (safe-area aware). Target touch ≥ 44px.
 
-### Reveal (componente firma)
-Ogni sezione del sito entra in scena con un fade-up uniforme via `IntersectionObserver`: opacità 0→1 e `translateY(28px)→0` su `cubic-bezier(0.16, 1, 0.3, 1)` di 0.9s, con `delay` scaglionato per elementi affiancati (es. le tre foto in "Il Palazzo", scaglionate di 120ms). È l'unica firma di movimento del sito: niente parallax, niente animazioni divergenti tra sezioni.
+### Scheda-Suite (componente firma)
+Ogni suite è una scheda su fondo `verdino`, raggio lg (24px), con badge romano (I–V) in `ink`, nome in `ink`, chip nel colore-elemento della stanza, e CTA a contrasto (pillola `ink` piena). È il momento in cui il verdino e i cinque elementi si incontrano.
+
+### Reveal (firma di movimento)
+Un unico fade-up (opacità 0→1, `translateY` clamp 12–18px, `cubic-bezier(0.16,1,0.3,1)`) applicato **solo al contenuto sotto la piega**: ciò che è già a schermo resta visibile, nessun gate. Rispetta sempre `prefers-reduced-motion`.
 
 ## 6. Do's and Don'ts
 
 ### Do:
 - **Do** ancorare ogni colore a un materiale reale fotografato nel palazzo (Regola del Materiale Vero).
-- **Do** usare la variante `-ink` di ogni colore-elemento per il testo, mai il colore decorativo puro.
-- **Do** mantenere il sito completamente flat: zero `box-shadow`, zero `border-radius`.
-- **Do** separare blocchi affiancati con una linea di 1px, non con un bordo o un'ombra.
-- **Do** usare il fade-up di `Reveal` come unica firma di movimento, con stagger solo dove elementi sono davvero affiancati nella stessa sezione.
-- **Do** dichiarare apertamente i contenuti mancanti ("Foto in arrivo") invece di nascondere il buco o inventare un placeholder generico.
-- **Do** rispettare sempre `prefers-reduced-motion`, dato il pubblico misto (anche ospiti meno avvezzi a interfacce animate).
+- **Do** usare il verdino come superficie-firma delle suite; per il testo usare `ink` o `accent-deep`.
+- **Do** dividere le informazioni con tono e spazio o pannelli morbidi, mai con filetti da 1px.
+- **Do** arrotondare pannelli e foto (raggio 12–24px) e usare ombre calde solo sulle foto-protagoniste.
+- **Do** tenere l'occhiello su 2 sezioni-àncora, non su tutte.
+- **Do** riservare i colori-elemento alla loro stanza.
+- **Do** rispettare `prefers-reduced-motion` e animare solo il contenuto sotto la piega.
+- **Do** dichiarare apertamente i contenuti mancanti invece di inventare placeholder ingannevoli.
 
 ### Don't:
-- **Don't** introdurre ombre, glassmorphism o angoli arrotondati: rompe la Regola del Foglio Piatto e introduce un linguaggio da prodotto SaaS estraneo a un palazzo del 1901.
-- **Don't** usare gradient text o testo con `background-clip: text` — vietato in ogni circostanza.
-- **Don't** trasformare le schede stanza in card con ombra/bordo arrotondato: restano fogli piatti separati da una linea.
-- **Don't** introdurre un'estetica da boutique hotel patinato (foto stock, oro ostentato, copy da marketing turistico generico) — è l'anti-riferimento esplicito del brand.
-- **Don't** moltiplicare l'eyebrow uppercase ("La Storia", "Le Stanze"...) come scaffolding automatico su ogni nuova sezione senza motivo: oggi è già presente su ogni sezione del sito ed è un pattern da AI-grammar da tenere sotto osservazione, non da estendere ulteriormente senza criterio.
-- **Don't** usare Bebas Neue in minuscolo o per corpo di testo: è riservato ai titoli, sempre maiuscolo.
-- **Don't** inventare dati reali mancanti (mq, piano, link booking) con segnaposto che sembrano dati veri.
+- **Don't** introdurre un'estetica da **boutique hotel patinato** (foto stock, oro ostentato, copy da marketing turistico generico) — anti-riferimento esplicito del brand.
+- **Don't** usare **ombre nette, scure o lucide** né glassmorphism decorativo: rompono la Regola dell'Ombra Calda.
+- **Don't** usare **gradient text** o `background-clip: text` — vietato in ogni circostanza.
+- **Don't** mettere l'**eyebrow uppercase su ogni sezione**, né **card grid identiche** ripetute, né **hero-metric template**: sono "AI slop" da landing page SaaS.
+- **Don't** usare il **verdino come colore di testo** su fondo chiaro (contrasto ~1.6:1).
+- **Don't** usare **bandiere-emoji** come icone (inietta hue incontrollati): icona lineare in `currentColor`.
+- **Don't** trasformare *ogni* gruppo di dati nello stesso pannello morbido: serve gerarchia tra contenitori.
+- **Don't** usare Encode Sans Expanded in minuscolo o per il corpo del testo.
+- **Don't** inventare dati reali mancanti (mq, piano, prezzi, recensioni) con segnaposto che sembrano veri.
