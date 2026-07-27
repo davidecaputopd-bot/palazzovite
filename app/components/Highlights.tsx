@@ -12,7 +12,7 @@ export default function Highlights({ items }: { items: SiteCopy["highlights"] })
               Dimora storica a Copertino
             </p>
             <h2 className="font-display text-[clamp(2.7rem,6vw,5.5rem)] leading-[0.9] max-w-4xl text-[var(--ink)]">
-              Una casa del 1908, aperta al tempo lento del Salento.
+              Una dimora del 1908, aperta al tempo lento del Salento.
             </h2>
           </div>
 

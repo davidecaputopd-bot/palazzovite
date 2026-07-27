@@ -23,25 +23,31 @@ export default function Reveal({
     const el = ref.current;
     if (!el) return;
 
+    let observer: IntersectionObserver | null = null;
+
+    // Solo il contenuto già sotto la piega viene animato all'ingresso.
+    // Ciò che è già a schermo resta visibile: nessun gate, nessun flash.
     const frame = requestAnimationFrame(() => {
+      const rect = el.getBoundingClientRect();
+      const belowFold = rect.top > window.innerHeight * 0.9;
+      if (!belowFold) return;
+
       setHidden(true);
+      observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setHidden(false);
+            observer?.disconnect();
+          }
+        },
+        { threshold: 0.1, rootMargin: "0px 0px -24px 0px" },
+      );
+      observer.observe(el);
     });
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setHidden(false);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.1, rootMargin: "0px 0px -24px 0px" },
-    );
-
-    observer.observe(el);
 
     return () => {
       cancelAnimationFrame(frame);
-      observer.disconnect();
+      observer?.disconnect();
     };
   }, [variant]);
 

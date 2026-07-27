@@ -1,7 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import { localeFlags, localeNames, localePath, locales, type Locale } from "@/app/data/i18n";
+import { localeNames, localePath, locales, type Locale } from "@/app/data/i18n";
+
+function GlobeIcon() {
+  return (
+    <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true" className="shrink-0">
+      <circle cx="12" cy="12" r="9" />
+      <path d="M3 12h18" />
+      <path d="M12 3c2.6 2.4 4 5.6 4 9s-1.4 6.6-4 9c-2.6-2.4-4-5.6-4-9s1.4-6.6 4-9Z" />
+    </svg>
+  );
+}
 
 export default function LanguageSwitcher({
   locale,
@@ -24,7 +34,7 @@ export default function LanguageSwitcher({
         className="flex min-h-[44px] items-center gap-1.5 rounded-full border px-3.5 py-2 font-label text-[12px] uppercase transition-[opacity,transform] hover:opacity-60 active:scale-[0.98]"
         style={{ borderColor: color, color }}
       >
-        <span aria-hidden="true" className="text-sm leading-none">{localeFlags[locale]}</span>
+        <GlobeIcon />
         <span>{locale}</span>
       </button>
       {open && (
@@ -35,10 +45,9 @@ export default function LanguageSwitcher({
               href={localePath(item)}
               hrefLang={item}
               aria-current={item === locale ? "page" : undefined}
-              className="flex items-center gap-2.5 px-4 py-2.5 font-label text-[12px] hover:bg-[var(--stone-deep)] active:bg-[var(--stone-deep)]"
+              className="block px-4 py-2.5 font-label text-[12px] hover:bg-[var(--stone-deep)] active:bg-[var(--stone-deep)]"
             >
-              <span aria-hidden="true" className="text-sm leading-none">{localeFlags[item]}</span>
-              <span>{localeNames[item]}</span>
+              {localeNames[item]}
             </a>
           ))}
         </div>
