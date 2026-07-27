@@ -22,8 +22,6 @@ export default function Rooms({ copy }: { copy: SiteCopy["rooms"] }) {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-14">
         {rooms.map((room, i) => {
-          const inkColor = `var(--${room.element}-ink)`;
-          const elementColor = `var(--${room.element})`;
           const roomFacts: string[] = [
             room.bed === "Due letti singoli" ? copy.twinBeds : copy.doubleBed,
             copy.privateBathroom,
@@ -34,7 +32,7 @@ export default function Rooms({ copy }: { copy: SiteCopy["rooms"] }) {
 
           return (
             <Reveal key={room.slug} delay={(i % 2) * 80} className={i % 2 ? "md:mt-20" : ""}>
-              <article className="group">
+              <article className="group rounded-[28px] bg-[var(--dark)] p-4 md:p-5">
                 <Gallery
                   images={ROOM_PHOTOS[room.slug]}
                   alt={`Suite ${room.name}, Palazzo Vite`}
@@ -45,29 +43,26 @@ export default function Rooms({ copy }: { copy: SiteCopy["rooms"] }) {
                   moreLabel={copy.morePhotos}
                 />
 
-                <div className="pt-6 md:pt-7">
+                <div className="px-1 pt-6 md:px-2 md:pt-7">
                   <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-4 mb-3">
                     <div className="flex items-center gap-3">
-                      <span
-                        className="inline-flex h-7 min-w-[1.75rem] items-center justify-center rounded-full px-2 font-label text-[11px]"
-                        style={{ backgroundColor: `color-mix(in srgb, ${elementColor} 26%, var(--stone))`, color: inkColor }}
-                      >
+                      <span className="inline-flex h-7 min-w-[1.75rem] items-center justify-center rounded-full px-2 font-label text-[11px] bg-[var(--ink)] text-[var(--dark)]">
                         {["I", "II", "III", "IV", "V"][i]}
                       </span>
-                      <h3 className="font-display text-3xl md:text-4xl tracking-wide" style={{ color: inkColor }}>
+                      <h3 className="font-display text-3xl md:text-4xl tracking-wide text-[var(--ink)]">
                         {room.name}
                       </h3>
                     </div>
-                    <span className="font-label text-[11px] text-[var(--ink-soft)]">{copy.bathroom}</span>
+                    <span className="font-label text-[11px] text-[var(--ink)]/60">{copy.bathroom}</span>
                   </div>
 
-                  <p className="font-body font-light text-[var(--ink-soft)] text-base leading-relaxed mb-5 max-w-md">
+                  <p className="font-body font-light text-[var(--ink)]/80 text-base leading-relaxed mb-5 max-w-md">
                     {copy.descriptions[room.slug]}
                   </p>
 
-                  <ul className="mb-5 grid grid-cols-2 gap-2 font-label text-[10px] text-[var(--ink-soft)] sm:flex sm:flex-wrap sm:gap-x-3 sm:gap-y-2">
+                  <ul className="mb-5 grid grid-cols-2 gap-2 font-label text-[10px] text-[var(--ink)] sm:flex sm:flex-wrap sm:gap-x-3 sm:gap-y-2">
                     {roomFacts.map((fact) => (
-                      <li key={fact} className="rounded-full bg-[var(--stone-deep)] px-3.5 py-2 text-center sm:text-left">
+                      <li key={fact} className="rounded-full bg-[var(--stone)] px-3.5 py-2 text-center sm:text-left">
                         {fact}
                       </li>
                     ))}
@@ -75,7 +70,7 @@ export default function Rooms({ copy }: { copy: SiteCopy["rooms"] }) {
 
                   <a
                     href={`?room=${room.slug}#prenota`}
-                    className="inline-flex w-full sm:w-auto items-center justify-center rounded-full border border-[var(--ink)]/20 px-5 py-3 font-label text-[11px] text-[var(--ink-soft)] hover:text-[var(--ink)] hover:border-[var(--ink)]/35 active:scale-[0.98] transition-[color,border-color,transform] duration-150"
+                    className="inline-flex w-full sm:w-auto items-center justify-center rounded-full bg-[var(--ink)] text-[var(--stone)] px-6 py-3 font-label text-[11px] hover:bg-[var(--hero-shade)] active:scale-[0.98] transition-[background-color,transform] duration-200"
                   >
                     {copy.request}
                   </a>
