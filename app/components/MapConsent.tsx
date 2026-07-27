@@ -31,7 +31,7 @@ export default function MapConsent({ copy }: { copy: SiteCopy["location"] }) {
     <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl md:rounded-3xl bg-[var(--dark)] text-[var(--on-dark)]">
       <div className="absolute inset-0 flex flex-col items-center justify-center gap-5 px-6 text-center">
         <div>
-          <p className="font-label text-[12px] mb-3">Via Amendola, 1 - Copertino (LE)</p>
+          <p className="font-label text-[11px] mb-3">Via Amendola, 1 - Copertino (LE)</p>
           <p className="font-body text-base md:text-lg leading-relaxed max-w-xl">
             {copy.mapConsent}
           </p>

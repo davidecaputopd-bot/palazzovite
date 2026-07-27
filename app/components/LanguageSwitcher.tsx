@@ -31,7 +31,7 @@ export default function LanguageSwitcher({
         aria-label={label}
         aria-expanded={open}
         onClick={() => setOpen((value) => !value)}
-        className="flex min-h-[44px] items-center gap-1.5 rounded-full border px-3.5 py-2 font-label text-[12px] uppercase transition-[opacity,transform] hover:opacity-60 active:scale-[0.98]"
+        className="flex min-h-[44px] items-center gap-1.5 rounded-full border px-3.5 py-2 font-label text-[11px] uppercase transition-[opacity,transform] hover:opacity-60 active:scale-[0.98]"
         style={{ borderColor: color, color }}
       >
         <GlobeIcon />
@@ -45,7 +45,7 @@ export default function LanguageSwitcher({
               href={localePath(item)}
               hrefLang={item}
               aria-current={item === locale ? "page" : undefined}
-              className="block px-4 py-2.5 font-label text-[12px] hover:bg-[var(--stone-deep)] active:bg-[var(--stone-deep)]"
+              className="block px-4 py-2.5 font-label text-[11px] hover:bg-[var(--stone-deep)] active:bg-[var(--stone-deep)]"
             >
               {localeNames[item]}
             </a>

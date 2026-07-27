@@ -25,7 +25,7 @@ export default function PracticalInfo({ copy }: { copy: SiteCopy["practical"] })
                 <span className="font-label text-[10px] text-[var(--accent-deep)] pt-1">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <dt className="font-label text-[12px] text-[var(--ink)] tracking-[0.16em] pt-1">
+                <dt className="font-label text-[11px] text-[var(--ink)] tracking-[0.16em] pt-1">
                   {label}
                 </dt>
                 <dd className="col-start-2 sm:col-start-auto font-body font-light text-lg md:text-xl leading-snug text-[var(--ink)] mt-2 sm:mt-0">
