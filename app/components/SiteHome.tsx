@@ -28,7 +28,7 @@ export default function SiteHome({ locale }: { locale: Locale }) {
       <Nav copy={copy.nav} locale={locale} />
       <main id="main-content" className="pb-20 md:pb-0">
         <Hero copy={copy.hero} availability={copy.nav.availability} />
-        <Highlights items={copy.highlights} />
+        <Highlights copy={copy.highlights} />
         <Story copy={copy.story} />
         <EditorialPause copy={copy.editorial.house} image="/foto/spazi-06.jpg" />
         <Rooms copy={copy.rooms} />
