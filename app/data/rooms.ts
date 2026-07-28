@@ -3,7 +3,7 @@ export type Room = {
   name: string;
   element: "aria" | "etere" | "fiamma" | "terra" | "mare";
   sqm?: number;
-  bed: string;
+  bed: "double" | "twin" | "both";
   floor?: string;
   description: string;
   image: string | null; // null = foto non ancora disponibile
@@ -16,7 +16,7 @@ export const rooms: Room[] = [
     slug: "aria",
     name: "Aria",
     element: "aria",
-    bed: "Letto matrimoniale",
+    bed: "double",
     description:
       "Toni chiari, biancheria bianca e ritratti alle pareti. Il bagno, essenziale e curato, è definito da un grande specchio ad arco.",
     image: "/foto/camera-aria-03.jpg",
@@ -26,7 +26,7 @@ export const rooms: Room[] = [
     slug: "etere",
     name: "Etere",
     element: "etere",
-    bed: "Letto matrimoniale",
+    bed: "both",
     description:
       "Pareti grigio-azzurre, una cassettiera antica con specchio originale e una porta-finestra sul balcone privato affacciato sulla bouganville.",
     image: "/foto/camera-etere-01.jpg",
@@ -36,7 +36,7 @@ export const rooms: Room[] = [
     slug: "fiamma",
     name: "Fiamma",
     element: "fiamma",
-    bed: "Letto matrimoniale",
+    bed: "double",
     description:
       "Cementine originali e un comodino in legno laccato color ocra raccontano il carattere della dimora con pochi elementi scelti.",
     image: "/foto/camera-fiamma-01.jpg",
@@ -46,7 +46,7 @@ export const rooms: Room[] = [
     slug: "terra",
     name: "Terra",
     element: "terra",
-    bed: "Letto matrimoniale",
+    bed: "double",
     description:
       "Cementine verdi e brune, legno laccato color ocra e un soffitto verde profondo compongono un ambiente raccolto.",
     image: "/foto/camera-terra-03.jpg",
@@ -56,7 +56,7 @@ export const rooms: Room[] = [
     slug: "mare",
     name: "Mare",
     element: "mare",
-    bed: "Due letti singoli",
+    bed: "double",
     description:
       "Pareti verde salvia, un camino in legno scuro e la porta-finestra con persiane bianche conservano un'atmosfera domestica.",
     image: "/foto/camera-mare-02.jpg",

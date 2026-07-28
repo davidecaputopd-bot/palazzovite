@@ -23,7 +23,7 @@ export default function Rooms({ copy }: { copy: SiteCopy["rooms"] }) {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-14">
         {rooms.map((room, i) => {
           const roomFacts: string[] = [
-            room.bed === "Due letti singoli" ? copy.twinBeds : copy.doubleBed,
+            room.bed === "twin" ? copy.twinBeds : room.bed === "both" ? copy.doubleOrTwin : copy.doubleBed,
             copy.privateBathroom,
             copy.wifi,
             room.sqm ? `${room.sqm} m²` : null,
