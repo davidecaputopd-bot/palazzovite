@@ -3,7 +3,7 @@ export type Room = {
   name: string;
   element: "aria" | "etere" | "fiamma" | "terra" | "mare";
   sqm?: number;
-  bed: "double" | "twin" | "both";
+  bed: "double" | "twin" | "both" | "double-single";
   floor?: string;
   description: string;
   image: string | null; // null = foto non ancora disponibile
@@ -36,7 +36,7 @@ export const rooms: Room[] = [
     slug: "fiamma",
     name: "Fiamma",
     element: "fiamma",
-    bed: "double",
+    bed: "double-single",
     description:
       "Cementine originali e un comodino in legno laccato color ocra raccontano il carattere della dimora con pochi elementi scelti.",
     image: "/foto/camera-fiamma-01.jpg",

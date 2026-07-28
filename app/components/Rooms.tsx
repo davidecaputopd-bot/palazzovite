@@ -1,10 +1,17 @@
-import { rooms } from "@/app/data/rooms";
+import { rooms, type Room } from "@/app/data/rooms";
 import Reveal from "@/app/components/Reveal";
 import Gallery from "@/app/components/Gallery";
 import { ROOM_BATHROOM_FROM, ROOM_PHOTOS } from "@/app/data/photos";
 import type { SiteCopy } from "@/app/data/i18n";
 
 export default function Rooms({ copy }: { copy: SiteCopy["rooms"] }) {
+  const bedLabels: Record<Room["bed"], string> = {
+    double: copy.doubleBed,
+    twin: copy.twinBeds,
+    both: copy.doubleOrTwin,
+    "double-single": copy.doublePlusSingle,
+  };
+
   return (
     <section id="stanze" className="px-6 md:px-10 py-20 md:py-36">
       <div className="max-w-6xl mx-auto">
@@ -23,7 +30,7 @@ export default function Rooms({ copy }: { copy: SiteCopy["rooms"] }) {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-14">
         {rooms.map((room, i) => {
           const roomFacts: string[] = [
-            room.bed === "twin" ? copy.twinBeds : room.bed === "both" ? copy.doubleOrTwin : copy.doubleBed,
+            bedLabels[room.bed],
             copy.privateBathroom,
             copy.wifi,
             room.sqm ? `${room.sqm} m²` : null,
