@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Encode_Sans_Expanded, Playfair_Display, Spectral } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
@@ -60,6 +60,11 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  themeColor: "#F4EFE4",
+  colorScheme: "light",
+};
+
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "LodgingBusiness",
@@ -79,7 +84,29 @@ const jsonLd = {
     postalCode: "73043",
     addressCountry: "IT",
   },
-  image: "https://palazzovite.vercel.app/images/palazzo/facciata.jpg",
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 40.2687,
+    longitude: 18.0506,
+  },
+  hasMap: "https://maps.google.com/?q=Via+Amendola+1,+73043+Copertino+LE",
+  checkinTime: "14:00",
+  checkoutTime: "10:00",
+  availableLanguage: ["it", "en", "fr", "es"],
+  petsAllowed: false,
+  smokingAllowed: false,
+  amenityFeature: [
+    { "@type": "LocationFeatureSpecification", name: "Wi-Fi gratuito", value: true },
+    { "@type": "LocationFeatureSpecification", name: "Parcheggio privato", value: true },
+    { "@type": "LocationFeatureSpecification", name: "Giardino", value: true },
+    { "@type": "LocationFeatureSpecification", name: "Terrazza", value: true },
+    { "@type": "LocationFeatureSpecification", name: "Colazione", value: true },
+  ],
+  image: [
+    "https://palazzovite.vercel.app/images/palazzo/facciata.jpg",
+    "https://palazzovite.vercel.app/images/palazzo/terrazza-1.jpg",
+    "https://palazzovite.vercel.app/images/palazzo/scala-1.jpg",
+  ],
 };
 
 export default function RootLayout({
