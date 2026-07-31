@@ -9,8 +9,15 @@ function seq(prefix: string, n: number): string[] {
 
 // Foto camere e bagni sono separate per evitare scambi accidentali nelle gallerie.
 export const ROOM_MAIN_PHOTOS: Record<string, string[]> = {
-  aria: seq("camera-aria", 4),
-  etere: seq("camera-etere", 4),
+  aria: [
+    ...seq("camera-aria", 4),
+    "/foto/camera-etere-01.jpg",
+  ],
+  etere: [
+    "/foto/camera-etere-02.jpg",
+    "/foto/camera-etere-03.jpg",
+    "/foto/camera-etere-04.jpg",
+  ],
   mare: seq("camera-mare", 4),
   terra: seq("camera-terra", 4),
   fiamma: seq("camera-fiamma", 4),
