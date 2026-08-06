@@ -19,8 +19,8 @@ export const rooms: Room[] = [
     bed: "double",
     description:
       "Pareti grigio-azzurre, una specchiera antica e la porta-finestra sul balcone affacciato sulla bouganville definiscono il carattere della suite.",
-    image: "/foto/camera-etere-01.jpg",
-    bathroomImage: "/foto/camera-aria-05.jpg",
+    image: "/foto/camera-aria-01.jpg",
+    bathroomImage: "/foto/camera-mare-05.jpg",
   },
   {
     slug: "etere",
@@ -29,8 +29,8 @@ export const rooms: Room[] = [
     bed: "both",
     description:
       "Pareti verde chiaro, cementine decorate e arredi restaurati compongono un ambiente raccolto, predisposto con letto matrimoniale o due letti singoli.",
-    image: "/foto/camera-etere-04.jpg",
-    bathroomImage: "/foto/camera-mare-05.jpg",
+    image: "/foto/camera-etere-01.jpg",
+    bathroomImage: "/foto/camera-aria-05.jpg",
   },
   {
     slug: "fiamma",

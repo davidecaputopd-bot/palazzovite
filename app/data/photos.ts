@@ -10,15 +10,14 @@ function seq(prefix: string, n: number): string[] {
 // Foto camere e bagni sono separate per evitare scambi accidentali nelle gallerie.
 export const ROOM_MAIN_PHOTOS: Record<string, string[]> = {
   aria: [
-    // Eccezione: portafinestra con bouganville, confermata in Aria.
-    "/foto/camera-etere-01.jpg",
     "/foto/camera-aria-01.jpg",
     "/foto/camera-aria-02.jpg",
     "/foto/camera-aria-03.jpg",
     "/foto/camera-aria-04.jpg",
   ],
   etere: [
-    // Eccezione: stanza verdina con quadro sopra i letti, confermata in Etere.
+    // Foto con letto, quadro, pareti verdi e portafinestra sulla bouganville.
+    "/foto/camera-etere-01.jpg",
     "/foto/camera-etere-04.jpg",
     "/foto/camera-etere-02.jpg",
     "/foto/camera-etere-03.jpg",
@@ -29,9 +28,9 @@ export const ROOM_MAIN_PHOTOS: Record<string, string[]> = {
 };
 
 export const ROOM_BATHROOM_PHOTOS: Record<string, string[]> = {
-  aria: ["/foto/camera-aria-05.jpg", "/foto/camera-aria-06.jpg"],
-  // Scambio intenzionale: questi due bagni corrispondono alle suite corrette.
-  etere: ["/foto/camera-mare-05.jpg", "/foto/camera-mare-06.jpg"],
+  // Bagni di Aria ed Etere scambiati su indicazione del proprietario.
+  aria: ["/foto/camera-mare-05.jpg", "/foto/camera-mare-06.jpg"],
+  etere: ["/foto/camera-aria-05.jpg", "/foto/camera-aria-06.jpg"],
   mare: ["/foto/camera-etere-05.jpg", "/foto/camera-etere-06.jpg"],
   terra: ["/foto/camera-terra-05.jpg", "/foto/camera-terra-06.jpg"],
   fiamma: ["/foto/camera-fiamma-05.jpg", "/foto/camera-fiamma-06.jpg"],
