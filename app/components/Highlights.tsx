@@ -3,7 +3,7 @@ import type { SiteCopy } from "@/app/data/i18n";
 
 export default function Highlights({ copy }: { copy: SiteCopy["highlights"] }) {
   return (
-    <section aria-label="Palazzo Vite in breve" className="bg-[var(--stone)] px-6 md:px-10 py-14 md:py-20">
+    <section aria-label="Palazzo Vite in breve" className="px-6 md:px-10 py-14 md:py-20">
       <Reveal className="max-w-7xl mx-auto">
 
         <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-16 items-end">

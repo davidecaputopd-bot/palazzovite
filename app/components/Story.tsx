@@ -14,7 +14,7 @@ export default function Story({ copy }: { copy: SiteCopy["story"] }) {
             {copy.title[1]}
           </h2>
           <div className="font-body font-light text-base md:text-lg leading-relaxed text-[var(--ink-soft)] space-y-5 max-w-md">
-            <p>
+            <p className="first-letter:float-left first-letter:font-display first-letter:text-[3.25rem] first-letter:leading-[0.72] first-letter:mr-2.5 first-letter:mt-1 first-letter:text-[var(--ink)]">
               {copy.paragraphs[0]}
             </p>
             <p>

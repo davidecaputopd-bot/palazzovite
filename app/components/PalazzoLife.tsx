@@ -14,7 +14,7 @@ export default function PalazzoLife({ copy }: { copy: SiteCopy["spaces"] }) {
   ];
 
   return (
-    <section id="palazzo" className="bg-[var(--stone)] text-[var(--ink)] px-6 md:px-10 py-20 md:py-36">
+    <section id="palazzo" className="text-[var(--ink)] px-6 md:px-10 py-20 md:py-36">
       <Reveal className="max-w-4xl mb-14 md:mb-20">
         <h2 className="font-display text-[clamp(3rem,7vw,4.5rem)] leading-[0.94]">
           {copy.title}

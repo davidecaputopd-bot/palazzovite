@@ -35,14 +35,27 @@ export default function Hero({ copy, availability }: { copy: SiteCopy["hero"]; a
             "linear-gradient(180deg, color-mix(in srgb, var(--hero-shade) 16%, transparent) 0%, color-mix(in srgb, var(--hero-shade) 36%, transparent) 55%, color-mix(in srgb, var(--hero-shade) 78%, transparent) 100%)",
         }}
       />
+      {/* Velatura calda: alone morbido dietro titolo e CTA, come luce di una casa vera */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(58% 46% at 20% 80%, color-mix(in srgb, var(--blush) 30%, transparent) 0%, transparent 62%)",
+          opacity: mounted ? 1 : 0,
+          transition: "opacity 1.8s ease-out 200ms",
+        }}
+      />
       <div className="relative z-10 min-h-[100dvh] flex flex-col justify-end px-6 md:px-10 pb-16 md:pb-24">
         <h1
-          className={`${base} font-display text-[var(--blush)] leading-[0.92] text-[clamp(2.4rem,8.5vw,5.75rem)]`}
+          className="font-display text-[var(--blush)] leading-[0.92] text-[clamp(2.4rem,8.5vw,5.75rem)]"
           style={{
             letterSpacing: "-0.01em",
             opacity: mounted ? 1 : 0,
-            transform: mounted ? "translateY(0)" : "translateY(24px)",
-            transitionDelay: "350ms",
+            clipPath: mounted ? "inset(0 0 0 0)" : "inset(0 100% 0 0)",
+            WebkitClipPath: mounted ? "inset(0 0 0 0)" : "inset(0 100% 0 0)",
+            transform: mounted ? "translateY(0)" : "translateY(16px)",
+            transition:
+              "opacity 0.9s ease-out 320ms, transform 1s cubic-bezier(0.16,1,0.3,1) 320ms, clip-path 1.15s cubic-bezier(0.16,1,0.3,1) 320ms, -webkit-clip-path 1.15s cubic-bezier(0.16,1,0.3,1) 320ms",
           }}
         >
           Palazzo Vite

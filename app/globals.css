@@ -66,7 +66,13 @@ html {
 }
 
 body {
-  background: var(--stone);
+  /* Atmosfera tonale: velature morbide dai colori del palazzo sopra la pietra,
+     per dare luce e profondità invece di un fondo a tinta piatta. Fixed = costante allo scroll. */
+  background:
+    radial-gradient(90% 60% at 88% -5%, color-mix(in srgb, var(--accent-soft) 42%, transparent) 0%, transparent 55%),
+    radial-gradient(80% 55% at 5% 108%, color-mix(in srgb, var(--blush) 55%, transparent) 0%, transparent 55%),
+    var(--stone);
+  background-attachment: fixed;
   color: var(--ink);
   font-family: var(--font-body);
   font-weight: 300;
