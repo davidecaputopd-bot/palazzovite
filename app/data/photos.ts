@@ -13,7 +13,6 @@ export const ROOM_MAIN_PHOTOS: Record<string, string[]> = {
     "/foto/camera-aria-01.jpg",
     "/foto/camera-aria-02.jpg",
     "/foto/camera-aria-03.jpg",
-    "/foto/camera-aria-04.jpg",
     // Portafinestra aperta sul balcone e sulla bouganville, non come copertina.
     "/foto/camera-etere-02.jpg",
   ],
