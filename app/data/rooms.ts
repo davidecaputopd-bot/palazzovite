@@ -18,8 +18,8 @@ export const rooms: Room[] = [
     element: "aria",
     bed: "double",
     description:
-      "Toni chiari, biancheria bianca e ritratti alle pareti. Il bagno, essenziale e curato, è definito da un grande specchio ad arco.",
-    image: "/foto/camera-aria-03.jpg",
+      "Pareti grigio-azzurre, una specchiera antica e la porta-finestra sul balcone affacciato sulla bouganville definiscono il carattere della suite.",
+    image: "/foto/camera-etere-01.jpg",
     bathroomImage: "/foto/camera-aria-05.jpg",
   },
   {
@@ -28,9 +28,9 @@ export const rooms: Room[] = [
     element: "etere",
     bed: "both",
     description:
-      "Pareti grigio-azzurre, una cassettiera antica con specchio originale e una porta-finestra sul balcone privato affacciato sulla bouganville.",
-    image: "/foto/camera-etere-01.jpg",
-    bathroomImage: "/foto/camera-etere-05.jpg",
+      "Pareti verde chiaro, cementine decorate e arredi restaurati compongono un ambiente raccolto, predisposto con letto matrimoniale o due letti singoli.",
+    image: "/foto/camera-aria-03.jpg",
+    bathroomImage: "/foto/camera-mare-05.jpg",
   },
   {
     slug: "fiamma",
@@ -60,6 +60,6 @@ export const rooms: Room[] = [
     description:
       "Pareti verde salvia, un camino in legno scuro e la porta-finestra con persiane bianche conservano un'atmosfera domestica.",
     image: "/foto/camera-mare-02.jpg",
-    bathroomImage: "/foto/camera-mare-05.jpg",
+    bathroomImage: "/foto/camera-etere-05.jpg",
   },
 ];

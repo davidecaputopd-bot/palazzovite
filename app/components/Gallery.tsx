@@ -37,7 +37,7 @@ export default function Gallery({
             <button
               key={src}
               type="button"
-              onClick={() => setIndex(i)}
+              onClick={() => setIndex(showsMoreBadge ? mobilePreviewCount : i)}
               aria-label={`${openLabel} - ${alt} ${i + 1}${isBath && bathroomLabel ? ` (${bathroomLabel})` : ""}`}
               className={`group relative overflow-hidden rounded-xl md:rounded-2xl bg-[var(--blush)] active:scale-[0.99] transition-transform duration-150 ${
                 i === 0 ? "col-span-2 row-span-2 aspect-square" : "aspect-square"

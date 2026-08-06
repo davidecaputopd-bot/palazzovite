@@ -120,29 +120,29 @@ export type SiteCopy = {
 
 const roomDescriptions = {
   it: {
-    aria: "Toni chiari, biancheria bianca e ritratti alle pareti. Il bagno, essenziale e curato, è definito da un grande specchio ad arco.",
-    etere: "Pareti grigio-azzurre, una cassettiera antica con specchio originale e una porta-finestra sul balcone privato affacciato sulla bouganville.",
+    aria: "Pareti grigio-azzurre, una specchiera antica e la porta-finestra sul balcone affacciato sulla bouganville definiscono il carattere della suite.",
+    etere: "Pareti verde chiaro, cementine decorate e arredi restaurati compongono un ambiente raccolto, predisposto con letto matrimoniale o due letti singoli.",
     fiamma: "Cementine originali e un comodino in legno laccato color ocra raccontano il carattere della dimora con pochi elementi scelti.",
     terra: "Cementine verdi e brune, legno laccato color ocra e un soffitto verde profondo compongono un ambiente raccolto.",
     mare: "Pareti verde salvia, un camino in legno scuro e la porta-finestra con persiane bianche conservano un'atmosfera domestica.",
   },
   en: {
-    aria: "Soft tones, crisp white linen and portraits on the walls. The carefully pared-back bathroom is defined by a large arched mirror.",
-    etere: "Blue-grey walls, an antique chest with its original mirror, and French doors opening onto a private balcony overlooking the bougainvillea.",
+    aria: "Blue-grey walls, an antique mirror and French doors opening onto a balcony overlooking the bougainvillea define the character of the suite.",
+    etere: "Pale-green walls, patterned cement tiles and restored furniture create an intimate room, arranged with a double bed or two single beds.",
     fiamma: "Original cement tiles and an ochre-lacquered wooden bedside table express the house's character through a few considered details.",
     terra: "Green and brown cement tiles, ochre-lacquered wood and a deep green ceiling create an intimate atmosphere.",
     mare: "Sage-green walls, a dark wood fireplace and French doors with white shutters retain the ease of a private home.",
   },
   fr: {
-    aria: "Tons clairs, linge blanc et portraits aux murs. Sobre et soignée, la salle de bains se distingue par un grand miroir cintré.",
-    etere: "Murs bleu-gris, commode ancienne avec son miroir d'origine et porte-fenêtre ouvrant sur un balcon privé face aux bougainvilliers.",
+    aria: "Des murs gris bleuté, un miroir ancien et une porte-fenêtre ouvrant sur le balcon face aux bougainvilliers définissent le caractère de la suite.",
+    etere: "Des murs vert clair, des carreaux de ciment décorés et du mobilier restauré composent une chambre intime, avec un lit double ou deux lits simples.",
     fiamma: "Carreaux de ciment d'origine et chevet en bois laqué ocre expriment le caractère de la demeure avec quelques détails choisis.",
     terra: "Carreaux de ciment verts et bruns, bois laqué ocre et plafond vert profond composent une atmosphère intime.",
     mare: "Murs vert sauge, cheminée en bois sombre et porte-fenêtre aux volets blancs conservent l'esprit d'une maison particulière.",
   },
   es: {
-    aria: "Tonos claros, ropa de cama blanca y retratos en las paredes. El baño, sobrio y cuidado, se define por un gran espejo arqueado.",
-    etere: "Paredes azul grisáceo, cómoda antigua con su espejo original y puerta acristalada a un balcón privado con vistas a la buganvilla.",
+    aria: "Las paredes gris azulado, un espejo antiguo y la puerta acristalada al balcón frente a la buganvilla definen el carácter de la suite.",
+    etere: "Las paredes verde claro, las baldosas hidráulicas decoradas y los muebles restaurados crean una estancia íntima, con cama doble o dos camas individuales.",
     fiamma: "Baldosas hidráulicas originales y una mesilla de madera lacada en ocre expresan el carácter de la casa con pocos detalles escogidos.",
     terra: "Baldosas verdes y marrones, madera lacada en ocre y un techo verde profundo crean un ambiente recogido.",
     mare: "Paredes verde salvia, chimenea de madera oscura y puerta acristalada con contraventanas blancas conservan el aire de una casa privada.",
