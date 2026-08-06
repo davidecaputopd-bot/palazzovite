@@ -9,18 +9,19 @@ function seq(prefix: string, n: number): string[] {
 
 // Foto camere e bagni sono separate per evitare scambi accidentali nelle gallerie.
 export const ROOM_MAIN_PHOTOS: Record<string, string[]> = {
-  // La camera con portafinestra e bouganville è Aria.
   aria: [
+    // Eccezione: portafinestra con bouganville, confermata in Aria.
     "/foto/camera-etere-01.jpg",
-    "/foto/camera-etere-02.jpg",
-    "/foto/camera-etere-03.jpg",
-  ],
-  etere: [
     "/foto/camera-aria-01.jpg",
     "/foto/camera-aria-02.jpg",
     "/foto/camera-aria-03.jpg",
     "/foto/camera-aria-04.jpg",
+  ],
+  etere: [
+    // Eccezione: stanza verdina con quadro sopra i letti, confermata in Etere.
     "/foto/camera-etere-04.jpg",
+    "/foto/camera-etere-02.jpg",
+    "/foto/camera-etere-03.jpg",
   ],
   mare: seq("camera-mare", 4),
   terra: seq("camera-terra", 4),

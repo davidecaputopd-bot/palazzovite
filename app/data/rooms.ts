@@ -29,7 +29,7 @@ export const rooms: Room[] = [
     bed: "both",
     description:
       "Pareti verde chiaro, cementine decorate e arredi restaurati compongono un ambiente raccolto, predisposto con letto matrimoniale o due letti singoli.",
-    image: "/foto/camera-aria-03.jpg",
+    image: "/foto/camera-etere-04.jpg",
     bathroomImage: "/foto/camera-mare-05.jpg",
   },
   {
