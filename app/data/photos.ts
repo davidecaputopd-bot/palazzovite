@@ -28,9 +28,8 @@ export const ROOM_MAIN_PHOTOS: Record<string, string[]> = {
 };
 
 export const ROOM_BATHROOM_PHOTOS: Record<string, string[]> = {
-  // Bagni di Aria ed Etere scambiati su indicazione del proprietario.
-  aria: ["/foto/camera-mare-05.jpg", "/foto/camera-mare-06.jpg"],
-  etere: ["/foto/camera-aria-05.jpg", "/foto/camera-aria-06.jpg"],
+  aria: ["/foto/camera-aria-05.jpg", "/foto/camera-aria-06.jpg"],
+  etere: ["/foto/camera-mare-05.jpg", "/foto/camera-mare-06.jpg"],
   mare: ["/foto/camera-etere-05.jpg", "/foto/camera-etere-06.jpg"],
   terra: ["/foto/camera-terra-05.jpg", "/foto/camera-terra-06.jpg"],
   fiamma: ["/foto/camera-fiamma-05.jpg", "/foto/camera-fiamma-06.jpg"],
