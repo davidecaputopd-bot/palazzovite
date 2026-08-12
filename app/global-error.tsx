@@ -1,10 +1,10 @@
 "use client";
 
 export default function GlobalError({
-  unstable_retry,
+  reset,
 }: {
   error: Error & { digest?: string };
-  unstable_retry: () => void;
+  reset: () => void;
 }) {
   return (
     <html lang="it">
@@ -31,7 +31,7 @@ export default function GlobalError({
         </p>
         <button
           type="button"
-          onClick={() => unstable_retry()}
+          onClick={() => reset()}
           style={{
             background: "#2B2419",
             color: "#F4EFE4",

@@ -5,10 +5,10 @@ import Link from "next/link";
 
 export default function Error({
   error,
-  unstable_retry,
+  reset,
 }: {
   error: Error & { digest?: string };
-  unstable_retry: () => void;
+  reset: () => void;
 }) {
   useEffect(() => {
     console.error(error);
@@ -32,7 +32,7 @@ export default function Error({
       <div className="flex flex-col sm:flex-row items-center gap-3">
         <button
           type="button"
-          onClick={() => unstable_retry()}
+          onClick={() => reset()}
           className="inline-flex items-center justify-center rounded-full bg-[var(--ink)] text-[var(--stone)] px-8 py-4 font-label text-[11px] tracking-[0.16em] uppercase hover:bg-[var(--hero-shade)] transition-colors"
         >
           Riprova

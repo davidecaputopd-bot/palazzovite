@@ -38,7 +38,13 @@ export async function generateMetadata({
       description: copy.meta.description,
       url: localePath(locale),
       locale: locale === "en" ? "en_GB" : locale === "fr" ? "fr_FR" : "es_ES",
-      images: ["/images/palazzo/facciata.jpg"],
+      images: ["/foto/hero-01.jpg"],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: copy.meta.title,
+      description: copy.meta.description,
+      images: ["/foto/hero-01.jpg"],
     },
   };
 }

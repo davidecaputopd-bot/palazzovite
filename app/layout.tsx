@@ -47,7 +47,7 @@ export const metadata: Metadata = {
       "Dimora storica del 1908 nel centro storico di Copertino, con cinque suite, giardino e terrazza affacciata sul Castello Angioino.",
     url: "https://palazzovite.vercel.app",
     siteName: "Palazzo Vite",
-    images: ["/images/palazzo/facciata.jpg"],
+    images: ["/foto/hero-01.jpg"],
     locale: "it_IT",
     type: "website",
   },
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     title: "Palazzo Vite · Dimora storica e suite a Copertino",
     description:
       "Dimora storica del 1908 nel centro storico di Copertino, con cinque suite, giardino e terrazza.",
-    images: ["/images/palazzo/facciata.jpg"],
+    images: ["/foto/hero-01.jpg"],
   },
 };
 
@@ -103,9 +103,9 @@ const jsonLd = {
     { "@type": "LocationFeatureSpecification", name: "Colazione", value: true },
   ],
   image: [
-    "https://palazzovite.vercel.app/images/palazzo/facciata.jpg",
-    "https://palazzovite.vercel.app/images/palazzo/terrazza-1.jpg",
-    "https://palazzovite.vercel.app/images/palazzo/scala-1.jpg",
+    "https://palazzovite.vercel.app/foto/hero-01.jpg",
+    "https://palazzovite.vercel.app/foto/location-05.jpg",
+    "https://palazzovite.vercel.app/foto/spazi-01.jpg",
   ],
 };
 
