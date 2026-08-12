@@ -43,6 +43,10 @@
   --shadow-panel: 0 1px 3px color-mix(in srgb, var(--hero-shade) 10%, transparent),
     0 16px 36px -16px color-mix(in srgb, var(--hero-shade) 24%, transparent);
 
+  /* Ombra fotografica: più profonda dei pannelli, ma tinta sul verde della dimora. */
+  --shadow-photo: 0 8px 18px -12px color-mix(in srgb, var(--hero-shade) 28%, transparent),
+    0 24px 52px -28px color-mix(in srgb, var(--hero-shade) 48%, transparent);
+
   /* Degradé interno dei pulsanti: sheen dall'alto per renderli "vivi",
      al posto della tinta piatta. Sottile, non lucido. */
   --btn-ink: linear-gradient(180deg, color-mix(in srgb, var(--ink) 78%, var(--ink-soft)) 0%, var(--ink) 60%);

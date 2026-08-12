@@ -26,7 +26,7 @@ export default function SiteHome({ locale }: { locale: Locale }) {
         {copy.skip}
       </a>
       <Nav copy={copy.nav} locale={locale} />
-      <main id="main-content" className="pb-20 md:pb-0">
+      <main id="main-content">
         <Hero copy={copy.hero} availability={copy.nav.availability} />
         <Highlights copy={copy.highlights} />
         <Story copy={copy.story} />

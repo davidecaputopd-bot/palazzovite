@@ -28,7 +28,7 @@ export default function PalazzoLife({ copy }: { copy: SiteCopy["spaces"] }) {
         {spaces.map((s, i) => (
           <Reveal key={s.name} delay={(i % 2) * 80} className={i % 2 ? "md:mt-20" : ""}>
             <article className="group">
-              <Gallery images={s.photos} alt={s.name} openLabel={copy.galleryLabel} mobilePreviewCount={4} />
+              <Gallery images={s.photos} alt={s.name} openLabel={copy.galleryLabel} mobilePreviewCount={4} elevated />
               <div className="pt-6 md:pt-7">
                 <h3 className="font-display text-2xl md:text-3xl tracking-wide mb-2">{s.name}</h3>
                 <p className="font-body font-light text-sm md:text-base text-[var(--ink-soft)] leading-relaxed max-w-md">

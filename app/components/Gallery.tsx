@@ -13,6 +13,7 @@ export default function Gallery({
   bathroomLabel,
   mobilePreviewCount = images.length,
   moreLabel,
+  elevated = false,
 }: {
   images: string[];
   alt: string;
@@ -21,6 +22,7 @@ export default function Gallery({
   bathroomLabel?: string;
   mobilePreviewCount?: number;
   moreLabel?: string;
+  elevated?: boolean;
 }) {
   const [index, setIndex] = useState(-1);
   const hiddenCount = Math.max(images.length - mobilePreviewCount, 0);
@@ -39,7 +41,7 @@ export default function Gallery({
               type="button"
               onClick={() => setIndex(showsMoreBadge ? mobilePreviewCount : i)}
               aria-label={`${openLabel} - ${alt} ${i + 1}${isBath && bathroomLabel ? ` (${bathroomLabel})` : ""}`}
-              className={`group relative overflow-hidden rounded-xl md:rounded-2xl bg-[var(--blush)] active:scale-[0.99] transition-transform duration-150 ${
+              className={`group relative overflow-hidden rounded-xl md:rounded-2xl bg-[var(--blush)] active:scale-[0.99] transition-[transform,box-shadow] duration-150 ${elevated ? "shadow-[var(--shadow-photo)]" : ""} ${
                 i === 0 ? "col-span-2 row-span-2 aspect-square" : "aspect-square"
               } ${hiddenOnMobile ? "hidden md:block" : ""}`}
             >
