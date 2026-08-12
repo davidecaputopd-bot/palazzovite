@@ -40,7 +40,7 @@ export default function Book({ copy, formCopy }: { copy: SiteCopy["book"]; formC
           </p>
         </Reveal>
 
-        <Reveal delay={90} className="rounded-3xl bg-[var(--stone)]/70 px-5 py-7 md:p-10">
+        <Reveal delay={90} className="rounded-3xl bg-[var(--stone)]/70 shadow-[var(--shadow-panel)] px-5 py-7 md:p-10">
           <Suspense fallback={null}>
             <ContactForm copy={formCopy} />
           </Suspense>

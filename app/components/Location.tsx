@@ -24,7 +24,7 @@ export default function Location({ copy }: { copy: SiteCopy["location"] }) {
             ].map(({ place, km }) => (
               <div
                 key={place}
-                className="rounded-2xl bg-[var(--stone-deep)] p-5 md:p-6"
+                className="rounded-2xl bg-[var(--stone-deep)] shadow-[var(--shadow-panel)] p-5 md:p-6"
               >
                 <p className="font-label text-[11px] tracking-[0.14em] uppercase text-[var(--accent-deep)] mb-2.5">{place}</p>
                 <p className="font-display text-2xl md:text-4xl leading-none" style={{ textWrap: "nowrap" }}>{km}</p>

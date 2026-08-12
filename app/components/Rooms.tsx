@@ -39,7 +39,7 @@ export default function Rooms({ copy }: { copy: SiteCopy["rooms"] }) {
 
           return (
             <Reveal key={room.slug} delay={(i % 2) * 80} className={i % 2 ? "md:mt-20" : ""}>
-              <article className="group rounded-3xl bg-[var(--dark)] p-4 md:p-5">
+              <article className="group rounded-3xl bg-[var(--dark)] shadow-[var(--shadow-panel)] p-4 md:p-5">
                 <Gallery
                   images={ROOM_PHOTOS[room.slug]}
                   alt={`Suite ${room.name}, Palazzo Vite`}
