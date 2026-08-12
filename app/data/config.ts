@@ -1,3 +1,9 @@
+// URL base del sito. Unica fonte di verità: metadata, sitemap, robots,
+// JSON-LD e OG lo leggono da qui. Per il dominio definitivo basta impostare
+// NEXT_PUBLIC_SITE_URL su Vercel (senza slash finale), niente modifiche al codice.
+export const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") ?? "https://www.palazzovite.it";
+
 // Configurazione centrale del sito. Aggiorna qui il link Booking.com
 // non appena la struttura ha una pagina attiva sul portale.
 export const BOOKING_URL: string | null = null; // null finché non c'è il link reale

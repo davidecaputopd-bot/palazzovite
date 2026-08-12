@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Encode_Sans_Expanded, Playfair_Display, Spectral } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
+import { SITE_URL } from "@/app/data/config";
 import "./globals.css";
 
 // Sostituti open dei font del riferimento "The Hollywood Grande":
@@ -28,7 +29,7 @@ const spectral = Spectral({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://palazzovite.vercel.app"),
+  metadataBase: new URL(SITE_URL),
   title: "Palazzo Vite · Dimora storica e suite a Copertino",
   description:
     "Palazzo Vite è una dimora storica del 1908 nel centro storico di Copertino, vicino al Castello Angioino, con cinque suite, giardino, terrazza e parcheggio privato.",
@@ -45,7 +46,7 @@ export const metadata: Metadata = {
     title: "Palazzo Vite · Dimora storica e suite a Copertino",
     description:
       "Dimora storica del 1908 nel centro storico di Copertino, con cinque suite, giardino e terrazza affacciata sul Castello Angioino.",
-    url: "https://palazzovite.vercel.app",
+    url: SITE_URL,
     siteName: "Palazzo Vite",
     images: ["/foto/hero-01.jpg"],
     locale: "it_IT",
@@ -71,7 +72,7 @@ const jsonLd = {
   name: "Palazzo Vite",
   description:
     "Dimora storica del 1908 nel centro storico di Copertino, vicino al Castello Angioino, con cinque suite, giardino, terrazza e parcheggio privato.",
-  url: "https://palazzovite.vercel.app",
+  url: SITE_URL,
   email: "palazzovite@gmail.com",
   telephone: "+393286244934",
   numberOfRooms: 5,
@@ -103,9 +104,9 @@ const jsonLd = {
     { "@type": "LocationFeatureSpecification", name: "Colazione", value: true },
   ],
   image: [
-    "https://palazzovite.vercel.app/foto/hero-01.jpg",
-    "https://palazzovite.vercel.app/foto/location-05.jpg",
-    "https://palazzovite.vercel.app/foto/spazi-01.jpg",
+    `${SITE_URL}/foto/hero-01.jpg`,
+    `${SITE_URL}/foto/location-05.jpg`,
+    `${SITE_URL}/foto/spazi-01.jpg`,
   ],
 };
 

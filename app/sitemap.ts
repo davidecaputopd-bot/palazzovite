@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
+import { SITE_URL } from "@/app/data/config";
 
-const BASE = "https://palazzovite.vercel.app";
+const BASE = SITE_URL;
 
 const languages = {
   it: BASE,
