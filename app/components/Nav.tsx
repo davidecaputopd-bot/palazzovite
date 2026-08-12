@@ -149,7 +149,7 @@ export default function Nav({ copy, locale }: { copy: SiteCopy["nav"]; locale: L
         <a
           href="#prenota"
           onClick={() => setOpen(false)}
-          className="mt-4 text-center bg-[var(--ink)] text-[var(--blush)] py-3 active:scale-[0.98] active:opacity-80 transition-[transform,opacity] duration-150"
+          className="mt-4 text-center rounded-full bg-[var(--btn-ink)] text-[var(--blush)] py-3 active:scale-[0.98] active:opacity-80 transition-[transform,opacity] duration-150"
         >
           {copy.availability}
         </a>

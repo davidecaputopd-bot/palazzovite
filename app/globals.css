@@ -42,6 +42,11 @@
      la loro ombra più marcata. */
   --shadow-panel: 0 1px 3px color-mix(in srgb, var(--hero-shade) 10%, transparent),
     0 16px 36px -16px color-mix(in srgb, var(--hero-shade) 24%, transparent);
+
+  /* Degradé interno dei pulsanti: sheen dall'alto per renderli "vivi",
+     al posto della tinta piatta. Sottile, non lucido. */
+  --btn-ink: linear-gradient(180deg, color-mix(in srgb, var(--ink) 78%, var(--ink-soft)) 0%, var(--ink) 60%);
+  --btn-blush: linear-gradient(180deg, color-mix(in srgb, var(--blush) 82%, var(--stone)) 0%, var(--blush) 62%);
 }
 
 /* Gli alias font vivono su body: è lì che next/font monta --font-encode/playfair/spectral */
