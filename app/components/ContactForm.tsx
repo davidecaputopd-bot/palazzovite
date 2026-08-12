@@ -261,7 +261,7 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
       <button
         type="submit"
         disabled={status === "loading" || !!dateError}
-        className="w-full rounded-full font-label text-xs bg-[var(--btn-ink)] text-[var(--stone)] px-8 py-4 hover:opacity-85 active:scale-[0.98] transition-[opacity,transform] duration-150 disabled:opacity-50 disabled:scale-100"
+        className="w-full rounded-full font-label text-xs bg-[image:var(--btn-ink)] text-[var(--stone)] px-8 py-4 hover:opacity-85 active:scale-[0.98] transition-[opacity,transform] duration-150 disabled:opacity-50 disabled:scale-100"
       >
         {status === "loading" ? copy.sending : copy.send}
       </button>
