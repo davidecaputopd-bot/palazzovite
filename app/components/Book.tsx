@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { BOOKING_URL, CONTACT_EMAIL } from "@/app/data/config";
+import { CONTACT_EMAIL } from "@/app/data/config";
 import ContactForm from "@/app/components/ContactForm";
 import Reveal from "@/app/components/Reveal";
 import type { SiteCopy } from "@/app/data/i18n";
@@ -24,17 +24,6 @@ export default function Book({ copy, formCopy }: { copy: SiteCopy["book"]; formC
               </li>
             ))}
           </ul>
-          {BOOKING_URL && (
-            <a
-              href={BOOKING_URL}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-block mt-8 font-label text-xs underline underline-offset-4 hover:text-[var(--accent-deep)] transition-colors"
-            >
-              {copy.directBooking}
-            </a>
-          )}
-
           <p className="font-label text-[11px] text-[var(--ink-soft)] mt-10 leading-relaxed">
             {copy.writeTo} {CONTACT_EMAIL}
           </p>

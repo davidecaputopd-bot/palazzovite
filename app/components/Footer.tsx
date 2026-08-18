@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_DISPLAY } from "@/app/data/config";
+import { BOOKING_URL, CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_DISPLAY } from "@/app/data/config";
 
 export default function Footer() {
   return (
@@ -11,6 +11,11 @@ export default function Footer() {
           <a href="https://www.instagram.com/palazzovite/" target="_blank" rel="noreferrer" className="hover:text-[var(--ink)]">
             Instagram
           </a>
+          {BOOKING_URL && (
+            <a href={BOOKING_URL} target="_blank" rel="noreferrer" className="hover:text-[var(--ink)]">
+              Booking
+            </a>
+          )}
           <a href={`tel:+39${CONTACT_PHONE}`} className="hover:text-[var(--ink)]">
             {CONTACT_PHONE_DISPLAY}
           </a>

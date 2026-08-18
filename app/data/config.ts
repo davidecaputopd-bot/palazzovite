@@ -6,7 +6,8 @@ export const SITE_URL =
 
 // Configurazione centrale del sito. Aggiorna qui il link Booking.com
 // non appena la struttura ha una pagina attiva sul portale.
-export const BOOKING_URL: string | null = null; // null finché non c'è il link reale
+export const BOOKING_URL: string | null =
+  "https://www.booking.com/hotel/it/palazzo-vite.it.html"; // link discreto in sezione prenota
 
 // Contatti ufficiali Palazzo Vite.
 export const CONTACT_EMAIL = "palazzovite@gmail.com";
