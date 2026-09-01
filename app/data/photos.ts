@@ -57,7 +57,7 @@ export const LOCATION_PHOTOS = seq("location", 8);
 
 // Foto per ciascuno spazio comune (galleria per tile, come le stanze).
 // La scala a chiocciola resta nella sezione Storia, non qui.
-export const SPACE_PHOTOS: Record<"garden" | "kitchen" | "terrace" | "work", string[]> = {
+export const SPACE_PHOTOS: Record<"garden" | "kitchen" | "terrace" | "work" | "parking", string[]> = {
   // Giardino murato di agrumi: la prima è quella "featured" nella galleria.
   garden: [
     "/foto/location-07.jpg",
@@ -70,4 +70,6 @@ export const SPACE_PHOTOS: Record<"garden" | "kitchen" | "terrace" | "work", str
   kitchen: ["/foto/spazi-04.jpg", "/foto/spazi-11.jpg", "/foto/spazi-10.jpg", "/foto/spazi-05.jpg", "/foto/spazi-12.jpg"],
   terrace: ["/foto/location-05.jpg", "/foto/location-06.jpg", "/foto/hero-01.jpg"],
   work: ["/foto/spazi-03.jpg", "/foto/spazi-08.jpg", "/foto/spazi-09.jpg"],
+  // Cortile interno riservato agli ospiti, con la bouganville in fiore.
+  parking: ["/foto/parcheggio-01.jpg", "/foto/parcheggio-02.jpg"],
 };

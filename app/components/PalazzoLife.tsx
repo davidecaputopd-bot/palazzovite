@@ -11,6 +11,7 @@ export default function PalazzoLife({ copy }: { copy: SiteCopy["spaces"] }) {
     { name: copy.breakfast[0], desc: copy.breakfast[1], photos: SPACE_PHOTOS.kitchen },
     { name: copy.terrace[0], desc: copy.terrace[1], photos: SPACE_PHOTOS.terrace },
     { name: copy.work[0], desc: copy.work[1], photos: SPACE_PHOTOS.work },
+    { name: copy.parking[0], desc: copy.parking[1], photos: SPACE_PHOTOS.parking },
   ];
 
   return (
