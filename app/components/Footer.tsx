@@ -1,11 +1,12 @@
 import Link from "next/link";
+import Logo from "@/app/components/Logo";
 import { BOOKING_URL, CONTACT_EMAIL, CONTACT_PHONE, CONTACT_PHONE_DISPLAY } from "@/app/data/config";
 
 export default function Footer() {
   return (
     <footer className="bg-[var(--dark)] text-[var(--ink)] px-6 md:px-10 py-10 pb-28 md:pb-10 border-t border-[var(--ink)]/10">
       <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-6">
-        <span className="font-display text-lg tracking-wide">Palazzo Vite</span>
+        <Logo className="h-16 w-16" />
         <div className="font-label text-[11px] flex flex-wrap items-center gap-x-6 gap-y-2 text-[var(--ink-soft)]">
           <span>Via Amendola, 1 - Copertino (LE)</span>
           <a href="https://www.instagram.com/palazzovite/" target="_blank" rel="noreferrer" className="hover:text-[var(--ink)]">
