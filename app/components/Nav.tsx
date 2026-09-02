@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import LanguageSwitcher from "@/app/components/LanguageSwitcher";
 import Logo from "@/app/components/Logo";
+import { CONTACT_PHONE, CONTACT_PHONE_DISPLAY } from "@/app/data/config";
 import type { Locale, SiteCopy } from "@/app/data/i18n";
 
 export default function Nav({ copy, locale }: { copy: SiteCopy["nav"]; locale: Locale }) {
@@ -95,6 +96,12 @@ export default function Nav({ copy, locale }: { copy: SiteCopy["nav"]; locale: L
             );
           })}
           <a
+            href={`tel:+39${CONTACT_PHONE}`}
+            className="whitespace-nowrap font-semibold hover:text-[var(--accent-deep)] transition-colors"
+          >
+            +39 {CONTACT_PHONE_DISPLAY}
+          </a>
+          <a
             href="#prenota"
             className="rounded-full border px-5 py-2.5 hover:bg-[var(--accent-deep)] hover:text-[var(--blush)] hover:border-[var(--accent-deep)] active:scale-[0.98] transition-[background-color,color,border-color,transform] duration-200 ease-out"
             style={{ borderColor }}
@@ -122,7 +129,7 @@ export default function Nav({ copy, locale }: { copy: SiteCopy["nav"]; locale: L
       <nav
         className="lg:hidden flex flex-col font-label text-sm px-6 pb-6 gap-1 overflow-hidden transition-[max-height,opacity,transform] ease-out text-[var(--ink)]"
         style={{
-          maxHeight: open ? "400px" : "0px",
+          maxHeight: open ? "480px" : "0px",
           opacity: open ? 1 : 0,
           transform: open ? "translateY(0)" : "translateY(-6px)",
           transitionDuration: open ? "240ms" : "160ms",
@@ -148,9 +155,19 @@ export default function Nav({ copy, locale }: { copy: SiteCopy["nav"]; locale: L
           );
         })}
         <a
+          href={`tel:+39${CONTACT_PHONE}`}
+          onClick={() => setOpen(false)}
+          className="mt-4 flex items-center justify-center gap-2.5 rounded-full border border-[var(--ink)]/25 py-3 font-semibold active:scale-[0.98] transition-transform duration-150"
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" className="h-[18px] w-[18px] shrink-0" aria-hidden="true">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg>
+          +39 {CONTACT_PHONE_DISPLAY}
+        </a>
+        <a
           href="#prenota"
           onClick={() => setOpen(false)}
-          className="mt-4 text-center rounded-full bg-[image:var(--btn-ink)] text-[var(--blush)] py-3 active:scale-[0.98] active:opacity-80 transition-[transform,opacity] duration-150"
+          className="mt-3 text-center rounded-full bg-[image:var(--btn-ink)] text-[var(--blush)] py-3 active:scale-[0.98] active:opacity-80 transition-[transform,opacity] duration-150"
         >
           {copy.availability}
         </a>

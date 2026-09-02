@@ -9,20 +9,23 @@ export default function Footer() {
         <Logo className="h-16 w-16" />
         <div className="font-label text-[11px] flex flex-wrap items-center gap-x-6 gap-y-2 text-[var(--ink-soft)]">
           <span>Via Amendola, 1 - Copertino (LE)</span>
+          <a href={`tel:+39${CONTACT_PHONE}`} className="whitespace-nowrap font-semibold text-[var(--ink)] hover:text-[var(--accent-deep)] transition-colors">
+            +39 {CONTACT_PHONE_DISPLAY}
+          </a>
+          <a href={`mailto:${CONTACT_EMAIL}`} className="font-semibold text-[var(--ink)] hover:text-[var(--accent-deep)] transition-colors">
+            {CONTACT_EMAIL}
+          </a>
           <a href="https://www.instagram.com/palazzovite/" target="_blank" rel="noreferrer" className="hover:text-[var(--ink)]">
             Instagram
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61588969245162" target="_blank" rel="noreferrer" className="hover:text-[var(--ink)]">
+            Facebook
           </a>
           {BOOKING_URL && (
             <a href={BOOKING_URL} target="_blank" rel="noreferrer" className="hover:text-[var(--ink)]">
               Booking
             </a>
           )}
-          <a href={`tel:+39${CONTACT_PHONE}`} className="hover:text-[var(--ink)]">
-            {CONTACT_PHONE_DISPLAY}
-          </a>
-          <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-[var(--ink)]">
-            {CONTACT_EMAIL}
-          </a>
           <Link href="/privacy" className="hover:text-[var(--ink)]">
             Privacy
           </Link>
