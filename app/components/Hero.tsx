@@ -46,19 +46,33 @@ export default function Hero({ copy, availability }: { copy: SiteCopy["hero"]; a
         }}
       />
       <div className="relative z-10 min-h-[100dvh] flex flex-col justify-end px-6 md:px-10 pb-16 md:pb-24">
-        <h1
-          className="font-display text-[var(--blush)] leading-[0.92] text-[clamp(2.4rem,8.5vw,5.75rem)]"
-          style={{
-            letterSpacing: "-0.01em",
-            opacity: mounted ? 1 : 0,
-            clipPath: mounted ? "inset(0 0 0 0)" : "inset(0 100% 0 0)",
-            WebkitClipPath: mounted ? "inset(0 0 0 0)" : "inset(0 100% 0 0)",
-            transform: mounted ? "translateY(0)" : "translateY(16px)",
-            transition:
-              "opacity 0.9s ease-out 320ms, transform 1s cubic-bezier(0.16,1,0.3,1) 320ms, clip-path 1.15s cubic-bezier(0.16,1,0.3,1) 320ms, -webkit-clip-path 1.15s cubic-bezier(0.16,1,0.3,1) 320ms",
-          }}
-        >
-          Palazzo Vite
+        {/* Titolo = wordmark "PALAZZO VITE" nel font brand Edinburgh, ricavato dai
+            tracciati vettoriali del logo (nessun font da caricare, nessuna licenza web).
+            Reso come CSS mask così il colore arriva dal sito; l'h1 resta accessibile. */}
+        <h1 aria-label="Palazzo Vite" className="m-0">
+          <span
+            aria-hidden="true"
+            className="block"
+            style={{
+              width: "clamp(280px, 82vw, 620px)",
+              aspectRatio: "584 / 86",
+              backgroundColor: "var(--blush)",
+              WebkitMaskImage: "url(/wordmark-palazzo-vite.svg)",
+              maskImage: "url(/wordmark-palazzo-vite.svg)",
+              WebkitMaskRepeat: "no-repeat",
+              maskRepeat: "no-repeat",
+              WebkitMaskPosition: "left center",
+              maskPosition: "left center",
+              WebkitMaskSize: "contain",
+              maskSize: "contain",
+              opacity: mounted ? 1 : 0,
+              clipPath: mounted ? "inset(0 0 0 0)" : "inset(0 100% 0 0)",
+              WebkitClipPath: mounted ? "inset(0 0 0 0)" : "inset(0 100% 0 0)",
+              transform: mounted ? "translateY(0)" : "translateY(16px)",
+              transition:
+                "opacity 0.9s ease-out 320ms, transform 1s cubic-bezier(0.16,1,0.3,1) 320ms, clip-path 1.15s cubic-bezier(0.16,1,0.3,1) 320ms, -webkit-clip-path 1.15s cubic-bezier(0.16,1,0.3,1) 320ms",
+            }}
+          />
         </h1>
         <p
           className={`${base} font-body font-light text-[var(--blush)]/85 max-w-md mt-6 text-base md:text-lg leading-relaxed`}
