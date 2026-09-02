@@ -76,7 +76,7 @@ export default function Nav({ copy, locale }: { copy: SiteCopy["nav"]; locale: L
     >
       <div className="flex items-center justify-between px-6 md:px-10 py-5">
         <a href="#" aria-label="Palazzo Vite — home" className="shrink-0">
-          <Logo className="h-11 w-11 md:h-12 md:w-12" />
+          <Logo className="h-14 w-14 md:h-16 md:w-16" />
         </a>
 
         <nav className="hidden lg:flex items-center gap-8 font-label text-[11px]">
