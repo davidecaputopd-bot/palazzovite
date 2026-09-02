@@ -6,11 +6,13 @@ import { SPACE_PHOTOS } from "@/app/data/photos";
 export default function PalazzoLife({ copy }: { copy: SiteCopy["spaces"] }) {
   // Ogni spazio comune è una galleria (come le stanze): foto + nome + descrizione.
   // La sala lettura è inclusa nella cucina; la scala resta nella sezione Storia.
-  const spaces = [
+  // desktopPreview: limita quante foto mostrare su desktop (le altre in "+N"),
+  // così una galleria con molte foto non diventa troppo alta.
+  const spaces: { name: string; desc: string; photos: string[]; desktopPreview?: number }[] = [
     { name: copy.garden[0], desc: copy.garden[1], photos: SPACE_PHOTOS.garden },
     { name: copy.breakfast[0], desc: copy.breakfast[1], photos: SPACE_PHOTOS.kitchen },
     { name: copy.terrace[0], desc: copy.terrace[1], photos: SPACE_PHOTOS.terrace },
-    { name: copy.work[0], desc: copy.work[1], photos: SPACE_PHOTOS.work },
+    { name: copy.work[0], desc: copy.work[1], photos: SPACE_PHOTOS.work, desktopPreview: 6 },
     { name: copy.parking[0], desc: copy.parking[1], photos: SPACE_PHOTOS.parking },
   ];
 
@@ -29,7 +31,7 @@ export default function PalazzoLife({ copy }: { copy: SiteCopy["spaces"] }) {
         {spaces.map((s, i) => (
           <Reveal key={s.name} delay={(i % 2) * 80} className={i % 2 ? "md:mt-20" : ""}>
             <article className="group">
-              <Gallery images={s.photos} alt={s.name} openLabel={copy.galleryLabel} mobilePreviewCount={4} elevated />
+              <Gallery images={s.photos} alt={s.name} openLabel={copy.galleryLabel} mobilePreviewCount={4} desktopPreviewCount={s.desktopPreview} elevated />
               <div className="pt-6 md:pt-7">
                 <h3 className="font-display text-2xl md:text-3xl tracking-wide mb-2">{s.name}</h3>
                 <p className="font-body font-light text-sm md:text-base text-[var(--ink-soft)] leading-relaxed max-w-md">

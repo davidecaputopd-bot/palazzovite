@@ -12,6 +12,7 @@ export default function Gallery({
   bathroomFrom,
   bathroomLabel,
   mobilePreviewCount = images.length,
+  desktopPreviewCount,
   moreLabel,
   elevated = false,
 }: {
@@ -21,11 +22,14 @@ export default function Gallery({
   bathroomFrom?: number;
   bathroomLabel?: string;
   mobilePreviewCount?: number;
+  desktopPreviewCount?: number;
   moreLabel?: string;
   elevated?: boolean;
 }) {
   const [index, setIndex] = useState(-1);
   const hiddenCount = Math.max(images.length - mobilePreviewCount, 0);
+  const desktopHiddenCount =
+    desktopPreviewCount != null ? Math.max(images.length - desktopPreviewCount, 0) : 0;
 
   return (
     <>
@@ -33,17 +37,29 @@ export default function Gallery({
         {images.map((src, i) => {
           const isBath = bathroomFrom !== undefined && i >= bathroomFrom;
           const hiddenOnMobile = i >= mobilePreviewCount;
+          const hiddenOnDesktop = desktopPreviewCount != null && i >= desktopPreviewCount;
           const showsMoreBadge = hiddenCount > 0 && i === mobilePreviewCount - 1;
+          const showsDesktopBadge = desktopHiddenCount > 0 && i === desktopPreviewCount! - 1;
+          // Nasconde su mobile e/o desktop a seconda dei due limiti.
+          const visibilityClass = hiddenOnMobile
+            ? hiddenOnDesktop
+              ? "hidden"
+              : "hidden md:block"
+            : hiddenOnDesktop
+              ? "md:hidden"
+              : "";
 
           return (
             <button
               key={src}
               type="button"
-              onClick={() => setIndex(showsMoreBadge ? mobilePreviewCount : i)}
+              onClick={() =>
+                setIndex(showsDesktopBadge ? desktopPreviewCount! : showsMoreBadge ? mobilePreviewCount : i)
+              }
               aria-label={`${openLabel} - ${alt} ${i + 1}${isBath && bathroomLabel ? ` (${bathroomLabel})` : ""}`}
               className={`group relative overflow-hidden rounded-xl md:rounded-2xl bg-[var(--blush)] active:scale-[0.99] transition-[transform,box-shadow] duration-150 ${elevated ? "shadow-[var(--shadow-photo)]" : ""} ${
                 i === 0 ? "col-span-2 row-span-2 aspect-square" : "aspect-square"
-              } ${hiddenOnMobile ? "hidden md:block" : ""}`}
+              } ${visibilityClass}`}
             >
               <Image
                 src={src}
@@ -64,6 +80,12 @@ export default function Gallery({
               {showsMoreBadge && (
                 <span className="md:hidden absolute inset-0 grid place-items-center bg-[color-mix(in_srgb,var(--hero-shade)_38%,transparent)] text-center font-label text-[11px] text-[var(--blush)] tracking-[0.14em]">
                   +{hiddenCount}{moreLabel ? ` ${moreLabel}` : ""}
+                </span>
+              )}
+
+              {showsDesktopBadge && (
+                <span className="hidden md:grid absolute inset-0 place-items-center bg-[color-mix(in_srgb,var(--hero-shade)_38%,transparent)] text-center font-label text-[12px] text-[var(--blush)] tracking-[0.14em]">
+                  +{desktopHiddenCount}{moreLabel ? ` ${moreLabel}` : ""}
                 </span>
               )}
             </button>
