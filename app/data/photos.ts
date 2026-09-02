@@ -66,12 +66,12 @@ export const SPACE_PHOTOS: Record<"garden" | "kitchen" | "terrace" | "work" | "p
     "/foto/giardino-04.jpg",
     "/foto/location-08.jpg",
   ],
-  // Cucina: piano cottura e cucina economica a legna (i mobili in legno marrone
-  // stanno nella sala lettura). spazi-13 = credenza/dispensa con uscita giardino.
-  kitchen: ["/foto/spazi-04.jpg", "/foto/spazi-11.jpg", "/foto/spazi-13.jpg"],
+  // Cucina: piano cottura, cucina economica a legna, tavolo coi limoni (spazi-10)
+  // e credenza/dispensa con uscita giardino (spazi-13).
+  kitchen: ["/foto/spazi-04.jpg", "/foto/spazi-11.jpg", "/foto/spazi-10.jpg", "/foto/spazi-13.jpg"],
   terrace: ["/foto/location-05.jpg", "/foto/location-06.jpg", "/foto/hero-01.jpg"],
-  // Sala lettura: include i mobili in legno (libreria, tavolo) e il salotto.
-  work: ["/foto/spazi-03.jpg", "/foto/spazi-08.jpg", "/foto/spazi-09.jpg", "/foto/spazi-05.jpg", "/foto/spazi-10.jpg", "/foto/spazi-12.jpg", "/foto/spazi-14.jpg", "/foto/spazi-15.jpg"],
+  // Sala lettura: libreria in legno, salotto e sala comune.
+  work: ["/foto/spazi-03.jpg", "/foto/spazi-08.jpg", "/foto/spazi-09.jpg", "/foto/spazi-05.jpg", "/foto/spazi-12.jpg", "/foto/spazi-14.jpg", "/foto/spazi-15.jpg"],
   // Cortile interno riservato agli ospiti, con la bouganville in fiore.
   parking: ["/foto/parcheggio-01.jpg", "/foto/parcheggio-02.jpg"],
 };
