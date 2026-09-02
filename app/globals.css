@@ -34,7 +34,7 @@
   --blush: #F2E2DD;       /* crema calda: superfici chiare */
   --accent: #ACB6A8;      /* verdino sbiadito campionato dalle pareti (era #8ca7af) */
   --accent-soft: #C1C8BE; /* verdino più chiaro per fill sottili */
-  --accent-deep: #5E6B57; /* verdino scurito per testo su fondo chiaro (contrasto AA) */
+  --accent-deep: #515C46; /* verdino scurito per testo su fondo chiaro: ≥4.5:1 AA anche a 10px */
   --on-dark: #2B2419;     /* testo su verdino chiaro */
 
   /* Ombra pannelli/schede (a due parti, calda hero-shade): solleva i

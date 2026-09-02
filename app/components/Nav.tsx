@@ -74,7 +74,20 @@ export default function Nav({ copy, locale }: { copy: SiteCopy["nav"]; locale: L
         borderBottom: scrolled && !open ? "1px solid color-mix(in srgb, var(--ink) 12%, transparent)" : "1px solid transparent",
       }}
     >
-      <div className="flex items-center justify-between px-6 md:px-10 py-5">
+      {/* Scudo di contrasto: velatura scura dietro l'header quando è trasparente
+          sull'hero, così logo e menu restano leggibili su qualsiasi foto.
+          Sparisce quando l'header prende il suo sfondo (solid). */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 top-0 h-44 md:h-48"
+        style={{
+          background:
+            "linear-gradient(180deg, color-mix(in srgb, var(--hero-shade) 55%, transparent) 0%, color-mix(in srgb, var(--hero-shade) 24%, transparent) 45%, transparent 100%)",
+          opacity: solid ? 0 : 1,
+          transition: "opacity 500ms ease-out",
+        }}
+      />
+      <div className="relative z-10 flex items-center justify-between px-6 md:px-10 py-5">
         <a href="#" aria-label="Palazzo Vite — home" className="shrink-0">
           <Logo className="h-14 w-14 md:h-16 md:w-16" />
         </a>
