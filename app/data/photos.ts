@@ -1,7 +1,7 @@
 // Manifest delle 40 foto reali in /public/foto (selezione dallo shooting).
 // I nomi camera-* seguono gli slug degli elementi (aria/etere/fiamma/terra/mare).
 
-export const HERO = "/foto/hero-01.jpg";
+export const HERO = "/foto/spazi-01.jpg";
 
 function seq(prefix: string, n: number): string[] {
   return Array.from({ length: n }, (_, i) => `/foto/${prefix}-${String(i + 1).padStart(2, "0")}.jpg`);
