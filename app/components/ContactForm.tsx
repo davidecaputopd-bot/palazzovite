@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useState, useEffect, useRef, FormEvent } from "react";
 import { useSearchParams } from "next/navigation";
 import { CONTACT_EMAIL } from "@/app/data/config";
 import { rooms } from "@/app/data/rooms";
@@ -17,6 +17,13 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
   const [checkOut, setCheckOut] = useState("");
   const [selectedRoom, setSelectedRoom] = useState(initialRoom);
   const [mailtoHref, setMailtoHref] = useState(`mailto:${CONTACT_EMAIL}`);
+  const successRef = useRef<HTMLDivElement>(null);
+
+  // A invio riuscito, sposta il focus sul messaggio di conferma: gli screen
+  // reader annunciano l'esito e l'utente non resta "perso" (WCAG 4.1.3 / focus).
+  useEffect(() => {
+    if (status === "success") successRef.current?.focus();
+  }, [status]);
 
   // Fallback: se l'invio automatico non riesce, apre la mail già precompilata
   // con tutti i dati della richiesta, così la richiesta arriva comunque.
@@ -101,7 +108,12 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
 
   if (status === "success") {
     return (
-      <div className="text-center py-12 max-w-md mx-auto form-success">
+      <div
+        ref={successRef}
+        tabIndex={-1}
+        role="status"
+        className="text-center py-12 max-w-md mx-auto form-success outline-none"
+      >
         <p className="font-display text-3xl mb-3">{copy.sent}</p>
         <p className="font-body font-light text-[var(--ink-soft)]">
           {copy.sentText}
@@ -235,7 +247,7 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
           type="checkbox"
           required
           aria-required="true"
-          className="mt-0.5 h-5 w-5 shrink-0 accent-[var(--ink)]"
+          className="mt-0.5 h-6 w-6 shrink-0 accent-[var(--ink)]"
         />
         <span>
           {copy.privacyConsent}{" "}
