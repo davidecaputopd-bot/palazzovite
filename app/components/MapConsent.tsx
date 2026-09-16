@@ -40,7 +40,7 @@ export default function MapConsent({ copy }: { copy: SiteCopy["location"] }) {
           <button
             type="button"
             onClick={() => setAccepted(true)}
-            className="font-label text-xs rounded-full bg-[image:var(--btn-ink)] text-[var(--stone)] px-7 py-4 hover:opacity-85 transition-opacity"
+            className="font-label text-xs rounded-full bg-[image:var(--btn-ink)] text-[var(--stone)] px-7 py-4 hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-8px_color-mix(in_srgb,var(--hero-shade)_40%,transparent)] transition-[transform,box-shadow]"
           >
             {copy.loadMap}
           </button>

@@ -6,7 +6,7 @@ export default function Story({ copy }: { copy: SiteCopy["story"] }) {
   return (
     <section id="storia" className="relative px-6 md:px-10 py-20 md:py-36 overflow-hidden">
       <div className="relative max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-[0.95fr_1.05fr] gap-12 md:gap-16 items-center">
-        <Reveal>
+        <Reveal variant="fade">
           <p className="font-label text-xs text-[var(--ink-soft)] mb-6">{copy.eyebrow}</p>
           <h2 className="font-display text-[clamp(2rem,4.4vw,4rem)] leading-[0.94] mb-8 text-[var(--ink)]">
             {copy.title[0]}
@@ -30,7 +30,7 @@ export default function Story({ copy }: { copy: SiteCopy["story"] }) {
             ))}
           </dl>
         </Reveal>
-        <Reveal delay={90} className="relative min-h-[520px] md:min-h-[680px]">
+        <Reveal variant="fade" delay={90} className="relative min-h-[520px] md:min-h-[680px]">
           <div className="absolute left-0 top-0 h-[74%] w-[82%] overflow-hidden rounded-2xl md:rounded-3xl bg-[var(--stone-deep)] shadow-[0_28px_60px_-32px_rgb(36_48_31_/_0.5)]">
             <Image
               src="/foto/spazi-01.jpg"

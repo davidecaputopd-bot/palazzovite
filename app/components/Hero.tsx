@@ -94,7 +94,7 @@ export default function Hero({ copy, availability }: { copy: SiteCopy["hero"]; a
         >
           <a
             href="#prenota"
-            className="font-label text-[11px] rounded-full bg-[image:var(--btn-blush)] text-[var(--ink)] px-8 py-4 hover:opacity-90 active:scale-[0.98] transition-[opacity,transform] duration-200 ease-out"
+            className="font-label text-[11px] rounded-full bg-[image:var(--btn-blush)] text-[var(--ink)] px-8 py-4 hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-8px_color-mix(in_srgb,var(--hero-shade)_40%,transparent)] active:scale-[0.98] transition-[transform,box-shadow] duration-200 ease-out"
           >
             {availability}
           </a>

@@ -77,7 +77,7 @@ export default function Rooms({ copy }: { copy: SiteCopy["rooms"] }) {
 
                   <a
                     href={`?room=${room.slug}#prenota`}
-                    className="inline-flex w-full sm:w-auto items-center justify-center rounded-full bg-[image:var(--btn-ink)] text-[var(--stone)] px-6 py-3 font-label text-[11px] hover:opacity-90 active:scale-[0.98] transition-[opacity,transform] duration-200"
+                    className="inline-flex w-full sm:w-auto items-center justify-center rounded-full bg-[image:var(--btn-ink)] text-[var(--stone)] px-6 py-3 font-label text-[11px] hover:-translate-y-0.5 hover:shadow-[0_10px_24px_-8px_color-mix(in_srgb,var(--hero-shade)_40%,transparent)] active:scale-[0.98] transition-[transform,box-shadow] duration-200"
                   >
                     {copy.request}
                   </a>
