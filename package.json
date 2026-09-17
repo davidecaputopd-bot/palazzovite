@@ -15,6 +15,7 @@
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "swiper": "^14.0.2",
+    "vanilla-tilt": "^1.8.1",
     "yet-another-react-lightbox": "^3.32.1"
   },
   "devDependencies": {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
@@ -27,13 +27,49 @@ export default function Gallery({
   elevated?: boolean;
 }) {
   const [index, setIndex] = useState(-1);
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  // Micro-tilt 3D leggero sulle foto (solo desktop con puntatore fine, mai su
+  // touch né sotto prefers-reduced-motion). Molto sobrio: max 4°, niente glare.
+  useEffect(() => {
+    const grid = gridRef.current;
+    if (!grid) return;
+    const fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!fine || reduce) return;
+
+    const tiles = Array.from(grid.querySelectorAll<HTMLElement>("[data-tilt]"));
+    let cancelled = false;
+    import("vanilla-tilt").then(({ default: VanillaTilt }) => {
+      if (cancelled) return;
+      VanillaTilt.init(tiles, {
+        max: 4,
+        perspective: 1200,
+        scale: 1.015,
+        speed: 600,
+        glare: false,
+        gyroscope: false,
+        reset: true,
+        easing: "cubic-bezier(0.16,1,0.3,1)",
+      });
+    });
+
+    return () => {
+      cancelled = true;
+      tiles.forEach((t) => {
+        const vt = (t as HTMLElement & { vanillaTilt?: { destroy: () => void } }).vanillaTilt;
+        vt?.destroy();
+      });
+    };
+  }, [images.length, mobilePreviewCount, desktopPreviewCount]);
+
   const hiddenCount = Math.max(images.length - mobilePreviewCount, 0);
   const desktopHiddenCount =
     desktopPreviewCount != null ? Math.max(images.length - desktopPreviewCount, 0) : 0;
 
   return (
     <>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+      <div ref={gridRef} className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
         {images.map((src, i) => {
           const isBath = bathroomFrom !== undefined && i >= bathroomFrom;
           const hiddenOnMobile = i >= mobilePreviewCount;
@@ -53,11 +89,12 @@ export default function Gallery({
             <button
               key={src}
               type="button"
+              data-tilt
               onClick={() =>
                 setIndex(showsDesktopBadge ? desktopPreviewCount! : showsMoreBadge ? mobilePreviewCount : i)
               }
               aria-label={`${openLabel} - ${alt} ${i + 1}${isBath && bathroomLabel ? ` (${bathroomLabel})` : ""}`}
-              className={`group relative overflow-hidden rounded-xl md:rounded-2xl bg-[var(--blush)] active:scale-[0.99] transition-[transform,box-shadow] duration-150 ${elevated ? "shadow-[var(--shadow-photo)]" : ""} ${
+              className={`group relative overflow-hidden rounded-xl md:rounded-2xl bg-[var(--blush)] active:scale-[0.99] transition-[box-shadow] duration-150 ${elevated ? "shadow-[var(--shadow-photo)]" : ""} ${
                 i === 0 ? "col-span-2 row-span-2 aspect-square" : "aspect-square"
               } ${visibilityClass}`}
             >
