@@ -53,10 +53,9 @@
   --btn-blush: linear-gradient(180deg, color-mix(in srgb, var(--blush) 82%, var(--stone)) 0%, var(--blush) 62%);
 }
 
-/* Gli alias font vivono su body: è lì che next/font monta --font-encode/playfair/spectral */
+/* Gli alias font vivono su body: è lì che next/font monta --font-encode/spectral */
 body {
   --font-display: var(--font-encode);
-  --font-subheading: var(--font-playfair);
   --font-label: var(--font-encode);
   --font-body: var(--font-spectral);
 }
@@ -132,7 +131,7 @@ p {
 }
 
 section {
-  scroll-margin-top: 88px;
+  scroll-margin-top: 100px;
 }
 
 .font-label {
@@ -142,10 +141,6 @@ section {
   letter-spacing: 0.14em;
 }
 
-.font-subheading {
-  font-family: var(--font-subheading);
-  font-weight: 500;
-}
 
 
 @media (max-width: 767px) {
@@ -164,7 +159,8 @@ section {
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
-}\n\n
+}
+
 .form-success {
   animation: fadeIn 0.45s cubic-bezier(0.16, 1, 0.3, 1);
 }

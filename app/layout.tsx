@@ -1,24 +1,18 @@
 import type { Metadata, Viewport } from "next";
-import { Encode_Sans_Expanded, Playfair_Display, Spectral } from "next/font/google";
+import { Encode_Sans_Expanded, Spectral } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SITE_URL } from "@/app/data/config";
 import "./globals.css";
 
 // Sostituti open dei font del riferimento "The Hollywood Grande":
 // GT America Extended -> Encode Sans Expanded (grottesco esteso, titoli/label)
-// Bookmania          -> Playfair Display (serif elegante, sottotitoli/accenti)
-// Calluna            -> Spectral (serif da lettura, corpo)
+// Calluna            -> Spectral (serif da lettura, corpo; anche corsivo per gli accenti)
+// Il marchio "Palazzo Vite" (logo + titolo hero) usa il font brand Edinburgh, reso
+// come artwork vettoriale: vive nei file SVG, non come webfont.
 const encode = Encode_Sans_Expanded({
   weight: ["500", "600", "700"],
   subsets: ["latin"],
   variable: "--font-encode",
-});
-
-const playfair = Playfair_Display({
-  weight: ["500", "600"],
-  style: ["normal", "italic"],
-  subsets: ["latin"],
-  variable: "--font-playfair",
 });
 
 const spectral = Spectral({
@@ -116,7 +110,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="it">
-      <body className={`${encode.variable} ${playfair.variable} ${spectral.variable}`}>
+      <body className={`${encode.variable} ${spectral.variable}`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

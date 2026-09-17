@@ -41,7 +41,7 @@ export default function EditorialPause({
             className={`lg:col-span-5 ${reverse ? "lg:col-start-1 lg:row-start-1" : "lg:col-start-8"}`}
           >
             <div className="pt-2 md:pt-3">
-              <h2 className="font-subheading text-[clamp(2.4rem,4.8vw,4.5rem)] leading-[1.02] max-w-xl">
+              <h2 className="font-body italic font-normal text-[clamp(2.4rem,4.8vw,4.5rem)] leading-[1.02] max-w-xl">
                 {copy.title}
               </h2>
 
