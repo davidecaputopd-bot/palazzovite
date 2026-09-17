@@ -11,6 +11,7 @@ import Book from "@/app/components/Book";
 import Footer from "@/app/components/Footer";
 import StickyBookBar from "@/app/components/StickyBookBar";
 import DocumentLanguage from "@/app/components/DocumentLanguage";
+import BrandConsole from "@/app/components/BrandConsole";
 import { copies, type Locale } from "@/app/data/i18n";
 
 export default function SiteHome({ locale }: { locale: Locale }) {
@@ -19,6 +20,7 @@ export default function SiteHome({ locale }: { locale: Locale }) {
   return (
     <div lang={locale}>
       <DocumentLanguage locale={locale} />
+      <BrandConsole />
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:font-label focus:text-xs focus:bg-[var(--stone)] focus:text-[var(--ink)] focus:px-4 focus:py-2"

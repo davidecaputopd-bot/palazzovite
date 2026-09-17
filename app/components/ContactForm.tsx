@@ -114,6 +114,26 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
         role="status"
         className="text-center py-12 max-w-md mx-auto form-success outline-none"
       >
+        {/* Sigillo: cerchio + spunta che si disegnano, come un timbro di conferma.
+            Sotto prefers-reduced-motion il blocco globale lo mostra già completo. */}
+        <svg
+          aria-hidden="true"
+          viewBox="0 0 64 64"
+          className="mx-auto mb-5 h-14 w-14"
+          fill="none"
+          strokeWidth={2}
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          style={{ stroke: "var(--accent-deep)" }}
+        >
+          <circle className="seal-ring" cx="32" cy="32" r="28" />
+          <path className="seal-check" d="M20 33 l8 8 l16 -18" />
+          <style>{`
+            .seal-ring { stroke-dasharray: 176; stroke-dashoffset: 176; animation: sealDraw 0.9s cubic-bezier(0.16,1,0.3,1) 0.1s forwards; }
+            .seal-check { stroke-dasharray: 42; stroke-dashoffset: 42; animation: sealDraw 0.5s cubic-bezier(0.16,1,0.3,1) 0.72s forwards; }
+            @keyframes sealDraw { to { stroke-dashoffset: 0; } }
+          `}</style>
+        </svg>
         <p className="font-display text-3xl mb-3">{copy.sent}</p>
         <p className="font-body font-light text-[var(--ink-soft)]">
           {copy.sentText}
