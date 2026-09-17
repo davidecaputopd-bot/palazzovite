@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/cookie-policy" },
 };
 
-const updatedAt = "16 luglio 2026";
+const updatedAt = "17 settembre 2026";
 
 export default function CookiePolicyPage() {
   return (
@@ -68,10 +68,12 @@ export default function CookiePolicyPage() {
           <section>
             <h2 className="font-label text-xs text-[var(--ink)] mb-3">Form di contatto</h2>
             <p>
-              L’invio del form passa attraverso FormSubmit, servizio usato per
-              recapitare la richiesta all’indirizzo email della struttura. I dati
-              inseriti nel form sono trattati secondo quanto indicato
-              nell’informativa privacy.
+              L’invio del form passa attraverso FormSubmit, un servizio con sede
+              negli Stati Uniti usato unicamente per recapitare la richiesta
+              all’indirizzo email della struttura. I dati inseriti nel form sono
+              trattati secondo quanto indicato nell’informativa privacy; in
+              alternativa puoi contattarci direttamente via email o telefono,
+              senza passare da servizi esterni.
             </p>
           </section>
 

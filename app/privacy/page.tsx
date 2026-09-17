@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/privacy" },
 };
 
-const updatedAt = "16 luglio 2026";
+const updatedAt = "17 settembre 2026";
 
 export default function PrivacyPage() {
   return (
@@ -80,22 +80,34 @@ export default function PrivacyPage() {
             <h2 className="font-label text-xs text-[var(--ink)] mb-3">Servizi esterni</h2>
             <p>
               Il sito è ospitato su Vercel. Il form di contatto utilizza
-              FormSubmit per inoltrare le richieste all’indirizzo email della
-              struttura. Il sito utilizza inoltre Vercel Web Analytics per
+              FormSubmit (servizio con sede negli Stati Uniti) come semplice
+              sistema di inoltro: riceve i dati del modulo e li recapita via
+              email all’indirizzo della struttura, senza utilizzarli per proprie
+              finalità. Il sito utilizza inoltre Vercel Web Analytics per
               statistiche aggregate e non invasive sulla navigazione. La mappa
               di Google Maps non viene caricata automaticamente: viene mostrata
               solo dopo un’azione esplicita dell’utente.
+            </p>
+            <p className="mt-3">
+              In alternativa al form puoi contattarci direttamente via email o
+              telefono, senza passare da servizi esterni.
             </p>
           </section>
 
           <section>
             <h2 className="font-label text-xs text-[var(--ink)] mb-3">Trasferimenti fuori dallo Spazio Economico Europeo</h2>
             <p>
-              Alcuni fornitori tecnici potrebbero trattare dati anche fuori
-              dallo Spazio Economico Europeo. In questi casi il trattamento deve
-              avvenire sulla base degli strumenti previsti dal GDPR, come
-              decisioni di adeguatezza, clausole contrattuali standard o altre
-              garanzie applicabili.
+              Alcuni fornitori tecnici — in particolare FormSubmit, usato per
+              l’inoltro del form — hanno sede negli Stati Uniti e possono quindi
+              trattare i dati fuori dallo Spazio Economico Europeo. Quando ciò
+              avviene per l’invio del modulo, il trasferimento è necessario per
+              dare seguito alla richiesta di natura precontrattuale che l’utente
+              stesso avvia inviando il form (art. 49, par. 1, lett. b, GDPR).
+              Per gli altri fornitori il trattamento avviene sulla base degli
+              strumenti previsti dal GDPR, come decisioni di adeguatezza,
+              clausole contrattuali standard o altre garanzie applicabili. In
+              ogni caso puoi evitare qualsiasi trasferimento contattandoci
+              direttamente via email o telefono.
             </p>
           </section>
 
