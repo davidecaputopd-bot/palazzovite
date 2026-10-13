@@ -7,6 +7,7 @@ import EditorialPause from "@/app/components/EditorialPause";
 import PalazzoLife from "@/app/components/PalazzoLife";
 import PracticalInfo from "@/app/components/PracticalInfo";
 import Location from "@/app/components/Location";
+import Testimonials from "@/app/components/Testimonials";
 import Book from "@/app/components/Book";
 import Footer from "@/app/components/Footer";
 import StickyBookBar from "@/app/components/StickyBookBar";
@@ -38,6 +39,7 @@ export default function SiteHome({ locale }: { locale: Locale }) {
         <PalazzoLife copy={copy.spaces} />
         <PracticalInfo copy={copy.practical} />
         <Location copy={copy.location} />
+        <Testimonials copy={copy.testimonials} locale={locale} />
         <Book copy={copy.book} formCopy={copy.form} />
       </main>
       <Footer />
