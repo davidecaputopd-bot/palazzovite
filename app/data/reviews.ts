@@ -25,12 +25,12 @@ export const REVIEWS: Review[] = [
   {
     // Estratto (verbatim) della recensione Booking di Massimo — citazione in evidenza.
     quote:
-      "Un'esperienza unica in un antico palazzo nobiliare, ristrutturato e arredato con estremo gusto. A Palazzo Vite vivi fuori dal tempo in un'atmosfera accogliente e confortevole, una casa di altri tempi con il comfort moderno.",
+      "Un'esperienza unica in un antico palazzo nobiliare, ristrutturato e arredato con estremo gusto. A Palazzo Vite vivi fuori dal tempo in un'atmosfera accogliente e confortevole, una casa di altri tempi con il comfort moderno. Fatevi un caffè nella vecchia cucina e godetevelo nel grazioso giardino.",
     lang: "it",
     t: {
-      en: "A unique experience in an old noble palazzo, restored and furnished with exquisite taste. At Palazzo Vite you live outside of time, in a warm and welcoming atmosphere: a house of another era with modern comfort.",
-      fr: "Une expérience unique dans un ancien palais de maître, restauré et meublé avec un goût exquis. À Palazzo Vite, on vit hors du temps, dans une atmosphère chaleureuse et accueillante : une maison d'autrefois avec le confort moderne.",
-      es: "Una experiencia única en un antiguo palacio noble, restaurado y amueblado con un gusto exquisito. En Palazzo Vite vives fuera del tiempo, en un ambiente acogedor y confortable: una casa de otros tiempos con el confort moderno.",
+      en: "A unique experience in an old noble palazzo, restored and furnished with exquisite taste. At Palazzo Vite you live outside of time, in a warm and welcoming atmosphere: a house of another era with modern comfort. Make yourself a coffee in the old kitchen and enjoy it in the lovely garden.",
+      fr: "Une expérience unique dans un ancien palais de maître, restauré et meublé avec un goût exquis. À Palazzo Vite, on vit hors du temps, dans une atmosphère chaleureuse et accueillante : une maison d'autrefois avec le confort moderne. Préparez-vous un café dans la vieille cuisine et savourez-le dans le joli jardin.",
+      es: "Una experiencia única en un antiguo palacio noble, restaurado y amueblado con un gusto exquisito. En Palazzo Vite vives fuera del tiempo, en un ambiente acogedor y confortable: una casa de otros tiempos con el confort moderno. Prepárate un café en la vieja cocina y disfrútalo en el bonito jardín.",
     },
     name: "Massimo",
     place: "Italia",
