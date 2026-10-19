@@ -52,7 +52,7 @@ function TranslateToggle({
     <button
       type="button"
       onClick={toggle}
-      className="self-start font-label text-[10px] tracking-[0.14em] uppercase text-[var(--ink-soft)] underline underline-offset-4 decoration-[var(--accent-deep)]/50 hover:text-[var(--ink)] hover:decoration-[var(--accent-deep)] transition-colors rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-deep)]"
+      className="self-start -my-1 py-1 font-label text-[10px] tracking-[0.14em] uppercase text-[var(--ink-soft)] underline underline-offset-4 decoration-[var(--accent-deep)]/50 hover:text-[var(--ink)] hover:decoration-[var(--accent-deep)] transition-colors rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-deep)]"
     >
       {on ? copy.original : copy.translate}
     </button>
@@ -130,31 +130,37 @@ export default function Testimonials({ copy, locale }: { copy: SiteCopy["testimo
             </p>
           </div>
 
-          {/* Doppio badge di fiducia — punteggi aggregati reali */}
-          <div className="flex flex-wrap gap-3 shrink-0">
+          {/* Doppio badge di fiducia — punteggi aggregati reali.
+              Mobile: due colonne affiancate. Desktop: in riga, a contenuto. */}
+          <div className="grid grid-cols-2 gap-3 shrink-0 lg:flex lg:flex-wrap">
             <a
               href={REVIEW_STATS.google.href}
               target="_blank"
               rel="noreferrer"
-              className="trust-badge flex items-center gap-3 rounded-2xl bg-[var(--stone)] shadow-[var(--shadow-panel)] px-5 py-4"
+              className="trust-badge flex items-center justify-center lg:justify-start gap-3 rounded-2xl bg-[var(--stone)] shadow-[var(--shadow-panel)] px-5 py-4"
             >
               <span className="font-display text-3xl leading-none">{REVIEW_STATS.google.rating}</span>
               <span className="flex flex-col">
-                <Stars className="text-[13px] text-[var(--accent-deep)]" />
+                <span className="font-label text-[10px] tracking-[0.14em] text-[var(--ink)]">/ 5</span>
                 <span className="font-label text-[10px] tracking-[0.14em] text-[var(--ink-soft)] mt-1">
-                  Google · {REVIEW_STATS.google.count} {copy.reviews}
+                  Google
                 </span>
               </span>
             </a>
-            <div className="flex items-center gap-3 rounded-2xl bg-[var(--stone)] shadow-[var(--shadow-panel)] px-5 py-4">
+            <a
+              href={REVIEW_STATS.booking.href}
+              target="_blank"
+              rel="noreferrer"
+              className="trust-badge flex items-center justify-center lg:justify-start gap-3 rounded-2xl bg-[var(--stone)] shadow-[var(--shadow-panel)] px-5 py-4"
+            >
               <span className="font-display text-3xl leading-none">{REVIEW_STATS.booking.rating}</span>
               <span className="flex flex-col">
                 <span className="font-label text-[10px] tracking-[0.14em] text-[var(--ink)]">/ 10</span>
                 <span className="font-label text-[10px] tracking-[0.14em] text-[var(--ink-soft)] mt-1">
-                  Booking · {REVIEW_STATS.booking.count} {copy.reviews}
+                  Booking
                 </span>
               </span>
-            </div>
+            </a>
           </div>
         </div>
       </Reveal>
@@ -201,10 +207,12 @@ export default function Testimonials({ copy, locale }: { copy: SiteCopy["testimo
           transition: transform 220ms cubic-bezier(0.16, 1, 0.3, 1),
                       box-shadow 220ms cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .trust-badge:hover {
-          transform: translateY(-3px);
-          box-shadow: 0 4px 10px -6px color-mix(in srgb, var(--hero-shade) 18%, transparent),
-            0 20px 40px -20px color-mix(in srgb, var(--hero-shade) 34%, transparent);
+        @media (hover: hover) and (pointer: fine) {
+          .trust-badge:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px -6px color-mix(in srgb, var(--hero-shade) 18%, transparent),
+              0 20px 40px -20px color-mix(in srgb, var(--hero-shade) 34%, transparent);
+          }
         }
 
         /* ---- Card recensione: sollevamento morbido all'hover, ombra a due
@@ -214,10 +222,12 @@ export default function Testimonials({ copy, locale }: { copy: SiteCopy["testimo
                       box-shadow 320ms cubic-bezier(0.16, 1, 0.3, 1);
           will-change: transform;
         }
-        .rev-card:hover {
-          transform: translateY(-6px);
-          box-shadow: 0 6px 14px -8px color-mix(in srgb, var(--hero-shade) 22%, transparent),
-            0 28px 54px -24px color-mix(in srgb, var(--hero-shade) 42%, transparent);
+        @media (hover: hover) and (pointer: fine) {
+          .rev-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 6px 14px -8px color-mix(in srgb, var(--hero-shade) 22%, transparent),
+              0 28px 54px -24px color-mix(in srgb, var(--hero-shade) 42%, transparent);
+          }
         }
         /* Il focus da tastiera solleva la scheda come l'hover (accessibilità) */
         .rev-card:focus-within {
@@ -236,7 +246,9 @@ export default function Testimonials({ copy, locale }: { copy: SiteCopy["testimo
         .rev-track {
           animation: revScroll 50s linear infinite;
         }
-        .rev-marquee:hover .rev-track { animation-play-state: paused; }
+        @media (hover: hover) and (pointer: fine) {
+          .rev-marquee:hover .rev-track { animation-play-state: paused; }
+        }
         @keyframes revScroll { to { transform: translateX(-50%); } }
 
         /* ---- Touch (niente hover) o reduced-motion: niente auto-scroll ---- */

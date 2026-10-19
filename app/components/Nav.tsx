@@ -27,7 +27,7 @@ export default function Nav({ copy, locale }: { copy: SiteCopy["nav"]; locale: L
   // Scroll-spy: evidenzia la sezione in cui ci si trova ("sei qui" del Trunk Test).
   // Sceglie la sezione più vicina al terzo superiore del viewport.
   useEffect(() => {
-    const ids = ["storia", "stanze", "palazzo", "posizione"];
+    const ids = ["storia", "stanze", "palazzo", "posizione", "recensioni"];
     const sections = ids
       .map((id) => document.getElementById(id))
       .filter((el): el is HTMLElement => el !== null);
@@ -56,6 +56,7 @@ export default function Nav({ copy, locale }: { copy: SiteCopy["nav"]; locale: L
     { href: "#stanze", label: copy.rooms },
     { href: "#palazzo", label: copy.palace },
     { href: "#posizione", label: copy.location },
+    { href: "#recensioni", label: copy.reviews },
   ];
 
   return (
@@ -87,7 +88,7 @@ export default function Nav({ copy, locale }: { copy: SiteCopy["nav"]; locale: L
           transition: "opacity 500ms ease-out",
         }}
       />
-      <div className="relative z-10 flex items-center justify-between px-6 md:px-10 py-5">
+      <div className="relative z-10 flex items-center justify-between px-6 md:px-10 pb-5 pt-[calc(1.25rem+env(safe-area-inset-top))]">
         <a href="#" aria-label="Palazzo Vite — home" className="shrink-0">
           <Logo className="h-14 w-14 md:h-16 md:w-16" />
         </a>

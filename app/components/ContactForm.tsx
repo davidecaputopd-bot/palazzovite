@@ -144,7 +144,7 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
 
   const inputClass =
     // Niente focus:outline-none: lascia agire il :focus-visible globale (2px, WCAG 2.4.11).
-    "w-full min-w-0 rounded-xl bg-[color-mix(in_srgb,var(--stone-deep)_55%,var(--stone))] px-4 py-3 font-body font-light text-[var(--ink)] placeholder:text-[var(--ink-soft)] focus:bg-[color-mix(in_srgb,var(--stone-deep)_80%,var(--stone))] transition-colors duration-200";
+    "w-full min-w-0 rounded-xl bg-[color-mix(in_srgb,var(--stone-deep)_55%,var(--stone))] px-4 py-3 text-base font-body font-light text-[var(--ink)] placeholder:text-[var(--ink-soft)] focus:bg-[color-mix(in_srgb,var(--stone-deep)_80%,var(--stone))] transition-colors duration-200";
   // Gli input date su iOS hanno una larghezza intrinseca nativa che sfora la
   // cella su mobile: appearance-none la annulla e min-w-0 lascia comprimere.
   const dateInputClass = `${inputClass} appearance-none`;

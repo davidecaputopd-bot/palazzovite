@@ -73,7 +73,7 @@ export default function Hero({ copy, availability }: { copy: SiteCopy["hero"]; a
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative min-h-[100dvh] w-full overflow-hidden bg-[var(--hero-shade)]">
+    <section ref={sectionRef} className="relative min-h-[100svh] w-full overflow-hidden bg-[var(--hero-shade)]">
       <div ref={imageWrapRef} className="absolute inset-0" style={{ willChange: "transform" }}>
         <Image src={HERO} alt={copy.imageAlt} fill priority className="object-cover" sizes="100vw" />
       </div>
@@ -95,7 +95,7 @@ export default function Hero({ copy, availability }: { copy: SiteCopy["hero"]; a
       />
       <div
         ref={contentRef}
-        className="relative z-10 min-h-[100dvh] flex flex-col justify-end px-6 md:px-10 pb-16 md:pb-24"
+        className="relative z-10 min-h-[100svh] flex flex-col justify-end px-6 md:px-10 pb-16 md:pb-24"
         style={{ willChange: "transform, opacity" }}
       >
         {/* Titolo = wordmark "PALAZZO VITE" nel font brand Edinburgh, ricavato dai

@@ -23,7 +23,22 @@ export type Review = {
 // La prima è la citazione "in evidenza".
 export const REVIEWS: Review[] = [
   {
-    // Estratto (verbatim) della recensione Google di Franz Grillo — citazione in evidenza.
+    // Estratto (verbatim) della recensione Booking di Massimo — citazione in evidenza.
+    quote:
+      "Un'esperienza unica in un antico palazzo nobiliare, ristrutturato e arredato con estremo gusto. A Palazzo Vite vivi fuori dal tempo in un'atmosfera accogliente e confortevole, una casa di altri tempi con il comfort moderno.",
+    lang: "it",
+    t: {
+      en: "A unique experience in an old noble palazzo, restored and furnished with exquisite taste. At Palazzo Vite you live outside of time, in a warm and welcoming atmosphere: a house of another era with modern comfort.",
+      fr: "Une expérience unique dans un ancien palais de maître, restauré et meublé avec un goût exquis. À Palazzo Vite, on vit hors du temps, dans une atmosphère chaleureuse et accueillante : une maison d'autrefois avec le confort moderne.",
+      es: "Una experiencia única en un antiguo palacio noble, restaurado y amueblado con un gusto exquisito. En Palazzo Vite vives fuera del tiempo, en un ambiente acogedor y confortable: una casa de otros tiempos con el confort moderno.",
+    },
+    name: "Massimo",
+    place: "Italia",
+    flag: "🇮🇹",
+    source: "Booking",
+  },
+  {
+    // Estratto (verbatim) della recensione Google di Franz Grillo (nel carosello).
     quote:
       "Una splendida dimora storica, ricca di fascino e carattere, curata in ogni minimo dettaglio e capace di conservare il sapore del passato senza rinunciare al comfort e alle comodità di oggi.",
     lang: "it",

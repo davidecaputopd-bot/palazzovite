@@ -67,6 +67,23 @@ body {
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent; /* via il flash grigio/blu al tap su mobile */
+  -webkit-text-size-adjust: 100%; /* niente gonfiaggio del testo in landscape */
+}
+
+/* Mobile: tap immediato (niente delay di 300ms). I controlli non selezionano
+   il proprio testo al long-press; i link restano selezionabili (telefono, indirizzo). */
+button,
+a,
+[role="button"],
+label,
+summary {
+  touch-action: manipulation;
+}
+button,
+[role="button"] {
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 ::selection {

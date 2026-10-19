@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Encode_Sans_Expanded, Spectral } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SITE_URL } from "@/app/data/config";
+import { REVIEW_STATS, REVIEWS } from "@/app/data/reviews";
 import "./globals.css";
 
 // Sostituti open dei font del riferimento "The Hollywood Grande":
@@ -59,7 +60,13 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   themeColor: "#F4EFE4",
   colorScheme: "light",
+  // Disegna fino ai bordi sotto notch/Dynamic Island e home indicator:
+  // attiva env(safe-area-inset-*) usate da nav e barra fissa.
+  viewportFit: "cover",
 };
+
+// Converte i punteggi in formato italiano ("4,9") in numero per lo schema.
+const toNum = (s: string) => Number(s.replace(",", "."));
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -70,11 +77,16 @@ const jsonLd = {
   url: SITE_URL,
   email: "palazzovite@gmail.com",
   telephone: "+393286244934",
+  priceRange: "€€",
   numberOfRooms: 5,
-  sameAs: ["https://www.instagram.com/palazzovite/"],
+  sameAs: [
+    "https://www.instagram.com/palazzovite/",
+    "https://www.google.com/maps/place/Palazzo+Vite/@40.2748687,18.0434028,17z",
+    "https://www.booking.com/hotel/it/palazzo-vite.it.html",
+  ],
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Via Amendola, 1",
+    streetAddress: "Via Giovanni Amendola, 1",
     addressLocality: "Copertino",
     addressRegion: "LE",
     postalCode: "73043",
@@ -82,10 +94,10 @@ const jsonLd = {
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: 40.2687,
-    longitude: 18.0506,
+    latitude: 40.2748687,
+    longitude: 18.0434028,
   },
-  hasMap: "https://maps.google.com/?q=Via+Amendola+1,+73043+Copertino+LE",
+  hasMap: "https://maps.google.com/?q=Via+Giovanni+Amendola+1,+73043+Copertino+LE",
   checkinTime: "14:00",
   checkoutTime: "10:00",
   availableLanguage: ["it", "en", "fr", "es"],
@@ -98,6 +110,24 @@ const jsonLd = {
     { "@type": "LocationFeatureSpecification", name: "Terrazza", value: true },
     { "@type": "LocationFeatureSpecification", name: "Colazione", value: true },
   ],
+  // Punteggio aggregato reale (fonte Google, scala a 5 stelle — la più leggibile
+  // da motori e AI). Aggiornare REVIEW_STATS fa aggiornare anche lo schema.
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: toNum(REVIEW_STATS.google.rating),
+    bestRating: 5,
+    ratingCount: REVIEW_STATS.google.count,
+  },
+  // Alcune recensioni reali Google, attribuite, per densità informativa (GEO).
+  review: REVIEWS.filter((r) => r.source === "Google")
+    .slice(0, 3)
+    .map((r) => ({
+      "@type": "Review",
+      author: { "@type": "Person", name: r.name },
+      reviewRating: { "@type": "Rating", ratingValue: 5, bestRating: 5 },
+      reviewBody: r.quote,
+      inLanguage: r.lang,
+    })),
   image: [
     `${SITE_URL}/foto/hero-01.jpg`,
     `${SITE_URL}/foto/location-05.jpg`,
