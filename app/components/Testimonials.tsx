@@ -52,7 +52,7 @@ function TranslateToggle({
     <button
       type="button"
       onClick={toggle}
-      className="self-start font-label text-[10px] tracking-[0.14em] uppercase text-[var(--accent-deep)] underline underline-offset-4 decoration-[var(--accent-deep)]/40 hover:decoration-[var(--accent-deep)] transition-colors"
+      className="self-start font-label text-[10px] tracking-[0.14em] uppercase text-[var(--ink-soft)] underline underline-offset-4 decoration-[var(--accent-deep)]/50 hover:text-[var(--ink)] hover:decoration-[var(--accent-deep)] transition-colors rounded-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--accent-deep)]"
     >
       {on ? copy.original : copy.translate}
     </button>
@@ -90,7 +90,7 @@ function ReviewCard({
   return (
     <li
       {...(dup ? { "aria-hidden": true } : {})}
-      className="rev-card w-[280px] md:w-[340px] shrink-0 rounded-2xl bg-[var(--blush)] shadow-[var(--shadow-panel)] p-6 flex flex-col gap-4"
+      className="rev-card w-[280px] md:w-[340px] shrink-0 rounded-[22px] bg-[var(--dark)] shadow-[var(--shadow-panel)] p-6 flex flex-col gap-4"
     >
       <div className="flex items-center justify-between gap-3">
         <Stars className="text-[13px] text-[var(--accent-deep)]" />
@@ -117,7 +117,7 @@ export default function Testimonials({ copy, locale }: { copy: SiteCopy["testimo
   return (
     <section
       id="recensioni"
-      className="bg-[var(--stone)] text-[var(--ink)] px-6 md:px-10 py-20 md:py-32 overflow-hidden"
+      className="bg-[var(--stone-deep)] text-[var(--ink)] px-6 md:px-10 py-20 md:py-32 overflow-hidden"
     >
       <Reveal className="max-w-6xl mx-auto">
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8">
@@ -136,7 +136,7 @@ export default function Testimonials({ copy, locale }: { copy: SiteCopy["testimo
               href={REVIEW_STATS.google.href}
               target="_blank"
               rel="noreferrer"
-              className="trust-badge flex items-center gap-3 rounded-2xl bg-[var(--blush)] shadow-[var(--shadow-panel)] px-5 py-4"
+              className="trust-badge flex items-center gap-3 rounded-2xl bg-[var(--stone)] shadow-[var(--shadow-panel)] px-5 py-4"
             >
               <span className="font-display text-3xl leading-none">{REVIEW_STATS.google.rating}</span>
               <span className="flex flex-col">
@@ -146,12 +146,7 @@ export default function Testimonials({ copy, locale }: { copy: SiteCopy["testimo
                 </span>
               </span>
             </a>
-            <a
-              href={REVIEW_STATS.booking.href}
-              target="_blank"
-              rel="noreferrer"
-              className="trust-badge flex items-center gap-3 rounded-2xl bg-[var(--blush)] shadow-[var(--shadow-panel)] px-5 py-4"
-            >
+            <div className="flex items-center gap-3 rounded-2xl bg-[var(--stone)] shadow-[var(--shadow-panel)] px-5 py-4">
               <span className="font-display text-3xl leading-none">{REVIEW_STATS.booking.rating}</span>
               <span className="flex flex-col">
                 <span className="font-label text-[10px] tracking-[0.14em] text-[var(--ink)]">/ 10</span>
@@ -159,7 +154,7 @@ export default function Testimonials({ copy, locale }: { copy: SiteCopy["testimo
                   Booking · {REVIEW_STATS.booking.count} {copy.reviews}
                 </span>
               </span>
-            </a>
+            </div>
           </div>
         </div>
       </Reveal>
@@ -188,7 +183,7 @@ export default function Testimonials({ copy, locale }: { copy: SiteCopy["testimo
       </Reveal>
 
       {/* Marquee delle recensioni (auto solo su desktop con hover; manuale su touch) */}
-      <div className="rev-marquee -mx-6 md:-mx-10">
+      <div className="rev-marquee -mx-6 md:-mx-10 pt-5 pb-12">
         <ul className="rev-track flex w-max items-stretch gap-5 px-6 md:px-10">
           {rest.map((r, i) => (
             <ReviewCard key={`${r.name}-${i}`} r={r} locale={locale} copy={copy} />
@@ -208,18 +203,27 @@ export default function Testimonials({ copy, locale }: { copy: SiteCopy["testimo
         }
         .trust-badge:hover {
           transform: translateY(-3px);
-          box-shadow: 0 16px 34px -18px rgba(43, 36, 25, 0.45);
+          box-shadow: 0 4px 10px -6px color-mix(in srgb, var(--hero-shade) 18%, transparent),
+            0 20px 40px -20px color-mix(in srgb, var(--hero-shade) 34%, transparent);
         }
 
-        /* ---- Card recensione: sollevamento morbido all'hover ---- */
+        /* ---- Card recensione: sollevamento morbido all'hover, ombra a due
+               strati tinta sul verde della dimora (coerente con --shadow-panel) ---- */
         .rev-card {
-          transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1),
-                      box-shadow 300ms cubic-bezier(0.16, 1, 0.3, 1);
+          transition: transform 320ms cubic-bezier(0.16, 1, 0.3, 1),
+                      box-shadow 320ms cubic-bezier(0.16, 1, 0.3, 1);
           will-change: transform;
         }
         .rev-card:hover {
           transform: translateY(-6px);
-          box-shadow: 0 22px 44px -22px rgba(43, 36, 25, 0.5);
+          box-shadow: 0 6px 14px -8px color-mix(in srgb, var(--hero-shade) 22%, transparent),
+            0 28px 54px -24px color-mix(in srgb, var(--hero-shade) 42%, transparent);
+        }
+        /* Il focus da tastiera solleva la scheda come l'hover (accessibilità) */
+        .rev-card:focus-within {
+          transform: translateY(-4px);
+          box-shadow: 0 6px 14px -8px color-mix(in srgb, var(--hero-shade) 22%, transparent),
+            0 28px 54px -24px color-mix(in srgb, var(--hero-shade) 42%, transparent);
         }
         .rev-quote { text-wrap: pretty; }
 
@@ -230,7 +234,7 @@ export default function Testimonials({ copy, locale }: { copy: SiteCopy["testimo
           mask-image: linear-gradient(to right, transparent, #000 9%, #000 91%, transparent);
         }
         .rev-track {
-          animation: revScroll 72s linear infinite;
+          animation: revScroll 50s linear infinite;
         }
         .rev-marquee:hover .rev-track { animation-play-state: paused; }
         @keyframes revScroll { to { transform: translateX(-50%); } }
@@ -253,7 +257,7 @@ export default function Testimonials({ copy, locale }: { copy: SiteCopy["testimo
         /* ---- Reduced-motion: nessun sollevamento, solo cambio d'ombra ---- */
         @media (prefers-reduced-motion: reduce) {
           .trust-badge, .rev-card { transition: box-shadow 200ms ease; }
-          .trust-badge:hover, .rev-card:hover { transform: none; }
+          .trust-badge:hover, .rev-card:hover, .rev-card:focus-within { transform: none; }
         }
       `}</style>
     </section>

@@ -5,7 +5,7 @@
 
 export const REVIEW_STATS = {
   google: { rating: "4,9", outOf: "5", count: 19, href: "https://www.google.com/maps?q=Palazzo+Vite+Copertino" },
-  booking: { rating: "9,6", outOf: "10", count: 13, href: "https://www.booking.com/hotel/it/palazzo-vite.it.html" },
+  booking: { rating: "9,6", outOf: "10", count: 15, href: "https://www.booking.com/hotel/it/palazzo-vite.it.html" },
 } as const;
 
 export type ReviewLang = "it" | "en" | "fr" | "es" | "hu";
@@ -22,6 +22,21 @@ export type Review = {
 
 // La prima è la citazione "in evidenza".
 export const REVIEWS: Review[] = [
+  {
+    // Estratto (verbatim) della recensione Google di Franz Grillo — citazione in evidenza.
+    quote:
+      "Una splendida dimora storica, ricca di fascino e carattere, curata in ogni minimo dettaglio e capace di conservare il sapore del passato senza rinunciare al comfort e alle comodità di oggi.",
+    lang: "it",
+    t: {
+      en: "A beautiful historic residence, full of charm and character, cared for in every last detail and able to preserve the flavour of the past without giving up the comfort and conveniences of today.",
+      fr: "Une splendide demeure historique, pleine de charme et de caractère, soignée dans les moindres détails et capable de conserver la saveur du passé sans renoncer au confort et aux commodités d'aujourd'hui.",
+      es: "Una espléndida residencia histórica, llena de encanto y carácter, cuidada hasta el más mínimo detalle y capaz de conservar el sabor del pasado sin renunciar al confort y las comodidades de hoy.",
+    },
+    name: "Franz Grillo",
+    place: "Italia",
+    flag: "🇮🇹",
+    source: "Google",
+  },
   {
     quote:
       "Una dimora storica del periodo liberty, ricercata e curata. Era la nostra prima esperienza nel Salento e ci siamo trovati benissimo.",
