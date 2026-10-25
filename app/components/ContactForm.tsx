@@ -79,6 +79,7 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
       _subject: `Richiesta disponibilità - ${camera} - ${date}`,
       _template: "table",
       _captcha: "false",
+      _honey: get("_honey"),
     };
     if (payload.Email) payload._replyto = payload.Email;
 
@@ -300,6 +301,16 @@ export default function ContactForm({ copy }: { copy: SiteCopy["form"] }) {
       >
         {status === "loading" ? copy.sending : copy.send}
       </button>
+      {/* Honeypot anti-spam (FormSubmit): invisibile agli utenti; se un bot lo
+          compila, l'invio viene scartato. Ultimo figlio per non toccare lo spacing. */}
+      <input
+        type="text"
+        name="_honey"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="hidden"
+      />
     </form>
   );
 }
