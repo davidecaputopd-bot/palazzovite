@@ -4,8 +4,8 @@
 // I testi vanno confermati dal titolare prima della pubblicazione.
 
 export const REVIEW_STATS = {
-  google: { rating: "4,9", outOf: "5", count: 19, href: "https://www.google.com/maps?q=Palazzo+Vite+Copertino" },
-  booking: { rating: "9,6", outOf: "10", count: 15, href: "https://www.booking.com/hotel/it/palazzo-vite.it.html" },
+  google: { rating: "4,9", outOf: "5", count: 22, href: "https://www.google.com/maps?q=Palazzo+Vite+Copertino" },
+  booking: { rating: "9,7", outOf: "10", count: 17, href: "https://www.booking.com/hotel/it/palazzo-vite.it.html" },
 } as const;
 
 export type ReviewLang = "it" | "en" | "fr" | "es" | "hu";
